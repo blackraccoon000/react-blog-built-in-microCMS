@@ -7,6 +7,13 @@
   "author": "Yutaka Fujii <yutakaf@playwell.site>",
   "license": "BSD 3-Clause License",
   "private": null,
+  "scripts": {
+    "live-server": "live-server public",
+    "serve": "webpack serve --open --env development",
+    "build:dev": "webpack --env development",
+    "build:prod": "webpack --env production",
+    "build:watch": "webpack --env development --watch"
+  },
   "dependencies": {
     "@babel/core": "^7.14.0",
     "@babel/plugin-proposal-class-properties": "^7.13.0",
