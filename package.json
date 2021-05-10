@@ -1,0 +1,36 @@
+{
+  "name": "react-blog-built-in-microCMS",
+  "version": "1.0.0",
+  "description": "microCMS",
+  "main": "app.js",
+  "repository": "git@github.com:blackraccoon000/react-blog-built-in-microCMS.git",
+  "author": "Yutaka Fujii <yutakaf@playwell.site>",
+  "license": "BSD 3-Clause License",
+  "private": null,
+  "dependencies": {
+    "@babel/core": "^7.14.0",
+    "@babel/plugin-proposal-class-properties": "^7.13.0",
+    "@babel/plugin-proposal-object-rest-spread": "^7.13.8",
+    "@babel/preset-env": "^7.14.1",
+    "@babel/preset-react": "^7.13.13",
+    "babel-loader": "^8.2.2",
+    "babel-plugin-styled-components": "^1.12.0",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "html-webpack-plugin": "^5.3.1",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "sass": "^1.32.12",
+    "sass-loader": "^11.0.1",
+    "style-loader": "^2.0.0",
+    "styled-components": "^5.3.0",
+    "styled-reset": "^4.3.4",
+    "webpack": "^5.36.2",
+    "webpack-cli": "^4.7.0",
+    "webpack-merge": "^5.7.3"
+  },
+  "devDependencies": {
+    "live-server": "^1.2.1",
+    "webpack-dev-server": "^3.11.2"
+  }
+}
