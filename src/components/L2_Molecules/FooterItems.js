@@ -18,6 +18,7 @@ const UnorderedList = styled.ul.attrs((props) => {})`
   flex-direction: row;
   justify-content: center;
   list-style: none;
+  margin-left: 30px;
 `;
 
 const ListItem = styled.li.attrs((props) => {})`

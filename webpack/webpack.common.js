@@ -58,7 +58,7 @@ module.exports = {
       ),
       cache: true,
       mode: 'webapp',
-      devMode: 'webapp',
+      devMode: 'light',
       version: '1.0',
       lang: 'ja-JP',
       favicons: {
