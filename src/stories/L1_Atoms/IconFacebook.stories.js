@@ -2,7 +2,7 @@ import React from 'react';
 import IconFacebook from '../../components/L1_Atoms/IconFacebook';
 
 export default {
-  title: 'ATOMS/IconFacebook',
+  title: 'L1_ATOMS/IconFacebook',
   component: IconFacebook,
   argTypes: {
     color: {
