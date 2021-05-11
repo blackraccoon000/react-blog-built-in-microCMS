@@ -12,6 +12,11 @@ import {
   createDataFour,
   createDataFive,
 } from './tests/fixtures/createData';
+import res from './microcms/getMicroCmsData';
+
+res.asyncData().then((value) => {
+  console.log(value.data);
+});
 
 store.subscribe(() => {
   const state = store.getState();
