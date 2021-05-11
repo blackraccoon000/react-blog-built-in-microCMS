@@ -7,6 +7,9 @@
   "author": "Yutaka Fujii <yutakaf@playwell.site>",
   "license": "BSD-3-Clause",
   "private": null,
+  "jest": {
+    "verbose": true
+  },
   "scripts": {
     "build-storybook": "build-storybook",
     "build:dev": "webpack --env development",
