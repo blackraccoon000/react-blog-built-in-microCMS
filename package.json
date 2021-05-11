@@ -1,18 +1,19 @@
 {
   "name": "react-blog-built-in-microCMS",
   "version": "1.0.0",
-  "description": "microCMS",
+  "description": "React with built in microCMS",
   "main": "app.js",
   "repository": "git@github.com:blackraccoon000/react-blog-built-in-microCMS.git",
   "author": "Yutaka Fujii <yutakaf@playwell.site>",
-  "license": "BSD 3-Clause License",
+  "license": "BSD-3-Clause",
   "private": null,
   "scripts": {
-    "live-server": "live-server public",
-    "serve": "webpack serve --open --env development",
     "build:dev": "webpack --env development",
     "build:prod": "webpack --env production",
-    "build:watch": "webpack --env development --watch"
+    "build:watch": "webpack --env development --watch",
+    "live-server": "live-server public",
+    "serve": "webpack serve --open --env development",
+    "storybook": "start-storybook -p 6006"
   },
   "dependencies": {
     "@babel/core": "^7.14.0",
@@ -24,9 +25,12 @@
     "babel-plugin-styled-components": "^1.12.0",
     "babel-plugin-transform-class-properties": "^6.24.1",
     "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "favicons": "^6.2.1",
+    "favicons-webpack-plugin": "^5.0.2",
     "html-webpack-plugin": "^5.3.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
+    "react-router-dom": "^5.2.0",
     "sass": "^1.32.12",
     "sass-loader": "^11.0.1",
     "style-loader": "^2.0.0",
@@ -37,6 +41,11 @@
     "webpack-merge": "^5.7.3"
   },
   "devDependencies": {
+    "@storybook/addon-actions": "^6.2.9",
+    "@storybook/addon-essentials": "^6.2.9",
+    "@storybook/addon-links": "^6.2.9",
+    "@storybook/react": "^6.2.9",
+    "chromatic": "^5.8.0",
     "live-server": "^1.2.1",
     "webpack-dev-server": "^3.11.2"
   }

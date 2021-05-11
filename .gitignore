@@ -105,3 +105,6 @@ dist
 
 # public directory
 public/
+
+# vscode
+.DS_Store

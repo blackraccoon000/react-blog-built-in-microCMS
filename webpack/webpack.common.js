@@ -1,9 +1,8 @@
 const path = require('path');
+const { basename } = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-
-// console.log(path.resolve(__dirname, '../src/template/index.html'));
-// console.log(path.resolve(__dirname, '../public/dist'));
+const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
 
 module.exports = {
   entry: './src/app.js',
@@ -47,14 +46,34 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      title: 'My Template X',
-      //生成する HTML ファイル
+      title: 'Custom template using Handlebars',
       filename: path.resolve(__dirname, '../public/index.html'),
       hash: true,
-      // テンプレートで使用するファイルのパスを指定
       template: path.resolve(__dirname, '../src/template/index.html'),
-      // テンプレートで使用する変数 h1 を設定
-      h1: 'Heading Title H1',
+    }),
+    new FaviconsWebpackPlugin({
+      logo: path.resolve(
+        __dirname,
+        '../src/favicons/playwell-icon-260_260_2.png'
+      ),
+      cache: true,
+      mode: 'webapp',
+      devMode: 'webapp',
+      version: '1.0',
+      lang: 'ja-JP',
+      favicons: {
+        appName: 'react-blog-built-in-microCMS',
+        appDescription: 'React with built in microCMS',
+        developerName: 'Yutaka Fujii',
+        developerURL:
+          'git@github.com:blackraccoon000/react-blog-built-in-microCMS.git',
+        icons: {
+          coast: false,
+          yandex: false,
+        },
+      },
+      inject: (htmlPlugin) =>
+        basename(htmlPlugin.options.filename) === 'index.html',
     }),
   ],
 };
