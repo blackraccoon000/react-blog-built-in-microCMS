@@ -8,6 +8,7 @@
   "license": "BSD-3-Clause",
   "private": null,
   "scripts": {
+    "build-storybook": "build-storybook",
     "build:dev": "webpack --env development",
     "build:prod": "webpack --env production",
     "build:watch": "webpack --env development --watch",
