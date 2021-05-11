@@ -1,6 +1,7 @@
 const path = require('path');
 const { basename } = require('path');
 const webpack = require('webpack');
+require('dotenv').config({ path: '.env' });
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
 
@@ -45,6 +46,9 @@ module.exports = {
     ],
   },
   plugins: [
+    new webpack.DefinePlugin({
+      'process.env.X_API_KEY': JSON.stringify(process.env.X_API_KEY),
+    }),
     new HtmlWebpackPlugin({
       title: 'Custom template using Handlebars',
       filename: path.resolve(__dirname, '../public/index.html'),
