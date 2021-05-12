@@ -18,6 +18,7 @@ const blogReducer = (state = blogReducerDefaultState, action) => {
         }
       });
     case 'SET_BLOG_DATA':
+      console.log(action);
       return [...state, ...action.blogData];
     default:
       return state;

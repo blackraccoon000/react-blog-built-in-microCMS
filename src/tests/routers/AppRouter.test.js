@@ -1,14 +1,13 @@
 import React from 'react';
 import { render } from '@testing-library/react';
+import ProviderMock from '../fixtures/ProviderMock';
 import AppRouter from '../../routers/AppRouter';
 
-/**
- * use manual mock
- */
-// jest.mock("../../components/Header")
-// jest.mock("../../components/Home")
-
 it('AppRouter経由でHomeディレクトリが描画されることを確認', () => {
-  const wrapper = render(<AppRouter />);
+  const wrapper = render(
+    <ProviderMock>
+      <AppRouter />
+    </ProviderMock>
+  );
   expect(wrapper.container).toMatchSnapshot();
 });

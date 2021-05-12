@@ -1,36 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Provider } from 'react-redux';
 
+import Provider from './provider/Provider';
 import AppRouter from './routers/AppRouter';
-import store from './store/store';
-import { createBlog } from './actions/blogActions';
-import {
-  createDataOne,
-  createDataTwo,
-  createDataThree,
-  createDataFour,
-  createDataFive,
-} from './tests/fixtures/createData';
-import res from './microcms/getMicroCmsData';
-
-res.asyncData().then((value) => {
-  console.log(value.data);
-});
-
-store.subscribe(() => {
-  const state = store.getState();
-  console.log('all ', state);
-});
-
-store.dispatch(createBlog(createDataOne));
-store.dispatch(createBlog(createDataTwo));
-store.dispatch(createBlog(createDataThree));
-store.dispatch(createBlog(createDataFour));
-store.dispatch(createBlog(createDataFive));
+import initialSetup from './microcms/initialSetup';
 
 const jsx = (
-  <Provider store={store}>
+  <Provider>
+    {initialSetup()}
     <AppRouter />
   </Provider>
 );

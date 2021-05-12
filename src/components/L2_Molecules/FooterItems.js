@@ -31,7 +31,11 @@ const FooterItems = (props) => {
       {props.linkList.map((linkItem) => {
         return (
           <ListItem key={`li_${linkItem.linkLabel}`}>
-            <Link key={`link_${linkItem.linkLabel}`} {...linkItem}>
+            <Link
+              key={`link_${linkItem.linkLabel}`}
+              link={linkItem.link}
+              ga={linkItem.ga}
+            >
               {linkItem.linkLabel}
             </Link>
           </ListItem>
@@ -42,6 +46,10 @@ const FooterItems = (props) => {
 };
 
 FooterItems.propTypes = {
+  /**
+   * linkList内部にて指定する。
+   * storybook内部ではActionsを利用してどこにLinkされているか表示したいができない。
+   */
   link: PropTypes.string,
   linkLabel: PropTypes.string,
   ga: PropTypes.string,
