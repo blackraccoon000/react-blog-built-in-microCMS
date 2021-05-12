@@ -4,12 +4,12 @@ module.exports = {
     '../src/stories/**/*.stories.mdx',
   ],
   addons: [
-    '@storybook/addon-links',
-    '@storybook/addon-essentials',
-    '@storybook/addon-actions',
     {
       name: '@storybook/addon-docs',
       options: { configureJSX: true },
     },
+    '@storybook/addon-links',
+    '@storybook/addon-essentials',
+    '@storybook/addon-actions',
   ],
 };

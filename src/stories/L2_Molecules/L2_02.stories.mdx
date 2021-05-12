@@ -1,0 +1,53 @@
+<Meta title="L2_Molecules/SummaryDetailsでの課題" />
+
+## SummaryDetails のアニメーションについて
+
+[details-summary](https://www.webcreatorbox.com/tech/details-summary)
+
+Details と Summary を活用すると、Javascript や CSS を複雑に使わないアコーディオンを実現することができる。
+
+Github のアコーディオンを参考に、開かれたアコーディオンの外をクリックしてアコーディオンを閉じる動作を追加できる方法を実現した。
+
+### z-index の仕様について
+
+z-index は、position を設定し、かつ、指定したタグが親子関係にある場合に効果があるようでした。
+
+```js
+const Details = styled.details.attrs((props) => {})`
+  cursor: pointer;
+  margin: 18px 10px 10px 10px;
+  overflow: visible;
+  padding: 8px;
+  pointer-events: none;
+  position: relative;
+  width: 180px;
+
+  &[open] {
+    & summary {
+      border-bottom: 2px solid #8b8c8e;
+      padding-bottom: 10px;
+    }
+    & div {
+      height: auto;
+    }
+  }
+
+  &[open] > summary:before {
+    box-sizing: border-box;
+    content: ' ';
+    display: block;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(150, 150, 100, 0.1);
+    z-index: 10;
+  }
+
+  & div {
+    position: relative;
+    z-index: 50;
+  }
+`;
+```

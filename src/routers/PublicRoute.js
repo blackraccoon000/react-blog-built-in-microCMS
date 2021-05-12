@@ -1,5 +1,6 @@
 import React from 'react';
 import { Route } from 'react-router-dom';
+import HeaderContainer from '../components/L3_Organisms/HeaderContainer';
 import FooterContainer from '../components/L3_Organisms/FooterContainer';
 
 const PublicRoute = (props) => {
@@ -9,10 +10,11 @@ const PublicRoute = (props) => {
       {...rest}
       component={(rest) => {
         return (
-          <div>
+          <>
+            <HeaderContainer />
             <Component {...rest} />
             <FooterContainer />
-          </div>
+          </>
         );
       }}
     />
