@@ -1,0 +1,64 @@
+<Meta title="L2_Molecules/href と Actions" />
+
+## href と Actions
+
+コンポーネントに記載されている`href`を`storybook`上では
+別の動作にさせる方法がわからない。
+
+`@storybook/addon-links`は`storybook`内部でのリンクを操作するアドオンらしい。
+[@storybook/addon-links](https://www.npmjs.com/package/@storybook/addon-links)
+
+### 一番近いかな、と思ったのは`parametars`を活用する方法
+
+`FooterItems.stories.js`
+
+```js
+export default {
+  title: 'L2_Molecules/FooterItems',
+  component: FooterItems,
+  argTypes: {
+    flag: false,
+  },
+  decorators: [
+    (Story) => {
+      Story.displayName = 'FooterItems';
+      return (
+        <div
+          style={{
+            backgroundColor: '#e6cccc8a',
+            width: '1500px',
+            height: '500px',
+            margin: '0 auto',
+            padding: '50px 50px',
+          }}
+        >
+          <Story />
+        </div>
+      );
+    },
+  ],
+  parameters: {
+    actions: {
+      handles: ['mouseover', 'click .btn'],
+    },
+  },
+};
+```
+
+[参考：action-event-handlers](https://storybook.js.org/docs/react/essentials/actions#action-event-handlers)
+
+## 他は、argTypes 経由で指定する場合。
+
+```js
+export default {
+  title: 'MOLECULES/Slider',
+  component: Slider,
+  argTypes: {
+    onClickMe: { action: 'clicked' },
+  },
+};
+```
+
+上記は`button`のように action が関数である場合に有効である。
+a タグの href のような内容は action というか、動作でないのが原因なのかと思うので、
+もともとの html や javascript の element に関する造詣が深くないとわからない内容なのかもしれない。

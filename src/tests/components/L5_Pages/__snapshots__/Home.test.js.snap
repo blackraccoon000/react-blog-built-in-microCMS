@@ -1,0 +1,58 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Home Components Render 1`] = `
+<div>
+  <div
+    class="Home__Wrapper-sc-1yza5ij-0 eETUCZ"
+  >
+    <div
+      class="Home__Container-sc-1yza5ij-1 eRfCXO"
+    >
+      <h1
+        class="Home__Heading-sc-1yza5ij-2 wJefj"
+      >
+        Home Components
+      </h1>
+      <ul
+        class="Home__Unordered-sc-1yza5ij-3"
+      >
+        <li
+          class="Home__ListItem-sc-1yza5ij-4 jgCtOG"
+        >
+          first blog
+           / 
+          1 create blog now one
+        </li>
+        <li
+          class="Home__ListItem-sc-1yza5ij-4 jgCtOG"
+        >
+          second blog
+           / 
+          2 create blog now two
+        </li>
+        <li
+          class="Home__ListItem-sc-1yza5ij-4 jgCtOG"
+        >
+          third blog
+           / 
+          3 create blog now three
+        </li>
+        <li
+          class="Home__ListItem-sc-1yza5ij-4 jgCtOG"
+        >
+          Forth blog
+           / 
+          4 create blog now four
+        </li>
+        <li
+          class="Home__ListItem-sc-1yza5ij-4 jgCtOG"
+        >
+          Fifth blog
+           / 
+          5 create blog now five
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+`;

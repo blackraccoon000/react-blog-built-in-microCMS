@@ -3,10 +3,36 @@
 exports[`AppRouter経由でHomeディレクトリが描画されることを確認 1`] = `
 <div>
   <div>
-    <div>
-      <h1>
-        Home Components
-      </h1>
+    <div
+      class="Home__Wrapper-sc-1yza5ij-0 eETUCZ"
+    >
+      <div
+        class="Home__Container-sc-1yza5ij-1 eRfCXO"
+      >
+        <h1
+          class="Home__Heading-sc-1yza5ij-2 wJefj"
+        >
+          Home Components
+        </h1>
+        <ul
+          class="Home__Unordered-sc-1yza5ij-3"
+        >
+          <li
+            class="Home__ListItem-sc-1yza5ij-4 jgCtOG"
+          >
+            first blog
+             / 
+            1 create blog now one
+          </li>
+          <li
+            class="Home__ListItem-sc-1yza5ij-4 jgCtOG"
+          >
+            second blog
+             / 
+            2 create blog now two
+          </li>
+        </ul>
+      </div>
     </div>
     <header
       class="FooterContainer__Footer-sc-13ni88s-0 eQPSMn"
@@ -15,7 +41,7 @@ exports[`AppRouter経由でHomeディレクトリが描画されることを確�
         class="FooterContainer__Container-sc-13ni88s-1 bBVYTd"
       >
         <ul
-          class="FooterItems__UnorderedList-x03trw-1 iGLNLw"
+          class="FooterItems__UnorderedList-x03trw-1 bvfaai"
         >
           <li
             class="FooterItems__ListItem-x03trw-2 fhrBqN"
