@@ -2,7 +2,7 @@ import React from 'react';
 import IconYoutube from '../../components/L1_Atoms/IconYoutube';
 
 export default {
-  title: 'L1_ATOMS/IconYoutube',
+  title: 'L1_Atoms/IconYoutube',
   component: IconYoutube,
   argTypes: {
     color: {

@@ -2,7 +2,7 @@ import React from 'react';
 import IconGitOct from '../../components/L1_Atoms/IconGitOct';
 
 export default {
-  title: 'L1_ATOMS/IconGitOct',
+  title: 'L1_Atoms/IconGitOct',
   component: IconGitOct,
   argTypes: {
     color: {

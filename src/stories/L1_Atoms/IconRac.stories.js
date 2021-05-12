@@ -2,7 +2,7 @@ import React from 'react';
 import IconRac from '../../components/L1_Atoms/IconRac';
 
 export default {
-  title: 'L1_ATOMS/IconRac',
+  title: 'L1_Atoms/IconRac',
   component: IconRac,
   argTypes: {
     color: {

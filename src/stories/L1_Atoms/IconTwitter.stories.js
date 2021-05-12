@@ -2,7 +2,7 @@ import React from 'react';
 import IconTwitter from '../../components/L1_Atoms/IconTwitter';
 
 export default {
-  title: 'L1_ATOMS/IconTwitter',
+  title: 'L1_Atoms/IconTwitter',
   component: IconTwitter,
   argTypes: {
     color: {

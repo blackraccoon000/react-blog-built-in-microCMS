@@ -2,7 +2,7 @@ import React from 'react';
 import IconQiita from '../../components/L1_Atoms/IconQiita';
 
 export default {
-  title: 'L1_ATOMS/IconQiita',
+  title: 'L1_Atoms/IconQiita',
   component: IconQiita,
   argTypes: {
     color: {
