@@ -6,7 +6,7 @@ import HeaderStart from '../L2_Molecules/HeaderStart';
 import HeaderEnd from '../L2_Molecules/HeaderEnd';
 
 const Header = styled.header`
-  background-color: #343535;
+  background-color: #fafbfc;
   border-bottom: 1px solid #e5e5e5;
   height: 70px;
   left: 0;

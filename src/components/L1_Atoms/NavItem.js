@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import PropTypes from 'prop-types';
 
 const NavDiv = styled.div.attrs((props) => {})`
-  margin: 7px 0 0 15px;
+  margin: 10px 0 0 15px;
 `;
 
 const NavA = styled.a.attrs((props) => {
