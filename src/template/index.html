@@ -7,6 +7,13 @@
     <title><%= htmlWebpackPlugin.options.title %></title>
   </head>
   <body>
+    <!--[if lte IE 9]><p>Internet Exploreは非対応です。</p><![endif]-->
     <div id="app"></div>
   </body>
+  <script>
+    var userAgent = window.navigator.userAgent;
+    if(userAgent.indexOf('Trident') != -1 || userAgent.indexOf('MSIE') != -1){
+      document.querySelector('#app').innerHTML = '<p style="color:blue; line-height:1.5;">Internet Exploreは非対応です。</p>';
+    }
+  </script>
 </html>
