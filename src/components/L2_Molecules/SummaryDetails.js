@@ -3,19 +3,24 @@ import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import ChevonDown from '../L1_Atoms/IconChevonDown';
 
-const Details = styled.details.attrs((props) => {})`
+const Details = styled.details.attrs((props) => {
+  return {
+    style: {
+      margin: `${props.detailMargin}`
+    }
+  }
+})`
   cursor: pointer;
-  margin: 18px 10px 10px 10px;
   overflow: visible;
   padding: 8px;
   pointer-events: none;
   position: relative;
-  width: 180px;
+  /* width: 100%; */
 
   &[open] {
     & summary {
       border-bottom: 2px solid #8b8c8e;
-      padding-bottom: 10px;
+      padding-bottom: 4px;
     }
     & div {
       height: auto;
@@ -36,7 +41,7 @@ const Details = styled.details.attrs((props) => {})`
   }
 
   & div {
-    position: relative;
+    position: absolute;
     z-index: 50;
   }
 `;
@@ -46,6 +51,7 @@ const Summary = styled.summary.attrs((props) => {})`
   color: #8b8c8e;
   list-style: none;
   margin: 0 0 0 5px;
+  padding-top: 2px;
   pointer-events: auto;
   transition: 0.8s;
 `;
@@ -59,7 +65,7 @@ const OtherLinks = styled.a.attrs((props) => {
   display: block;
   font-size: 14px;
   font-weight: 600;
-  padding: 16px 0 0 20px;
+  padding: 16px 20px 0;
   pointer-events: auto;
   transition: 0.8s;
   text-decoration: none;
@@ -91,10 +97,10 @@ const SummaryDetails = (props) => {
         <ChevonDown />
       </Summary>
       <DropdownMenu>
-        {props.someLink.map((oneLink) => {
+        {props.someLinks.map((link) => {
           return (
-            <OtherLinks key={oneLink.linkLabel} link={oneLink.link}>
-              {oneLink.linkLabel}
+            <OtherLinks key={link.linkLabel} link={link.link}>
+              {link.linkLabel}
             </OtherLinks>
           );
         })}
@@ -104,15 +110,17 @@ const SummaryDetails = (props) => {
 };
 
 SummaryDetails.propTypes = {
+  detailMargin: PropTypes.string,
   summaryLabel: PropTypes.string,
-  someLink: PropTypes.array,
+  someLinks: PropTypes.array,
   link: PropTypes.string,
   linkLabel: PropTypes.string,
 };
 
 SummaryDetails.defaultProps = {
+  detailMargin: "18px 10px 10px 10px",
   summaryLabel: 'Why Github?',
-  someLink: [
+  someLinks: [
     {
       link: '#',
       linkLabel: 'Link A',

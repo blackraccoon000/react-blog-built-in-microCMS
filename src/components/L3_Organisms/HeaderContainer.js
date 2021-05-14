@@ -7,7 +7,7 @@ import HeaderEnd from '../L2_Molecules/HeaderEnd';
 const Header = styled.header`
   background-color: #fafbfc;
   border-bottom: 1px solid #e5e5e5;
-  height: 70px;
+  height: 45px;
   left: 0;
   position: fixed;
   top: 0;
@@ -18,10 +18,11 @@ const Header = styled.header`
 const Container = styled.div`
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: center;
   min-width: 600px;
   max-width: 1200px;
   margin: 0 auto;
+  padding: 5px 20px;
 `;
 
 const HeaderContainer = (props) => {

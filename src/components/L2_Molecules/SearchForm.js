@@ -5,22 +5,21 @@ import IconFocus from '../L1_Atoms/IconFocus';
 import IconSearchKeySlash from '../L1_Atoms/IconSearchKeySlash';
 
 const Form = styled.form`
-  margin-top: 7px;
+  margin-left: 15px;
+  padding: 5px;
 `;
 
 const Label = styled.label.attrs((props) => ({}))`
   background-color: transparent;
-  border: 2px solid rgb(139, 140, 142);
+  /* border: 2px solid rgb(139, 140, 142); */
   border-radius: 6px;
   box-sizing: border-box;
-  padding: 6px 5px 6px 5px;
+  padding: 8px;
   position: relative;
 
   &:focus-within {
     background-color: white;
-    border: 2px solid #a9aaad;
-    border-radius: 6px;
-    padding: 6px 5px 8px 5px;
+    /* border: 2px solid #a9aaad; */
 
     & svg {
       width: 20px;
