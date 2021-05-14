@@ -6,6 +6,7 @@ import IconQiita from '../L1_Atoms/IconQiita';
 import IconTwitter from '../L1_Atoms/IconTwitter';
 import IconYoutube from '../L1_Atoms/IconYoutube';
 import IconFacebook from '../L1_Atoms/IconFacebook';
+import IconChromatic from "../L1_Atoms/IconChromatic"
 
 const UnorderedList = styled.ul.attrs((props) => {})`
   display: flex;
@@ -59,8 +60,13 @@ const FooterIcons = (props) => {
         </a>
       </ListItem> */}
       <ListItem>
-        <a href="https://github.com/blackraccoon000">
+        <a href="https://github.com/blackraccoon000/react-blog-built-in-microCMS">
           <IconGitOct color={color} />
+        </a>
+      </ListItem>
+      <ListItem>
+        <a href="https://www.chromatic.com/library?appId=6099f15c1b8f98003be928e5">
+          <IconChromatic fill={color} color={"#fff"} />
         </a>
       </ListItem>
     </UnorderedList>

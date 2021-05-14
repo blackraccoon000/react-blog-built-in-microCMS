@@ -9,7 +9,8 @@ const Header = styled.header`
   border-bottom: 1px solid #e5e5e5;
   height: 45px;
   left: 0;
-  position: fixed;
+  /* position: fixed; */
+  position: relative;
   top: 0;
   width: 100%;
   z-index: 50;
