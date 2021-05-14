@@ -1,4 +1,6 @@
-export const parameters = {
+import { Reset } from 'styled-reset';
+
+const parameters = {
   actions: { argTypesRegex: '^on[A-Z].*' },
   controls: {
     matchers: {
@@ -12,3 +14,14 @@ export const parameters = {
     ],
   },
 };
+
+const decorators = [
+  (Story) => (
+    <>
+      <Reset />
+      <Story />
+    </>
+  ),
+];
+
+export { parameters, decorators };

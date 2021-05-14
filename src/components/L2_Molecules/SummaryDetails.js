@@ -1,7 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
-import { Reset } from 'styled-reset';
 import ChevonDown from '../L1_Atoms/IconChevonDown';
 
 const Details = styled.details.attrs((props) => {})`
@@ -87,7 +86,6 @@ const DropdownMenu = styled.div.attrs((props) => {})`
 const SummaryDetails = (props) => {
   return (
     <Details>
-      <Reset />
       <Summary>
         {props.summaryLabel}
         <ChevonDown />

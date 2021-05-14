@@ -1,17 +1,17 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Reset } from 'styled-reset';
 import FooterItems from '../L2_Molecules/FooterItems';
 import FooterIcons from '../L2_Molecules/FooterIcons';
 
-const Footer = styled.header`
+const Footer = styled.footer`
   background-color: #fafbfc;
   border-top: 1px solid #e5e5e5;
   height: 50px;
   left: 0;
-  position: relative;
-  top: 0;
+  position: fixed;
+  bottom: 0;
   width: 100%;
+  z-index: 50;
 `;
 
 const Container = styled.div`
@@ -26,7 +26,6 @@ const Container = styled.div`
 const FooterContainer = (props) => {
   return (
     <Footer>
-      <Reset />
       <Container>
         <FooterItems />
         <FooterIcons />

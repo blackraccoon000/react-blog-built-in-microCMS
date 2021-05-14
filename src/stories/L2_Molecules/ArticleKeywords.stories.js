@@ -1,9 +1,9 @@
 import React from 'react';
-import EntryKeywords from '../../components/L2_Molecules/EntryKeywords';
+import ArticleKeywords from '../../components/L2_Molecules/ArticleKeywords';
 
 export default {
-  title: 'L2_Molecules/EntryKeywords',
-  component: EntryKeywords,
+  title: 'L2_Molecules/ArticleKeywords',
+  component: ArticleKeywords,
   argTypes: {
     color: {
       control: 'color',
@@ -20,7 +20,7 @@ export default {
   },
 };
 
-const Template = (args) => <EntryKeywords {...args} />;
+const Template = (args) => <ArticleKeywords {...args} />;
 
 export const Default = Template.bind({});
 Default.args = {};
