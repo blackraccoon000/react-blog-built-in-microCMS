@@ -2,15 +2,13 @@ import React from 'react';
 import styled from 'styled-components';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
-import ArticleCard from "../L3_Organisms/ArticleCard"
 
 const Wrapper = styled.div.attrs((props) => {})`
   align-items: center;
   background-color: #fff4f4;
   display: flex;
   flex-direction: column;
-  height: 100vh;
-  justify-content: flex-start;
+  justify-content: center;
 `;
 
 const Container = styled.div.attrs((props) => {})`
@@ -19,7 +17,6 @@ const Container = styled.div.attrs((props) => {})`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin-top: 90px;
   width: 1200px;
 `;
 
@@ -29,13 +26,7 @@ const Heading = styled.h1.attrs((props) => {})`
   margin: 30px 10px 10px 10px;
 `;
 
-const Unordered = styled.ul.attrs((props) => {})`
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  margin: 20px auto;
-`;
-
+const Unordered = styled.ul.attrs((props) => {})``;
 const ListItem = styled.li.attrs((props) => {})`
   font-size: 15px;
   margin: 10px;
@@ -45,25 +36,19 @@ const ListItem = styled.li.attrs((props) => {})`
   }
 `;
 
-const Home = (props) => {
+const Help = (props) => {
   return (
     <Wrapper>
       <Container>
-        <Heading>
-          Home Components
-        </Heading>
-        <Link to="/">Home</Link>
+        <Heading>Help Components</Heading>
         <Unordered>
+          <ListItem>
+            <Link to="/">Help</Link>
+          </ListItem>
           {props.pages.map((page, num) => {
             return (
               <ListItem key={`${page.id}`}>
-                <ArticleCard
-                  src={page.thumbnail.url}
-                  title={page.title}
-                  link={`/article/${page.id}`}
-                  createdAt={page.createdAt}
-                  updatedAt={page.updatedAt}
-                />
+                <Link to={`/article/${page.id}`}>{`article/${page.id}`}</Link>
               </ListItem>
             );
           })}
@@ -79,5 +64,5 @@ const mapStateToProps = (state) => {
   };
 };
 
-export default connect(mapStateToProps)(Home);
-export { Home };
+export default connect(mapStateToProps)(Help);
+export { Help };

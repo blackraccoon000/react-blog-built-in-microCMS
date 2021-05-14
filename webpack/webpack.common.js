@@ -8,6 +8,19 @@ const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
 module.exports = {
   entry: './src/app.js',
   output: {
+    /**
+     * publicPathがないと参照先URLの階層が違う場合に相対Pathでのアクセスになり、
+     * 各URLからbundle.jsやfaviconにアクセスができなくなる。
+     *
+     * 例：
+     * ○アクセス先
+     * http://localhost:8082/article/7odtdk62l
+     * ○参照ファイル名(失敗)
+     * http://localhost:8082/article/dist/bundle.js?dd29d78971b5809d4935
+     * ○参照ファイル名(成功)
+     * http://localhost:8082/dist/bundle.js?dd29d78971b5809d4935
+     */
+    publicPath: '/dist',
     path: path.resolve(__dirname, '../public/dist'),
     filename: 'bundle.js',
     clean: true,

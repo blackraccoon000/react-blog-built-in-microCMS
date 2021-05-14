@@ -1,7 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
-import { Reset } from 'styled-reset';
 import HeaderStart from '../L2_Molecules/HeaderStart';
 import HeaderEnd from '../L2_Molecules/HeaderEnd';
 
@@ -10,9 +9,10 @@ const Header = styled.header`
   border-bottom: 1px solid #e5e5e5;
   height: 70px;
   left: 0;
-  position: relative;
+  position: fixed;
   top: 0;
   width: 100%;
+  z-index: 50;
 `;
 
 const Container = styled.div`
@@ -27,7 +27,6 @@ const Container = styled.div`
 const HeaderContainer = (props) => {
   return (
     <Header>
-      <Reset />
       <Container>
         <HeaderStart />
         <HeaderEnd />

@@ -6,7 +6,9 @@ module.exports = {
   addons: [
     {
       name: '@storybook/addon-docs',
-      options: { configureJSX: true },
+      options: {
+        configureJSX: true,
+      },
     },
     '@storybook/addon-links',
     '@storybook/addon-essentials',

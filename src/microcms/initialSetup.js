@@ -1,6 +1,6 @@
 import store from '../store/store';
 import res from './getMicroCmsData';
-import { createBlog, setBlog } from '../actions/blogActions';
+import { setPages } from '../actions/articleActions';
 
 export default () => {
   store.subscribe(() => {
@@ -9,6 +9,6 @@ export default () => {
   });
 
   res.asyncData().then((value) => {
-    store.dispatch(setBlog(value.data.contents));
+    store.dispatch(setPages(value.data.contents));
   });
 };
