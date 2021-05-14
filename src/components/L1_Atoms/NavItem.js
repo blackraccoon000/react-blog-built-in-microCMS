@@ -2,34 +2,31 @@ import React from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 
-const NavDiv = styled.div.attrs((props) => {})`
-  margin: 10px 0 0 15px;
-`;
-
 const NavA = styled.a.attrs((props) => {
   return {
     href: '#',
     style: {
-      border: `2px solid ${props.color}`,
       color: `${props.color}`,
     },
   };
 })`
   background: transparent;
-  border-radius: 8px;
-  font-size: 14px;
-  font-weight: 800;
-  padding: 8px;
+  font-size: 15px;
+  font-weight: 500;
+  margin-left: 15px;
+  padding: 10px;
   text-decoration: none;
 `;
 
+const SpanItem = styled.span.attrs(props => {})`
+  vertical-align: middle;
+`
+
 const NavItem = (props) => {
   return (
-    <NavDiv {...props}>
       <NavA {...props}>
-        <span>{props.value}</span>
+        <SpanItem>{props.value}</SpanItem>
       </NavA>
-    </NavDiv>
   );
 };
 

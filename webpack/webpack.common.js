@@ -63,6 +63,7 @@ module.exports = {
       'process.env.X_API_KEY': JSON.stringify(process.env.X_API_KEY),
     }),
     new HtmlWebpackPlugin({
+      lang: 'ja-JP',
       title: 'Custom template using Handlebars',
       filename: path.resolve(__dirname, '../public/index.html'),
       hash: true,
