@@ -20,7 +20,8 @@ const ArticleWrapper = styled.div.attrs((props) => {})`
   justify-content: center;
   min-width: 600px;
   max-width: 1200px;
-  margin: 90px auto;
+  /* margin: 90px auto; */
+  margin: 0 auto;
 `;
 /**
  * ブログの記事を表示する。

@@ -16,7 +16,7 @@ const Svg = styled.svg.attrs((props) => {
     y: 0,
   };
 })`
-  margin: 3px 0 0 10px;
+  margin: 4px 0 0 10px;
   opacity: 1;
 `;
 

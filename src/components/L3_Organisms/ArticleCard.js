@@ -27,7 +27,7 @@ const ArticleCard = (props) => {
         height="none"
         src={props.src}
         radius="10px 10px 0 0"
-        imageMargin="10px 10px 0 0"
+        imageMargin={props.imageMargin}
         width="100%"
       />
       <ArticleTitle
@@ -114,7 +114,7 @@ ArticleCard.propTypes = {
   src:
     'https://images.microcms-assets.io/assets/577bcb7965bf4dbd951686143646657b/2687c64d1e7e4a8b8fef792ff909ea81/cat_four.jpg',
   link: '#',
-  imageMargin: "10px 10px 0 0",
+  imageMargin: "0",
   height: "none",
   radius:"10px 10px 0 0",
   dateMargin: "10px 0",

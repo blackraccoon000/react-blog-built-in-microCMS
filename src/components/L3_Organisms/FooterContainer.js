@@ -8,8 +8,9 @@ const Footer = styled.footer`
   border-top: 1px solid #e5e5e5;
   height: 50px;
   left: 0;
-  position: fixed;
-  bottom: 0;
+  /* position: fixed; */
+  /* position: relative;
+  bottom: 0; */
   width: 100%;
   z-index: 50;
 `;

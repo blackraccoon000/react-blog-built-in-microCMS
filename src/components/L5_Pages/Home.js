@@ -1,7 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
 import { connect } from 'react-redux';
-import { Link } from 'react-router-dom';
 import ArticleCard from "../L3_Organisms/ArticleCard"
 
 const Wrapper = styled.div.attrs((props) => {})`
@@ -9,18 +8,18 @@ const Wrapper = styled.div.attrs((props) => {})`
   background-color: #fff4f4;
   display: flex;
   flex-direction: column;
-  height: 100vh;
+  /* height: 100vh; */
   justify-content: flex-start;
 `;
 
 const Container = styled.div.attrs((props) => {})`
   align-items: center;
-  background-color: #fff;
+  /* background-color: #fff; */
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin-top: 90px;
-  width: 1200px;
+  /* margin-top: 50px; */
+  /* width: 1200px; */
 `;
 
 const Heading = styled.h1.attrs((props) => {})`
@@ -49,10 +48,6 @@ const Home = (props) => {
   return (
     <Wrapper>
       <Container>
-        <Heading>
-          Home Components
-        </Heading>
-        <Link to="/">Home</Link>
         <Unordered>
           {props.pages.map((page, num) => {
             return (
