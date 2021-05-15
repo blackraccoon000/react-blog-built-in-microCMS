@@ -1,27 +1,26 @@
 import React from 'react';
-import IconRac from '../../components/L1_Atoms/IconRac';
+import IconMicroCms from '../../components/L1_Atoms/IconMicroCms';
 
 export default {
-  title: 'L1_Atoms/IconRac',
-  component: IconRac,
+  title: 'L1_Atoms/IconMicroCms',
+  component: IconMicroCms,
   argTypes: {
-    flag: true,
     color: {
       control: 'color',
     },
     size: {
       control: {
         type: 'range',
-        min: 10,
-        max: 100,
-        step: 10,
+        min: 5,
+        max: 50,
+        step: 1,
         default: 30,
       },
     },
   },
 };
 
-const Template = (args) => <IconRac {...args} />;
+const Template = (args) => <IconMicroCms {...args} />;
 
 export const Default = Template.bind({});
 Default.args = {};

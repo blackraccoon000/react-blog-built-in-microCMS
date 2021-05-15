@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { Route, Redirect } from 'react-router-dom';
 
 import HeaderContainer from '../components/L3_Organisms/HeaderContainer';
+import HeaderTurquoiseBlue from '../components/L3_Organisms/HeaderTurquoiseBlue';
 import FooterContainer from '../components/L3_Organisms/FooterContainer';
 import ArticleContainer from '../components/L3_Organisms/ArticleContainer';
 
@@ -15,7 +16,8 @@ const ArticleRoute = (props) => {
       component={(props) =>
         id ? (
           <>
-            <HeaderContainer />
+            {/* <HeaderContainer /> */}
+            <HeaderTurquoiseBlue/>
             <ArticleContainer {...props} />
             <FooterContainer />
           </>

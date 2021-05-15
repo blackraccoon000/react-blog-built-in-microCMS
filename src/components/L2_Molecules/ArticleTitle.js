@@ -5,17 +5,15 @@ import PropTypes from 'prop-types';
 const ArticleHeadline = styled.h1.attrs((props) => {
   return {
     style: {
-      color: `${props.color}`,
       fontSize: `${props.titleSize}px`,
-      margin: `${props.titleMargin}`
+      margin: `${props.titleMargin}`,
+      fontFamily: `${props.fontFamily}`
     },
   };
 })`
   align-items: center;
   display: flex;
   flex-direction: column;
-  font-family: 'source-code-pro';
-  font-weight: 600;
   padding: 8px;
   text-align: center;
 `;
@@ -23,9 +21,13 @@ const ArticleHeadline = styled.h1.attrs((props) => {
 const ArticleLink = styled.a.attrs((props) => {
   return {
     href: `${props.link}`,
+    style: {
+      color: `${props.color}`,
+    }
   };
 })`
   display: inline-block;
+  font-weight: 600;
   text-decoration: none;
   margin: 0;
 `;
@@ -33,17 +35,21 @@ const ArticleLink = styled.a.attrs((props) => {
 const ArticleTitle = (props) => {
   return (
     <ArticleHeadline
-      color={props.color}
-      titleSize={props.titleSize}
+      fontFamily={props.fontFamily}
       titleMargin={props.titleMargin}
+      titleSize={props.titleSize}
     >
-      <ArticleLink link={props.link}>{props.title}</ArticleLink>
+      <ArticleLink
+        color={props.color}
+        link={props.link}
+      >{props.title}</ArticleLink>
     </ArticleHeadline>
   );
 };
 
 ArticleTitle.propTypes = {
   color: PropTypes.string,
+  fontFamily: PropTypes.oneOf(['source-code-pro',"kan415typos-std","monospace","sans-serif"]),
   titleSize: PropTypes.number,
   titleMargin: PropTypes.string,
   link: PropTypes.string,
@@ -52,6 +58,7 @@ ArticleTitle.propTypes = {
 
 ArticleTitle.defaultProps = {
   color: '#787878',
+  fontFamily: 'source-code-pro',
   titleSize: 25,
   titleMargin: "20px auto 0 auto",
   link: '#',

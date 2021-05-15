@@ -14,7 +14,7 @@ export default {
         min: 10,
         max: 200,
         step: 10,
-        default: 24,
+        default: 15,
       },
     },
   },

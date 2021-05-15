@@ -4,13 +4,17 @@ import PropTypes from 'prop-types';
 import HeaderStart from '../L2_Molecules/HeaderStart';
 import HeaderEnd from '../L2_Molecules/HeaderEnd';
 
-const Header = styled.header`
+const Header = styled.header.attrs(props => {
+  return {
+    style: {
+      position: `${props.position}`,
+    }
+  }
+})`
   background-color: #fafbfc;
   border-bottom: 1px solid #e5e5e5;
   height: 45px;
   left: 0;
-  /* position: fixed; */
-  position: relative;
   top: 0;
   width: 100%;
   z-index: 50;
@@ -28,7 +32,7 @@ const Container = styled.div`
 
 const HeaderContainer = (props) => {
   return (
-    <Header>
+    <Header {...props}>
       <Container>
         <HeaderStart />
         <HeaderEnd />
@@ -36,5 +40,13 @@ const HeaderContainer = (props) => {
     </Header>
   );
 };
+
+HeaderContainer.propTypes = {
+  position: PropTypes.oneOf(["relative","fixed"])
+}
+
+HeaderContainer.defaultProps = {
+  position: "relative"
+}
 
 export default HeaderContainer;

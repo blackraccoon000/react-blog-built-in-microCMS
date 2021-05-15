@@ -1,9 +1,9 @@
 import React from 'react';
-import HeaderContainer from '../../components/L3_Organisms/HeaderContainer';
+import HeaderTurquoiseBlue from '../../components/L3_Organisms/HeaderTurquoiseBlue';
 
 export default {
-  title: 'L3_Organisms/HeaderContainer',
-  component: HeaderContainer,
+  title: 'L3_Organisms/HeaderTurquoiseBlue',
+  component: HeaderTurquoiseBlue,
   argTypes: {
     position: {
       options: ["relative","fixed"],
@@ -12,15 +12,16 @@ export default {
   },
   decorators: [
     (Story) => {
-      Story.displayName = 'HeaderContainer';
+      Story.displayName = 'HeaderTurquoiseBlue';
       return (
         <div
           style={{
             display: 'flex',
             justifyContent: 'center',
-            backgroundColor: '#e5e5e5',
+            // backgroundColor: '#61b1c8',
+            backgroundColor: '#000',
             width: 'auto',
-            height: '1800px',
+            height: '100vh',
             margin: '0 auto',
             padding: '50px 50px',
           }}
@@ -32,7 +33,7 @@ export default {
   ],
 };
 
-const Template = (args) => <HeaderContainer {...args} />;
+const Template = (args) => <HeaderTurquoiseBlue {...args} />;
 
 export const Default = Template.bind({});
 Default.args = {};

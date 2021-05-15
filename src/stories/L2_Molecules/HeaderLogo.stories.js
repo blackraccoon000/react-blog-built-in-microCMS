@@ -1,26 +1,45 @@
+
 import React from 'react';
-import ArticleTitle from '../../components/L2_Molecules/ArticleTitle';
+import HeaderLogo from '../../components/L2_Molecules/HeaderLogo';
 
 export default {
-  title: 'L2_Molecules/ArticleTitle',
-  component: ArticleTitle,
+  title: 'L2_Molecules/HeaderLogo',
+  component: HeaderLogo,
   argTypes: {
     color: {
       control: 'color',
     },
-    titleSize: {
+    height: {
+      control: {
+        type: 'range',
+        min: 5,
+        max: 100,
+        step: 1,
+        default: 27,
+      },
+    },
+    size: {
       control: {
         type: 'range',
         min: 10,
-        max: 50,
+        max: 70,
         step: 1,
-        default: 25,
+        default: 52,
+      },
+    },
+    width: {
+      control: {
+        type: 'range',
+        min: 10,
+        max: 300,
+        step: 1,
+        default: 180,
       },
     },
   },
   decorators: [
     (Story) => {
-      Story.displayName = 'ArticleTitle';
+      Story.displayName = 'HeaderLogo';
       return (
         <div
           style={{
@@ -40,8 +59,12 @@ export default {
   ],
 };
 
-
-const Template = (args) => <ArticleTitle {...args} />;
+const Template = (args) => <HeaderLogo {...args} />;
 
 export const Default = Template.bind({});
 Default.args = {};
+
+export const Red = Template.bind({});
+Red.args = {
+  color: "#e84141"
+};

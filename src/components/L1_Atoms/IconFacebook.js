@@ -27,6 +27,9 @@ const Path = styled.path.attrs((props) => {
   };
 })``;
 
+/**
+ * Facebookのアイコンを参考にSVGデータを抜き出し、構成。
+ */
 const FacebookIcon = (props) => {
   return (
     <Svg {...props}>

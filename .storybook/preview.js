@@ -1,3 +1,5 @@
+import React from "react"
+import styled from "styled-components"
 import { Reset } from 'styled-reset';
 
 const parameters = {
