@@ -27,6 +27,7 @@ const Path = styled.path.attrs((props) => {
 
 /**
  * カルーセルのボタンとして活用
+ * どこかのサイトを参考に自作
  */
 const IconChevonDown = (props) => {
   return (

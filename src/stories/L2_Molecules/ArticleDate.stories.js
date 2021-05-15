@@ -11,10 +11,28 @@ export default {
     dateSize: {
       control: {
         type: 'range',
-        min: 10,
-        max: 50,
+        min: 1,
+        max: 30,
         step: 1,
-        default: 12,
+        default: 15,
+      },
+    },
+    updateSize: {
+      control: {
+        type: 'range',
+        min: 1,
+        max: 30,
+        step: 1,
+        default: 15,
+      },
+    },
+    scheduleSize: {
+      control: {
+        type: 'range',
+        min: 1,
+        max: 30,
+        step: 1,
+        default: 15,
       },
     },
   },

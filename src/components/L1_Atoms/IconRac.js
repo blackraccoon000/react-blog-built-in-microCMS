@@ -2,12 +2,15 @@ import React from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 
-const IconRacWrapper = styled.a.attrs((props) => {
+const LinkWrapper = styled.a.attrs((props) => {
   return {
     href: `${props.link}`,
     dataHotkey: 'g d',
     ariaLabel: 'Homepage',
-    dataGaClick: 'Header, go to dashboard, icon:logo',
+    dataGaClick: 'Header, go to Home, icon:PlayWell favicon Image',
+    style: {
+      marginBottom: `${props.flag ? "0px" : "6px"}`
+    }
   };
 })`
   font-size: 0;
@@ -46,7 +49,7 @@ const Circle = styled.circle.attrs((props) => {
 
 const IconRac = (props) => {
   return (
-    <IconRacWrapper link={props.link}>
+    <LinkWrapper link={props.link}>
       <Svg {...props}>
         <g>
           <Path
@@ -91,22 +94,24 @@ const IconRac = (props) => {
             c0.7,0.64,1.36,1.33,1.97,2.06C8.64,11.31,7.53,11.7,6.46,12.17z"
           />
         </g>
-        <Circle {...props} cx="15" cy="15" r="13.5" />
+        { props.flag && <Circle {...props} cx="15" cy="15" r="13.5" />}
       </Svg>
-    </IconRacWrapper>
+    </LinkWrapper>
   );
 };
 
 IconRac.propTypes = {
   color: PropTypes.string,
+  flag: PropTypes.bool,
   link: PropTypes.string,
   size: PropTypes.number,
 };
 
 IconRac.defaultProps = {
   color: '#6a3906',
-  link: "#",
-  size: 30,
+  flag: true,
+  link: "/",
+  size: 60,
 };
 
 export default IconRac;

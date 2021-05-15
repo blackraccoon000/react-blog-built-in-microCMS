@@ -1,26 +1,36 @@
+
 import React from 'react';
-import ArticleTitle from '../../components/L2_Molecules/ArticleTitle';
+import IconPlayWellLogo from '../../components/L1_Atoms/IconPlayWellLogo';
 
 export default {
-  title: 'L2_Molecules/ArticleTitle',
-  component: ArticleTitle,
+  title: 'L1_Atoms/IconPlayWellLogo',
+  component: IconPlayWellLogo,
   argTypes: {
     color: {
       control: 'color',
     },
-    titleSize: {
+    height: {
+      control: {
+        type: 'range',
+        min: 5,
+        max: 100,
+        step: 1,
+        default: 30,
+      },
+    },
+    width: {
       control: {
         type: 'range',
         min: 10,
-        max: 50,
+        max: 300,
         step: 1,
-        default: 25,
+        default: 180,
       },
     },
   },
   decorators: [
     (Story) => {
-      Story.displayName = 'ArticleTitle';
+      Story.displayName = 'IconPlayWellLogo';
       return (
         <div
           style={{
@@ -40,8 +50,12 @@ export default {
   ],
 };
 
-
-const Template = (args) => <ArticleTitle {...args} />;
+const Template = (args) => <IconPlayWellLogo {...args} />;
 
 export const Default = Template.bind({});
 Default.args = {};
+
+export const Red = Template.bind({});
+Red.args = {
+  color: "#e84141"
+};

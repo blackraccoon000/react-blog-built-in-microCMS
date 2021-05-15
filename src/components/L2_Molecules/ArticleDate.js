@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import { DateTime } from 'luxon';
 import IconSchedule from '../L1_Atoms/IconSchedule';
+import IconUpdateSymbol from "../L1_Atoms/IconUpdateSymbol"
 
 const DateWrapper = styled.div.attrs((props) => {
   return {
@@ -21,12 +22,16 @@ const DateType = styled.div.attrs((props) => {
     style: {
       color: `${props.color}`,
       fontSize: `${props.dateSize}px`,
+      fontFamily: `${props.fontFamily}`
     },
   };
 })`
+  align-items: center;
+  display: flex;
+  flex-direction: row;
   font-weight: 300;
   letter-spacing: 0.2em;
-  margin: 1px 0 0 5px;
+  margin: 0 5px;
   text-align: center;
 `;
 
@@ -37,10 +42,6 @@ const ArticleDate = (props) => {
   const updatedDate = DateTime.fromMillis(Date.parse(props.updatedAt)).toFormat(
     'yyyy-LL-dd'
   );
-  const date =
-    createdDate === updatedDate
-      ? `${createdDate}`
-      : `${createdDate} (${updatedDate})`;
 
   return (
     <DateWrapper
@@ -48,34 +49,54 @@ const ArticleDate = (props) => {
     >
       <IconSchedule
         color={props.color}
-        height={props.height}
-        width={props.width}
+        size={props.scheduleSize}
       />
-      <DateType color={props.color} dateSize={props.dateSize}>
-        {date}
-      </DateType>
+      {
+        createdDate === updatedDate
+        ? <DateType
+            color={props.color}
+            dateSize={props.dateSize}
+            fontFamily={props.fontFamily}
+          >
+            {createdDate}
+          </DateType>
+        : <DateType
+            color={props.color}
+            dateSize={props.dateSize}
+            fontFamily={props.fontFamily}
+          >
+            {createdDate}
+            <IconUpdateSymbol size={props.updateSize}/>
+            {updatedDate}
+          </DateType>
+      }
     </DateWrapper>
   );
 };
 
 ArticleDate.propTypes = {
   color: PropTypes.string,
-  height: PropTypes.number,
   dateSize: PropTypes.number,
   dateMargin: PropTypes.string,
   createdAt: PropTypes.string,
+  fontFamily: PropTypes.oneOf(['source-code-pro',"kan415typos-std","monospace","sans-serif"]),
   updatedAt: PropTypes.string,
-  width: PropTypes.number,
+  /**
+   * IconUpdateSymbolのsizeを指定する。
+   */
+  updateSize: PropTypes.number,
+  scheduleSize: PropTypes.number,
 };
 
 ArticleDate.defaultProps = {
   color: '#787878',
-  height: 20,
-  dateSize: 14,
-  dateMargin: "0",
+  scheduleSize: 15,
+  dateSize: 15,
+  dateMargin: "20px auto",
+  fontFamily: 'source-code-pro',
   createdAt: '2021-05-02T07:38:52.010Z',
   updatedAt: '2021-05-11T07:32:08.904Z',
-  width: 20,
+  updateSize: 15,
 };
 
 export default ArticleDate;
