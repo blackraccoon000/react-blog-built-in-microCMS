@@ -75,16 +75,37 @@ const ArticleDate = (props) => {
 };
 
 ArticleDate.propTypes = {
+  /**
+   * IconSchedule/DateTypeの色を変更
+   */
   color: PropTypes.string,
+  /**
+   * DateTypeの文字列の大きさを指定
+   */
   dateSize: PropTypes.number,
+  /**
+   * DateTypeの余白を指定
+   */
   dateMargin: PropTypes.string,
+  /**
+   * 取得した時間を入力(解析はluxon)
+   */
   createdAt: PropTypes.string,
+  /**
+   * フォント種類を指定
+   */
   fontFamily: PropTypes.oneOf(['source-code-pro',"kan415typos-std","monospace","sans-serif"]),
+  /**
+   * 取得した時間を入力(解析はluxon)
+   */
   updatedAt: PropTypes.string,
   /**
    * IconUpdateSymbolのsizeを指定する。
    */
   updateSize: PropTypes.number,
+  /**
+   * IconScheduleのsizeを指定する。
+   */
   scheduleSize: PropTypes.number,
 };
 

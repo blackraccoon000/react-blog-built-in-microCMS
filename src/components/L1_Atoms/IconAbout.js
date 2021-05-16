@@ -63,18 +63,24 @@ IconAbout.propTypes = {
    */
   color: PropTypes.string,
   /**
-   * サイズを変更できる。
+   * サイズを変更できる。(正方形アイコンでheight/widthに適用)
    */
   size: PropTypes.number,
+  /**
+   * 押下時に転送するリンク先。
+   */
   link: PropTypes.string,
+  /**
+   * 順番を指示。
+   */
   order: PropTypes.number,
 };
 
 IconAbout.defaultProps = {
-  color: '#C30D23',
+  color: '#a3d9e8',
   size: 22,
   link: "/about",
-  order: 1
+  order: 0
 };
 
 export default IconAbout;

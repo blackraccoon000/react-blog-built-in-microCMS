@@ -17,13 +17,24 @@ const parameters = {
   },
 };
 
+const DecorateWrapper = styled.div.attrs(props => {})`
+  display: flex;
+  height: auto;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+  width: auto;
+`
+
 const decorators = [
-  (Story) => (
-    <>
-      <Reset />
-      <Story />
-    </>
-  ),
+  (Story) => {
+    return (
+      <DecorateWrapper>
+        <Reset />
+        <Story />
+      </DecorateWrapper>
+    )
+  },
 ];
 
 export { parameters, decorators };

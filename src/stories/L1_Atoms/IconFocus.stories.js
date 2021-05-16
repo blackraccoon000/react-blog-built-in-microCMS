@@ -23,4 +23,12 @@ export default {
 const Template = (args) => <IconFocus {...args} />;
 
 export const Default = Template.bind({});
-Default.args = {};
+Default.args = {
+  flag: true,
+  link:"/search"
+};
+
+export const NoLink = Template.bind({});
+NoLink.args = {
+  flag: false,
+};

@@ -8,16 +8,7 @@ export default {
     color: {
       control: 'color',
     },
-    height: {
-      control: {
-        type: 'range',
-        min: 10,
-        max: 200,
-        step: 10,
-        default: 24,
-      },
-    },
-    width: {
+    size: {
       control: {
         type: 'range',
         min: 10,

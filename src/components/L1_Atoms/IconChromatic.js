@@ -93,13 +93,13 @@ IconChromatic.propTypes = {
    */
   color: PropTypes.string,
   /**
-   * 高さを変更できる。
+   * サイズを変更できる。(正方形アイコンでheight/widthに適用)
    */
   size: PropTypes.number,
 };
 
 IconChromatic.defaultProps = {
-  color: '#000',
+  color: "#ee7c7c",
   size: 22,
 };
 

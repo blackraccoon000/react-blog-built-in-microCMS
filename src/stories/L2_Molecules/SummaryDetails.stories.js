@@ -7,16 +7,6 @@ export default {
   argTypes: {
     flag: false,
   },
-  decorators: [
-    (Story) => {
-      Story.displayName = 'SummaryDetails';
-      return (
-        <div>
-          <Story />
-        </div>
-      );
-    },
-  ],
 };
 
 const Template = (args) => <SummaryDetails {...args} />;
@@ -24,7 +14,7 @@ const Template = (args) => <SummaryDetails {...args} />;
 export const Default = Template.bind({});
 Default.args = {
   summaryLabel: 'Whats PlayWell?',
-  someLink: [
+  someLinks: [
     {
       link: '#',
       linkLabel: 'Link α',
@@ -36,6 +26,25 @@ Default.args = {
     {
       link: '#',
       linkLabel: 'Link γ',
+    },
+  ],
+};
+
+export const LongLabeling = Template.bind({});
+LongLabeling.args = {
+  summaryLabel: 'Whats PlayWell?',
+  someLinks: [
+    {
+      link: '#',
+      linkLabel: 'Long Name Labeling...aaaaaaaaa',
+    },
+    {
+      link: '#',
+      linkLabel: 'Long Name Labeling...sssssss',
+    },
+    {
+      link: '#',
+      linkLabel: 'Long Name Labeling...dddddddddddddd',
     },
   ],
 };

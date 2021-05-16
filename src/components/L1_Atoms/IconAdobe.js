@@ -47,7 +47,7 @@ IconAdobe.propTypes = {
    */
   color: PropTypes.string,
   /**
-   * サイズを変更できる。
+   * サイズを変更できる。(正方形アイコンでheight/widthに適用)
    */
   size: PropTypes.number,
 };

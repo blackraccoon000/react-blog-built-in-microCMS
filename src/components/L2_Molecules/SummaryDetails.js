@@ -15,7 +15,6 @@ const Details = styled.details.attrs((props) => {
   padding: 8px;
   pointer-events: none;
   position: relative;
-  /* width: 100%; */
 
   &[open] {
     & summary {

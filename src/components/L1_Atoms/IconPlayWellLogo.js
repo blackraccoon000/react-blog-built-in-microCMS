@@ -82,7 +82,7 @@ IconPlayWellLogo.propTypes = {
 };
 
 IconPlayWellLogo.defaultProps = {
-  color: '#fff',
+  color: '#000',
   height: 30,
   link: "/",
   width: 180,
