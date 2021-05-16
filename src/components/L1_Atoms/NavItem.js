@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 
 const NavA = styled.a.attrs((props) => {
   return {
-    href: '#',
+    href: `${props.link}`,
     style: {
       color: `${props.color}`,
     },
@@ -32,11 +32,13 @@ const NavItem = (props) => {
 
 NavItem.propTypes = {
   color: PropTypes.string,
+  link: PropTypes.string,
   value: PropTypes.string,
 };
 
 NavItem.defaultProps = {
   color: '#8b8c8e',
+  link: "/",
   value: 'Sign In',
 };
 

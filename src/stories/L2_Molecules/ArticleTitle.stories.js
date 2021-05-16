@@ -18,26 +18,6 @@ export default {
       },
     },
   },
-  decorators: [
-    (Story) => {
-      Story.displayName = 'ArticleTitle';
-      return (
-        <div
-          style={{
-            display: 'flex',
-            justifyContent: 'center',
-            backgroundColor: '#e5e5e5',
-            width: 'auto',
-            height: 'auto',
-            margin: '0 auto',
-            padding: '50px 50px',
-          }}
-        >
-          <Story />
-        </div>
-      );
-    },
-  ],
 };
 
 

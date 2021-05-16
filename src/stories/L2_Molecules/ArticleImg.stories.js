@@ -15,26 +15,6 @@ export default {
       },
     },
   },
-  decorators: [
-    (Story) => {
-      Story.displayName = 'ArticleImg';
-      return (
-        <div
-          style={{
-            display: 'flex',
-            justifyContent: 'center',
-            backgroundColor: '#fff',
-            width: 'auto',
-            height: 'auto',
-            margin: '0 auto',
-            padding: '50px 50px',
-          }}
-        >
-          <Story />
-        </div>
-      );
-    },
-  ],
 };
 
 const Template = (args) => <ArticleImg {...args} />;

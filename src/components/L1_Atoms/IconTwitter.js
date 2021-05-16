@@ -10,8 +10,8 @@ const Svg = styled.svg.attrs((props) => {
     xmlns: 'http://www.w3.org/2000/svg',
     xmlSpace: 'preserve',
     xmlnsXlink: 'http://www.w3.org/1999/xlink',
-    width: `${props.width}`,
-    height: `${props.height}`,
+    width: `${props.size}`,
+    height: `${props.size}`,
     x: 0,
     y: 0,
   };
@@ -42,14 +42,12 @@ const IconTwitter = (props) => {
 
 IconTwitter.propTypes = {
   color: PropTypes.string,
-  height: PropTypes.number,
-  width: PropTypes.number,
+  size: PropTypes.number,
 };
 
 IconTwitter.defaultProps = {
   color: '#000',
-  height: 20,
-  width: 20,
+  size: 20,
 };
 
 export default IconTwitter;

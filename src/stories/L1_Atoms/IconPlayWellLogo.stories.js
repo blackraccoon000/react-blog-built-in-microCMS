@@ -28,32 +28,14 @@ export default {
       },
     },
   },
-  decorators: [
-    (Story) => {
-      Story.displayName = 'IconPlayWellLogo';
-      return (
-        <div
-          style={{
-            display: 'flex',
-            justifyContent: 'center',
-            backgroundColor: '#e5e5e5',
-            width: 'auto',
-            height: 'auto',
-            margin: '0 auto',
-            padding: '50px 50px',
-          }}
-        >
-          <Story />
-        </div>
-      );
-    },
-  ],
 };
 
 const Template = (args) => <IconPlayWellLogo {...args} />;
 
-export const Default = Template.bind({});
-Default.args = {};
+export const Default_White = Template.bind({});
+Default_White.args = {
+  color: "#fff"
+};
 
 export const Red = Template.bind({});
 Red.args = {

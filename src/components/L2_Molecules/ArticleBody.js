@@ -68,6 +68,9 @@ const ArticleBody = (props) => {
 };
 
 ArticleBody.propTypes = {
+  /**
+   * 記事を文字列型で抜粋
+   */
   body: PropTypes.string,
 };
 

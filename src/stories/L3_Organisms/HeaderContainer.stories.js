@@ -10,26 +10,6 @@ export default {
       control: { type: 'select' }
     }
   },
-  decorators: [
-    (Story) => {
-      Story.displayName = 'HeaderContainer';
-      return (
-        <div
-          style={{
-            display: 'flex',
-            justifyContent: 'center',
-            backgroundColor: '#e5e5e5',
-            width: 'auto',
-            height: '1800px',
-            margin: '0 auto',
-            padding: '50px 50px',
-          }}
-        >
-          <Story />
-        </div>
-      );
-    },
-  ],
 };
 
 const Template = (args) => <HeaderContainer {...args} />;

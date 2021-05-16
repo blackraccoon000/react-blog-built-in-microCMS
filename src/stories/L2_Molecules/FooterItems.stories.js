@@ -1,7 +1,4 @@
 import React from 'react';
-import { hrefTo } from '@storybook/addon-links';
-import { action } from '@storybook/addon-actions';
-import { withLinks } from '@storybook/addon-links';
 import FooterItems from '../../components/L2_Molecules/FooterItems';
 
 export default {
@@ -9,29 +6,6 @@ export default {
   component: FooterItems,
   argTypes: {
     flag: false,
-  },
-  decorators: [
-    (Story) => {
-      Story.displayName = 'FooterItems';
-      return (
-        <div
-          style={{
-            backgroundColor: '#e6cccc8a',
-            width: '1500px',
-            height: '500px',
-            margin: '0 auto',
-            padding: '50px 50px',
-          }}
-        >
-          <Story />
-        </div>
-      );
-    },
-  ],
-  parameters: {
-    actions: {
-      handles: ['mouseover', 'click .btn'],
-    },
   },
 };
 

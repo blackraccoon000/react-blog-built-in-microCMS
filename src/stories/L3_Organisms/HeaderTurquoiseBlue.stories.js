@@ -10,27 +10,6 @@ export default {
       control: { type: 'select' }
     }
   },
-  decorators: [
-    (Story) => {
-      Story.displayName = 'HeaderTurquoiseBlue';
-      return (
-        <div
-          style={{
-            display: 'flex',
-            justifyContent: 'center',
-            // backgroundColor: '#61b1c8',
-            backgroundColor: '#000',
-            width: 'auto',
-            height: '100vh',
-            margin: '0 auto',
-            padding: '50px 50px',
-          }}
-        >
-          <Story />
-        </div>
-      );
-    },
-  ],
 };
 
 const Template = (args) => <HeaderTurquoiseBlue {...args} />;

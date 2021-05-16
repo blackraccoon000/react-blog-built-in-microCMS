@@ -11,7 +11,6 @@ const Form = styled.form`
 
 const Label = styled.label.attrs((props) => ({}))`
   background-color: transparent;
-  /* border: 2px solid rgb(139, 140, 142); */
   border-radius: 6px;
   box-sizing: border-box;
   padding: 8px;
@@ -19,7 +18,6 @@ const Label = styled.label.attrs((props) => ({}))`
 
   &:focus-within {
     background-color: white;
-    /* border: 2px solid #a9aaad; */
 
     & svg {
       width: 20px;
@@ -63,16 +61,11 @@ const SearchKeySlash = styled(IconSearchKeySlash)`
   width: 0px;
 `;
 
-const Focus = styled(IconFocus)`
-  top: 2px;
-  position: relative;
-`;
-
 const SearchForm = (props) => {
   return (
     <Form>
       <Label htmlFor="search-form">
-        <Focus />
+        <IconFocus flag={props.flag}/>
         <Input
           id="search-form"
           onFocus={props.toggleFn}
