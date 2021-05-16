@@ -14,7 +14,7 @@ export default {
         min: 5,
         max: 50,
         step: 1,
-        default: 22,
+        default: 20,
       },
     },
   },
@@ -24,3 +24,18 @@ const Template = (args) => <IconAbout {...args} />;
 
 export const Default = Template.bind({});
 Default.args = {};
+
+export const Large = Template.bind({});
+Large.args = {
+  size:30
+};
+
+export const Middle = Template.bind({});
+Middle.args = {
+  size:20
+};
+
+export const Small = Template.bind({});
+Small.args = {
+  size:16
+};

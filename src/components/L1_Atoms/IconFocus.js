@@ -1,5 +1,5 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled, { ThemeProvider } from 'styled-components';
 import PropTypes from 'prop-types';
 
 const LinkWrapper = styled.a.attrs(props => {
@@ -36,6 +36,9 @@ const Path = styled.path.attrs((props) => {
   };
 })``;
 
+/**
+ * Focus アイコン
+ */
 const Focus = (props) => {
   return (<Svg {...props}>
     <g>

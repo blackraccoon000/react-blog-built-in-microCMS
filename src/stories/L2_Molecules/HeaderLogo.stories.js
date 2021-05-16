@@ -48,3 +48,28 @@ export const Red = Template.bind({});
 Red.args = {
   color: "#e84141"
 };
+
+export const Large = Template.bind({});
+Large.args = {
+  color: "#e84141",
+  height: 30,
+  size: 60,
+  width: 180,
+};
+
+export const Middle = Template.bind({});
+Middle.args = {
+  color: "#e84141",
+  height: 20,
+  size: 40,
+  width: 120,
+
+};
+
+export const Small = Template.bind({});
+Small.args = {
+  color: "#e84141",
+  height: 20,
+  size: 30,
+  width: 100,
+};

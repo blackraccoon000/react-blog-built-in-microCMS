@@ -13,9 +13,11 @@ const Svg = styled.svg.attrs((props) => {
     height: `${props.height}`,
     x: 0,
     y: 0,
+    style: {
+      margin: `${props.margin}`
+    }
   };
 })`
-  margin: 4px 0 0 10px;
   opacity: 1;
 `;
 
@@ -48,6 +50,7 @@ IconChevonDown.propTypes = {
    * 色を変更できる。
    */
   color: PropTypes.string,
+  margin: PropTypes.string,
   /**
    * 高さを変更できる。
    */
@@ -60,6 +63,7 @@ IconChevonDown.propTypes = {
 
 IconChevonDown.defaultProps = {
   color: '#8b8c8e',
+  margin: "4px 0 0 10px",
   height: 8,
   width: 15,
 };

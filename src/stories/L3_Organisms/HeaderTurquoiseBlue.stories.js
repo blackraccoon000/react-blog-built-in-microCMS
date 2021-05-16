@@ -15,7 +15,7 @@ export default {
         min: 10,
         max: 100,
         step: 10,
-        default: 60,
+        default: 40,
       },
     },
     iconSize: {
@@ -24,7 +24,7 @@ export default {
         min: 10,
         max: 50,
         step: 1,
-        default: 30,
+        default: 20,
       },
     },
     logoHeight: {
@@ -33,7 +33,7 @@ export default {
         min: 10,
         max: 50,
         step: 10,
-        default: 30,
+        default: 20,
       },
     },
     logoWidth: {
@@ -42,7 +42,7 @@ export default {
         min: 10,
         max: 300,
         step: 10,
-        default: 180,
+        default: 120,
       },
     },
   },
@@ -54,7 +54,7 @@ export const Default = Template.bind({});
 Default.args = {};
 
 export const Large = Template.bind({});
-Default.args = {
+Large.args = {
   racSize:60,
   iconSize:30,
   logoHeight:30,

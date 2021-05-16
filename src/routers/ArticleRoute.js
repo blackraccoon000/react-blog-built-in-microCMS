@@ -5,6 +5,7 @@ import { Route, Redirect } from 'react-router-dom';
 import HeaderContainer from '../components/L3_Organisms/HeaderContainer';
 import HeaderTurquoiseBlue from '../components/L3_Organisms/HeaderTurquoiseBlue';
 import FooterContainer from '../components/L3_Organisms/FooterContainer';
+import FooterTurquoiseBlue from "../components/L3_Organisms/FooterTurquoiseBlue"
 import ArticleContainer from '../components/L3_Organisms/ArticleContainer';
 
 const ArticleRoute = (props) => {
@@ -19,7 +20,8 @@ const ArticleRoute = (props) => {
             {/* <HeaderContainer /> */}
             <HeaderTurquoiseBlue/>
             <ArticleContainer {...props} />
-            <FooterContainer />
+            {/* <FooterContainer /> */}
+            <FooterTurquoiseBlue />
           </>
         ) : (
           // 直リンクで飛んできた場合、dataのloadができていないため、

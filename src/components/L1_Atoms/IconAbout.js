@@ -42,7 +42,7 @@ const Path = styled.path.attrs((props) => {
 const IconAbout = (props) => {
   return (
     <LinkWrapper {...props}>
-      <Svg {...props}>
+      <Svg size={props.size}>
         <Path color={props.color}
           d="M15,0.6C7.06,0.6,0.6,7.06,0.6,15c0,7.94,6.46,14.4,14.4,14.4c7.94,0,14.4-6.46,14.4-14.4C29.4,7.06,22.94,0.6,15,0.6z
           M15,26.52C8.65,26.52,3.48,21.35,3.48,15C3.48,8.65,8.65,3.48,15,3.48c6.35,0,11.52,5.17,11.52,11.52
@@ -78,7 +78,7 @@ IconAbout.propTypes = {
 
 IconAbout.defaultProps = {
   color: '#a3d9e8',
-  size: 22,
+  size: 20,
   link: "/about",
   order: 0
 };
