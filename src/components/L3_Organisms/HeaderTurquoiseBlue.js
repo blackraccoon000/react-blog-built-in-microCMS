@@ -28,7 +28,12 @@ const HeaderTurquoiseBlue = (props) => {
   return (
     <Header>
       <Nav>
-        <HeaderLogo order={props.hLOrder} />
+        <HeaderLogo
+          order={props.hLOrder}
+          height={props.logoHeight}
+          width={props.logoWidth}
+          size={props.racSize}
+        />
         <IconAbout size={props.iconSize} color={props.iconColor} order={props.iAOrder}/>
         <IconFocus size={props.iconSize} color={props.iconColor} order={props.iFOrder}/>
       </Nav>
@@ -38,10 +43,25 @@ const HeaderTurquoiseBlue = (props) => {
 
 HeaderTurquoiseBlue.propTypes = {
   iconColor: PropTypes.string,
+  /**
+   * IconAbout/IconFocusの大きさ調整
+   */
   iconSize: PropTypes.number,
   iAOrder: PropTypes.number,
   iFOrder: PropTypes.number,
   hLOrder: PropTypes.number,
+  /**
+   * PlayWellLogoの高さを変更できる。
+   */
+  logoHeight: PropTypes.number,
+  /**
+   * PlayWellLogoの横幅を変更できる。
+   */
+  logoWidth: PropTypes.number,
+  /**
+   * IconRacでのサイズを変更できる。
+   */
+  racSize: PropTypes.number,
 }
 
 HeaderTurquoiseBlue.defaultProps = {
@@ -50,6 +70,9 @@ HeaderTurquoiseBlue.defaultProps = {
   iAOrder: 1,
   iFOrder: 3,
   hLOrder: 2,
+  logoHeight:30,
+  logoWidth:180,
+  racSize:60,
 }
 
 export default HeaderTurquoiseBlue
