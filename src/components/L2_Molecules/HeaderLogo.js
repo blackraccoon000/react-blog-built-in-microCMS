@@ -58,7 +58,7 @@ HeaderLogo.propTypes = {
 }
 
 HeaderLogo.defaultProps = {
-  color: '#fff',
+  color: '#e6e6e6',
   flag: false,
   height: 30,
   link: "/",

@@ -17,7 +17,7 @@ const parameters = {
   },
 };
 
-const DecorateWrapper = styled.div.attrs(props => {})`
+const DecorateWrapper = styled.div`
   display: flex;
   height: auto;
   justify-content: center;

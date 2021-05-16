@@ -18,7 +18,7 @@
     "chromatic": "chromatic --project-token=CHROMATIC_PROJECT_TOKEN",
     "live-server": "live-server public",
     "serve": "webpack serve --open --env development",
-    "storybook": "start-storybook -p 6006",
+    "storybook": "start-storybook -p 6006 -s ./src",
     "test": "jest --config jest.config.json"
   },
   "dependencies": {

@@ -25,10 +25,35 @@ const Template = (args) => <IconFocus {...args} />;
 export const Default = Template.bind({});
 Default.args = {
   flag: true,
-  link:"/search"
+  link:"/search",
+  size:20
 };
 
 export const NoLink = Template.bind({});
 NoLink.args = {
   flag: false,
+  link:"",
+  size:20
 };
+
+export const Large = Template.bind({});
+Large.args = {
+  flag: false,
+  link:"",
+  size:30
+};
+
+export const Middle = Template.bind({});
+Middle.args = {
+  flag: false,
+  link:"",
+  size:20
+};
+
+export const Small = Template.bind({});
+Small.args = {
+  flag: false,
+  link:"",
+  size:16
+};
+

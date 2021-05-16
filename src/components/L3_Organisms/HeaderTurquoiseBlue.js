@@ -29,6 +29,7 @@ const HeaderTurquoiseBlue = (props) => {
     <Header>
       <Nav>
         <HeaderLogo
+          color={props.iconColor}
           order={props.hLOrder}
           height={props.logoHeight}
           width={props.logoWidth}
@@ -65,14 +66,14 @@ HeaderTurquoiseBlue.propTypes = {
 }
 
 HeaderTurquoiseBlue.defaultProps = {
-  iconColor: "#fff",
-  iconSize: 30,
+  iconColor: "#e6e6e6",
+  iconSize: 20,
   iAOrder: 1,
   iFOrder: 3,
   hLOrder: 2,
-  logoHeight:30,
-  logoWidth:180,
-  racSize:60,
+  logoHeight:20,
+  logoWidth:120,
+  racSize:40,
 }
 
 export default HeaderTurquoiseBlue
