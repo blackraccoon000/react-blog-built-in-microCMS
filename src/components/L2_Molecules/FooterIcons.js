@@ -6,33 +6,33 @@ import IconQiita from '../L1_Atoms/IconQiita';
 import IconTwitter from '../L1_Atoms/IconTwitter';
 import IconYoutube from '../L1_Atoms/IconYoutube';
 import IconFacebook from '../L1_Atoms/IconFacebook';
-import IconChromatic from "../L1_Atoms/IconChromatic"
-import IconMicroCms from "../L1_Atoms/IconMicroCms"
-import IconAdobe from "../L1_Atoms/IconAdobe"
+import IconChromatic from '../L1_Atoms/IconChromatic';
+import IconMicroCms from '../L1_Atoms/IconMicroCms';
+import IconAdobe from '../L1_Atoms/IconAdobe';
 
 const UnorderedList = styled.ul.attrs((props) => {})`
   display: flex;
   flex-direction: row;
   justify-content: center;
   list-style: none;
-  padding: 10px;
+  padding: calc(10rem / 16);
 `;
 
 const ListItem = styled.li.attrs((props) => {})`
-  margin-right: 16px;
+  margin-right: calc(16rem / 16);
 `;
 
 const QiitaBorder = styled.div.attrs((props) => {
   return {
     style: {
-      border: `2px solid ${props.color}`,
+      border: `calc(.2rem/1.6) solid ${props.color}`,
     },
   };
 })`
-  border-radius: 10px;
-  height: 11px;
-  padding: 5px 6px;
-  margin-top: 3px;
+  border-radius: calc(10rem / 16);
+  height: calc(11rem / 16);
+  padding: calc(5rem / 16) calc(6rem / 16);
+  margin-top: calc(3rem / 16);
 `;
 
 const FooterIcons = (props) => {

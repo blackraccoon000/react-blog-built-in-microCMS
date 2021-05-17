@@ -8,7 +8,7 @@ export default {
     color: {
       control: 'color',
     },
-    dateSize: {
+    dateFontSize: {
       control: {
         type: 'range',
         min: 1,

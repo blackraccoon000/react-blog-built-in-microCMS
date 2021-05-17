@@ -6,20 +6,20 @@ import ChevonDown from '../L1_Atoms/IconChevonDown';
 const Details = styled.details.attrs((props) => {
   return {
     style: {
-      margin: `${props.detailMargin}`
-    }
-  }
+      margin: `${props.detailMargin}`,
+    },
+  };
 })`
   cursor: pointer;
   overflow: visible;
-  padding: 8px;
+  padding: calc(8rem / 16);
   pointer-events: none;
   position: relative;
 
   &[open] {
     & summary {
-      border-bottom: 2px solid #8b8c8e;
-      padding-bottom: 4px;
+      border-bottom: calc(2rem / 16) solid #8b8c8e;
+      padding-bottom: calc(4rem / 16);
     }
     & div {
       height: auto;
@@ -49,8 +49,8 @@ const Summary = styled.summary.attrs((props) => {})`
   border: none;
   color: #8b8c8e;
   list-style: none;
-  margin: 0 0 0 5px;
-  padding-top: 2px;
+  margin: 0 0 0 calc(5rem / 16);
+  padding-top: calc(2rem / 16);
   pointer-events: auto;
   transition: 0.8s;
 `;
@@ -62,9 +62,9 @@ const OtherLinks = styled.a.attrs((props) => {
 })`
   color: #8b8c8e;
   display: block;
-  font-size: 14px;
+  font-size: calc(14rem / 16);
   font-weight: 600;
-  padding: 16px 20px 0;
+  padding: calc(16rem / 16) calc(20rem / 16) 0;
   pointer-events: auto;
   transition: 0.8s;
   text-decoration: none;
@@ -78,13 +78,13 @@ const OtherLinks = styled.a.attrs((props) => {
 const DropdownMenu = styled.div.attrs((props) => {})`
   background-color: #fff;
   background-clip: padding-box;
-  border: 1px solid #8b8c8e;
-  border-radius: 10px;
-  height: 0px;
-  margin-top: 10px;
+  border: calc(1rem / 16) solid #8b8c8e;
+  border-radius: calc(10rem / 16);
+  height: 0;
+  margin-top: calc(10rem / 16);
 
   & a:last-child {
-    margin-bottom: 10px;
+    margin-bottom: calc(10rem / 16);
   }
 `;
 
@@ -117,7 +117,7 @@ SummaryDetails.propTypes = {
 };
 
 SummaryDetails.defaultProps = {
-  detailMargin: "18px 10px 10px 10px",
+  detailMargin: 'calc(18rem/16) calc(10rem/16) calc(10rem/16) calc(10rem/16)',
   summaryLabel: 'Why Github?',
   someLinks: [
     {

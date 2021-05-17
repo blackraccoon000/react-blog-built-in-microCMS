@@ -55,12 +55,12 @@ ArticleImg.propTypes = {
 ArticleImg.defaultProps = {
   height: '100%',
   link: '#',
-  imageMargin: "30px auto 0 auto",
-  radius: "10px",
+  imageMargin: 'calc(30rem/16) auto 0 auto',
+  radius: 'calc(1rem/1.6)',
   src:
     'https://images.microcms-assets.io/assets/577bcb7965bf4dbd951686143646657b/2687c64d1e7e4a8b8fef792ff909ea81/cat_four.jpg',
   overflow: 'hidden',
-  width: "750px",
+  width: 'calc(750rem/16)',
 };
 
 export default ArticleImg;

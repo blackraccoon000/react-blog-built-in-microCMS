@@ -8,7 +8,7 @@ export default {
     color: {
       control: 'color',
     },
-    titleSize: {
+    titleFontSize: {
       control: {
         type: 'range',
         min: 10,

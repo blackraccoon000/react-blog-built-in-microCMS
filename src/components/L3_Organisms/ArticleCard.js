@@ -1,23 +1,24 @@
 import React from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
-import ArticleImg from "../L2_Molecules/ArticleImg"
-import ArticleTitle from "../L2_Molecules/ArticleTitle"
-import ArticleKeywords from "../L2_Molecules/ArticleKeywords"
-import ArticleDate from "../L2_Molecules/ArticleDate"
+import ArticleImg from '../L2_Molecules/ArticleImg';
+import ArticleTitle from '../L2_Molecules/ArticleTitle';
+import ArticleKeywords from '../L2_Molecules/ArticleKeywords';
+import ArticleDate from '../L2_Molecules/ArticleDate';
 
 const CardDivision = styled.div.attrs((props) => {})`
   align-items: center;
   background-color: #fff;
-  border: 1px;
-  border-radius: 10px;
-  box-shadow: 5px 5px 10px 3px rgb(0 0 0 / 14%);
+  border: calc(1rem / 16);
+  border-radius: calc(10rem / 16);
+  box-shadow: calc(5rem / 16) calc(5rem / 16) calc(10rem / 16) calc(3rem / 16)
+    rgb(0 0 0 / 14%);
   display: flex;
   flex-direction: column;
   height: auto;
   margin: 0;
   position: relative;
-  width: 325px;
+  width: calc(325rem / 16);
 `;
 
 const ArticleCard = (props) => {
@@ -26,7 +27,7 @@ const ArticleCard = (props) => {
       <ArticleImg
         height="none"
         src={props.src}
-        radius="10px 10px 0 0"
+        radius="calc(10rem/16) calc(10rem/16) 0 0"
         imageMargin={props.imageMargin}
         width="100%"
       />
@@ -43,7 +44,7 @@ const ArticleCard = (props) => {
       />
     </CardDivision>
   );
-}
+};
 
 ArticleCard.propTypes = {
   /**
@@ -105,20 +106,19 @@ ArticleCard.propTypes = {
 /**
  * Storybook用、通常の動作では表示されない。
  */
- ArticleCard.defaultProps = {
+ArticleCard.defaultProps = {
   title: 'Article Title',
-  titleMargin: "10px auto",
+  titleMargin: 'calc(10rem/16) auto',
   keywords: ['テスト', 'ブログ', 'test', 'blog', 'microcms'],
   createdAt: '2021-05-02T07:38:52.010Z',
   updatedAt: '2021-05-11T07:32:08.904Z',
   src:
     'https://images.microcms-assets.io/assets/577bcb7965bf4dbd951686143646657b/2687c64d1e7e4a8b8fef792ff909ea81/cat_four.jpg',
   link: '#',
-  imageMargin: "0",
-  height: "none",
-  radius:"10px 10px 0 0",
-  dateMargin: "10px 0",
+  imageMargin: '0',
+  height: 'none',
+  radius: 'calc(10rem/16) calc(10rem/16) 0 0',
+  dateMargin: 'calc(10rem/16) 0',
 };
-
 
 export default ArticleCard;

@@ -18,16 +18,14 @@ const ArticleWrapper = styled.div.attrs((props) => {})`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  min-width: 600px;
-  max-width: 1200px;
-  /* margin: 90px auto; */
+  min-width: calc(600rem / 16);
+  max-width: calc(1200rem / 16);
   margin: 0 auto;
 `;
 /**
  * ブログの記事を表示する。
  */
 const ArticleContainer = (props) => {
-  // console.log(props);
   return (
     <ArticleWrapper>
       <ArticleTitle title={props.title} link={props.link} />

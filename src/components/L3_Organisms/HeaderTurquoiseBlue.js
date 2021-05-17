@@ -1,28 +1,28 @@
-import React from "react"
-import styled from "styled-components"
-import PropTypes from "prop-types"
+import React from 'react';
+import styled from 'styled-components';
+import PropTypes from 'prop-types';
 
-import HeaderLogo from "../L2_Molecules/HeaderLogo"
-import IconAbout from "../L1_Atoms/IconAbout"
-import IconFocus from "../L1_Atoms/IconFocus"
+import HeaderLogo from '../L2_Molecules/HeaderLogo';
+import IconAbout from '../L1_Atoms/IconAbout';
+import IconFocus from '../L1_Atoms/IconFocus';
 
-const Header = styled.header.attrs(props => {
+const Header = styled.header.attrs((props) => {
   return {
     style: {
-      position: "block",
-      width: "100%"
-    }
-  }
+      position: 'block',
+      width: '100%',
+    },
+  };
 })`
   background-color: #61b1c8;
-`
+`;
 
-const Nav = styled.nav.attrs(props => {})`
+const Nav = styled.nav.attrs((props) => {})`
   display: flex;
   justify-content: space-between;
-  margin: 0 30px;
+  margin: 0 calc(30rem / 16);
   align-items: center;
-`
+`;
 
 const HeaderTurquoiseBlue = (props) => {
   return (
@@ -35,12 +35,20 @@ const HeaderTurquoiseBlue = (props) => {
           width={props.logoWidth}
           size={props.racSize}
         />
-        <IconAbout size={props.iconSize} color={props.iconColor} order={props.iAOrder}/>
-        <IconFocus size={props.iconSize} color={props.iconColor} order={props.iFOrder}/>
+        <IconAbout
+          size={props.iconSize}
+          color={props.iconColor}
+          order={props.iAOrder}
+        />
+        <IconFocus
+          size={props.iconSize}
+          color={props.iconColor}
+          order={props.iFOrder}
+        />
       </Nav>
     </Header>
-  )
-}
+  );
+};
 
 HeaderTurquoiseBlue.propTypes = {
   iconColor: PropTypes.string,
@@ -63,17 +71,17 @@ HeaderTurquoiseBlue.propTypes = {
    * IconRacでのサイズを変更できる。
    */
   racSize: PropTypes.number,
-}
+};
 
 HeaderTurquoiseBlue.defaultProps = {
-  iconColor: "#e6e6e6",
+  iconColor: '#e6e6e6',
   iconSize: 20,
   iAOrder: 1,
   iFOrder: 3,
   hLOrder: 2,
-  logoHeight:20,
-  logoWidth:120,
-  racSize:40,
-}
+  logoHeight: 20,
+  logoWidth: 120,
+  racSize: 40,
+};
 
-export default HeaderTurquoiseBlue
+export default HeaderTurquoiseBlue;

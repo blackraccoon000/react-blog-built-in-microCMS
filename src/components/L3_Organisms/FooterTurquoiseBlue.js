@@ -1,11 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
-import FooterIndexPageLink from "../L2_Molecules/FooterIndexPageLink"
-import FooterCopyrightAria from "../L2_Molecules/FooterCopyrightAria"
+import FooterIndexPageLink from '../L2_Molecules/FooterIndexPageLink';
+import FooterCopyrightAria from '../L2_Molecules/FooterCopyrightAria';
 
 const Footer = styled.footer`
-  border-top: 1px solid #e5e5e5;
-  height: 50px;
+  border-top: calc(1rem / 16) solid #e5e5e5;
+  height: calc(50rem / 16);
   left: 0;
   width: 100%;
   z-index: 50;
@@ -14,8 +14,8 @@ const Footer = styled.footer`
 const FooterTurquoiseBlue = (props) => {
   return (
     <Footer>
-      <FooterIndexPageLink/>
-      <FooterCopyrightAria/>
+      <FooterIndexPageLink />
+      <FooterCopyrightAria />
     </Footer>
   );
 };

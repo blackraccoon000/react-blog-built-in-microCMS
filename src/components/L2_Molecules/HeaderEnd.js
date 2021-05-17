@@ -3,16 +3,16 @@ import styled from 'styled-components';
 import PropTypes from 'prop-types';
 
 import NavItem from '../L1_Atoms/NavItem';
-import HeaderMenu from "./HeaderMenu"
+import HeaderMenu from './HeaderMenu';
 import SearchForm from './SearchForm';
 
 const EndWrapper = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  margin: 0 30px 0 0;
+  margin: 0 calc(30rem / 16) 0 0;
   overflow: visible;
-  width:1100px;
+  width: calc(1100rem / 16);
 `;
 
 const EndDiv = styled.div`

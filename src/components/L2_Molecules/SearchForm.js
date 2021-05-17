@@ -5,22 +5,22 @@ import IconFocus from '../L1_Atoms/IconFocus';
 import IconSearchKeySlash from '../L1_Atoms/IconSearchKeySlash';
 
 const Form = styled.form`
-  margin-left: 15px;
-  padding: 5px;
+  margin-left: calc(15rem / 16);
+  padding: calc(5rem / 16);
 `;
 
 const Label = styled.label.attrs((props) => ({}))`
   background-color: transparent;
-  border-radius: 6px;
+  border-radius: calc(6rem / 16);
   box-sizing: border-box;
-  padding: 8px;
+  padding: calc(8rem / 16);
   position: relative;
 
   &:focus-within {
     background-color: white;
 
     & svg {
-      width: 20px;
+      width: calc(20rem / 16);
     }
   }
 `;
@@ -38,34 +38,34 @@ const Input = styled.input.attrs((props) => ({
   background-color: transparent;
   border: none;
   color: #5a616f;
-  font-size: 14px;
+  font-size: calc(14rem / 16);
   outline: none;
   padding: 0;
   transition: 0.5s;
   width: 0;
 
   &:focus {
-    width: 170px;
-    padding: 0px 10px;
+    width: calc(170rem / 16);
+    padding: 0px calc(10rem / 16);
   }
 
   &::placeholder {
     color: #8b8c8e;
-    margin: 5px 20px;
+    margin: calc(5rem / 16) calc(20rem / 16);
   }
 `;
 
 const SearchKeySlash = styled(IconSearchKeySlash)`
   position: relative;
-  top: 4px;
-  width: 0px;
+  top: calc(4rem / 16);
+  width: 0;
 `;
 
 const SearchForm = (props) => {
   return (
     <Form>
       <Label htmlFor="search-form">
-        <IconFocus flag={props.flag}/>
+        <IconFocus flag={props.flag} />
         <Input
           id="search-form"
           onFocus={props.toggleFn}

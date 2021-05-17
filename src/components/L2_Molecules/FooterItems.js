@@ -9,7 +9,7 @@ const Link = styled.a.attrs((props) => {
   };
 })`
   color: #586069;
-  font-size: 12px;
+  font-size: calc(12rem / 16);
 `;
 
 const UnorderedList = styled.ul.attrs((props) => {})`
@@ -18,11 +18,11 @@ const UnorderedList = styled.ul.attrs((props) => {})`
   flex-direction: row;
   justify-content: center;
   list-style: none;
-  margin-left: 30px;
+  margin-left: calc(30rem / 16);
 `;
 
 const ListItem = styled.li.attrs((props) => {})`
-  margin-right: 20px;
+  margin-right: calc(20rem / 16);
 `;
 
 const FooterItems = (props) => {
@@ -53,6 +53,11 @@ FooterItems.propTypes = {
   link: PropTypes.string,
   linkLabel: PropTypes.string,
   ga: PropTypes.string,
+  /**
+   * linkListは配列で、中身はLink先、Linkのラベル,
+   * gaはアナリティクスのトラッキング先情報であるという。
+   * 詳しくはまだ対応していない。
+   */
   linkList: PropTypes.array,
 };
 
