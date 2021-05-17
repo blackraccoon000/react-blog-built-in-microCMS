@@ -20,7 +20,7 @@ const DateWrapper = styled.div.attrs((props) => {
 
 const DateType = styled.time.attrs((props) => {
   return {
-    datetime: `${props.datetime}`,
+    dateTime: `${props.datetime}`,
     style: {
       color: `${props.color}`,
       fontSize: `${props.dateFontSize / 16}rem`,
