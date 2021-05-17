@@ -22,7 +22,7 @@ const BodyWrapper = styled.div.attrs((props) => {})`
 
 const BodyType = styled.div.attrs((props) => {})`
   justify-content: center;
-  width: calc(750rem / 106);
+  width: calc(750rem / 16);
 
   & h2 {
     font-size: calc(18rem / 16);
@@ -38,7 +38,7 @@ const BodyType = styled.div.attrs((props) => {})`
   }
   & pre {
     background-color: #19171c;
-    border: calc(0.2rem/16) solid #19171c;
+    border: calc(2rem / 16) solid #19171c;
     border-radius: calc(1rem / 16);
     box-sizing: border-box;
     padding: calc(15rem / 16);
