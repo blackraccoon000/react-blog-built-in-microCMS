@@ -46,7 +46,7 @@ FooterIndexPageLink.propTypes = {
 };
 
 FooterIndexPageLink.defaultProps = {
-  border: '#e2e1de calc(20rem/16) solid',
+  border: '#e2e1de calc(2rem/16) solid',
   btnMargin: 'calc(30rem/16) 0 0 0',
   bGColor: '#61b1c8',
   color: '#e6e6e6',
