@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 
 const ArticleWrapper = styled.div.attrs((props) => {
   return {
@@ -30,6 +31,7 @@ const BlogTopImg = styled.img.attrs((props) => {
 `;
 
 const ArticleImg = (props) => {
+  console.log('AI:', props);
   return (
     <ArticleWrapper
       height={props.height}
@@ -37,13 +39,13 @@ const ArticleImg = (props) => {
       overflow={props.overflow}
       order={props.order}
     >
-      <a href={props.link}>
+      <Link to={props.link}>
         <BlogTopImg
           src={props.src}
           radius={props.imageRadius}
           width={props.width}
         />
-      </a>
+      </Link>
     </ArticleWrapper>
   );
 };

@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { connect } from 'react-redux';
 import FooterIndexPageLink from '../L2_Molecules/FooterIndexPageLink';
 import FooterCopyrightAria from '../L2_Molecules/FooterCopyrightAria';
 
@@ -19,4 +20,12 @@ const FooterTurquoiseBlue = (props) => {
   );
 };
 
-export default FooterTurquoiseBlue;
+const mapStateToProps = (state) => {
+  console.log('FT-state:', state);
+  return {
+    pages: state.pages,
+  };
+};
+
+export default connect(mapStateToProps)(FooterTurquoiseBlue);
+export { FooterTurquoiseBlue };

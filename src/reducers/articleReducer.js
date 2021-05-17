@@ -18,7 +18,6 @@ const articleReducer = (state = articleReducerDefaultState, action) => {
         }
       });
     case 'SET_PAGES':
-      // console.log(action);
       return [...state, ...action.pages];
     default:
       return state;
