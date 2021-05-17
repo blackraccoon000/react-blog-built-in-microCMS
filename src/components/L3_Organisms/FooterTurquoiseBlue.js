@@ -1,6 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+import pages from '../../tests/fixtures/pages';
 import FooterIndexPageLink from '../L2_Molecules/FooterIndexPageLink';
 import FooterCopyrightAria from '../L2_Molecules/FooterCopyrightAria';
 
@@ -18,6 +20,14 @@ const FooterTurquoiseBlue = (props) => {
       <FooterCopyrightAria />
     </Footer>
   );
+};
+
+FooterTurquoiseBlue.propTypes = {
+  pages: PropTypes.array,
+};
+
+FooterTurquoiseBlue.defaultProps = {
+  pages: pages,
 };
 
 const mapStateToProps = (state) => {
