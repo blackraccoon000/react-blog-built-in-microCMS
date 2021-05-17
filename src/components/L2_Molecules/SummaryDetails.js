@@ -6,20 +6,20 @@ import ChevonDown from '../L1_Atoms/IconChevonDown';
 const Details = styled.details.attrs((props) => {
   return {
     style: {
-      margin: `${props.detailMargin}`
-    }
-  }
+      margin: `${props.detailMargin}`,
+    },
+  };
 })`
   cursor: pointer;
   overflow: visible;
-  padding: calc(.8rem/1.6);
+  padding: calc(8rem / 16);
   pointer-events: none;
   position: relative;
 
   &[open] {
     & summary {
-      border-bottom: calc(.2rem/1.6) solid #8b8c8e;
-      padding-bottom: calc(.4rem/1.6);
+      border-bottom: calc(2rem / 16) solid #8b8c8e;
+      padding-bottom: calc(4rem / 16);
     }
     & div {
       height: auto;
@@ -49,8 +49,8 @@ const Summary = styled.summary.attrs((props) => {})`
   border: none;
   color: #8b8c8e;
   list-style: none;
-  margin: 0 0 0 calc(.5rem/1.6);
-  padding-top: 2px;
+  margin: 0 0 0 calc(5rem / 16);
+  padding-top: calc(2rem / 16);
   pointer-events: auto;
   transition: 0.8s;
 `;
@@ -62,9 +62,9 @@ const OtherLinks = styled.a.attrs((props) => {
 })`
   color: #8b8c8e;
   display: block;
-  font-size: calc(1.4rem/1.6);
+  font-size: calc(14rem / 16);
   font-weight: 600;
-  padding: calc(1.6rem/1.6) calc(2rem/1.6) 0;
+  padding: calc(16rem / 16) calc(20rem / 16) 0;
   pointer-events: auto;
   transition: 0.8s;
   text-decoration: none;
@@ -78,13 +78,13 @@ const OtherLinks = styled.a.attrs((props) => {
 const DropdownMenu = styled.div.attrs((props) => {})`
   background-color: #fff;
   background-clip: padding-box;
-  border: 1px solid #8b8c8e;
-  border-radius: calc(1rem/1.6);
+  border: calc(1rem / 16) solid #8b8c8e;
+  border-radius: calc(10rem / 16);
   height: 0;
-  margin-top: calc(1rem/1.6);
+  margin-top: calc(10rem / 16);
 
   & a:last-child {
-    margin-bottom: calc(1rem/1.6);
+    margin-bottom: calc(10rem / 16);
   }
 `;
 
@@ -117,7 +117,7 @@ SummaryDetails.propTypes = {
 };
 
 SummaryDetails.defaultProps = {
-  detailMargin: "calc(1.8rem/1.6) calc(1rem/1.6) calc(1rem/1.6) calc(1rem/1.6)",
+  detailMargin: 'calc(18rem/16) calc(10rem/16) calc(10rem/16) calc(10rem/16)',
   summaryLabel: 'Why Github?',
   someLinks: [
     {

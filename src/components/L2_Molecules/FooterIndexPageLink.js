@@ -2,14 +2,14 @@ import React from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 
-import ViewButton from "../L1_Atoms/ViewButton"
+import ViewButton from '../L1_Atoms/ViewButton';
 
-const Wrapper = styled.div.attrs(props=>{
+const Wrapper = styled.div.attrs((props) => {
   return {
     style: {
-      backgroundColor: `${props.bGColor}`
-    }
-  }
+      backgroundColor: `${props.bGColor}`,
+    },
+  };
 })`
   height: auto;
   left: 0;
@@ -43,13 +43,13 @@ FooterIndexPageLink.propTypes = {
   btnMargin: PropTypes.string,
   bGColor: PropTypes.string,
   color: PropTypes.string,
-}
+};
 
 FooterIndexPageLink.defaultProps = {
-  border: "#e2e1de calc(.2rem/1.6) solid",
-  btnMargin: "calc(3rem/1.6) 0 0 0",
-  bGColor: "#61b1c8",
-  color: "#e6e6e6",
-}
+  border: '#e2e1de calc(20rem/16) solid',
+  btnMargin: 'calc(30rem/16) 0 0 0',
+  bGColor: '#61b1c8',
+  color: '#e6e6e6',
+};
 
 export default FooterIndexPageLink;

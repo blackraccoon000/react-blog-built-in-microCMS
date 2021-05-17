@@ -16,45 +16,45 @@ const BodyWrapper = styled.div.attrs((props) => {})`
   display: flex;
   flex-direction: row;
   justify-content: center;
-  margin: calc(3rem/1.6) auto;
-  width: calc(80rem/1.6);
+  margin: calc(30rem / 16) auto;
+  width: calc(800rem / 16);
 `;
 
 const BodyType = styled.div.attrs((props) => {})`
   justify-content: center;
-  width: calc(75rem/1.6);
+  width: calc(750rem / 106);
 
   & h2 {
-    font-size: calc(1.8rem/1.6);
+    font-size: calc(18rem / 16);
     font-weight: 600;
-    margin: calc(1.3rem/1.6) auto;
+    margin: calc(13rem / 16) auto;
     color: #787878;
   }
   & h3 {
-    font-size: calc(1.6rem/1.6);
+    font-size: calc(16rem / 16);
     font-weight: 500;
-    margin: calc(1.5rem/1.6) auto;
+    margin: calc(15rem / 16) auto;
     color: #787878;
   }
   & pre {
     background-color: #19171c;
-    border: calc(.2rem/1.6) solid #19171c;
-    border-radius: calc(1rem/1.6);
+    border: calc(0.2rem/16) solid #19171c;
+    border-radius: calc(1rem / 16);
     box-sizing: border-box;
-    padding: calc(1.5rem/1.6);
-    width: calc(75rem/1.6);
+    padding: calc(15rem / 16);
+    width: calc(750rem / 16);
 
     & code {
       white-space: pre-wrap;
     }
   }
   & img {
-    border: calc(.1rem/1.6);
-    border-radius: calc(1rem/1.6);
+    border: calc(1rem / 16);
+    border-radius: calc(10rem / 16);
     display: flex;
     justify-content: center;
-    margin-bottom: calc(2.5rem/1.6);
-    width: calc(75rem/1.6);
+    margin-bottom: calc(25rem / 16);
+    width: calc(750rem / 16);
   }
 `;
 

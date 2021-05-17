@@ -17,22 +17,22 @@ const Container = styled.div.attrs((props) => {})`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  width: calc(120rem/1.6);
+  width: calc(1200rem / 16);
 `;
 
 const Heading = styled.h1.attrs((props) => {})`
   font-family: 'Dancing Script', cursive;
-  font-size:  calc(3rem/1.6);
-  margin:  calc(3rem/1.6)  calc(1rem/1.6)  calc(1rem/1.6)  calc(1rem/1.6);
+  font-size: calc(30rem / 16);
+  margin: calc(30rem / 16) calc(10rem / 16) calc(10rem / 16) calc(10rem / 16);
 `;
 
 const Unordered = styled.ul.attrs((props) => {})``;
 const ListItem = styled.li.attrs((props) => {})`
-  font-size: calc(1.5rem/1.6);
-  margin: calc(1rem/1.6);
+  font-size: calc(15rem / 16);
+  margin: calc(10rem / 16);
 
   :last-child {
-    margin-bottom: calc(3rem/1.6);
+    margin-bottom: calc(30rem / 16);
   }
 `;
 

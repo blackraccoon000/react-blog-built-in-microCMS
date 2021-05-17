@@ -9,7 +9,7 @@ const Link = styled.a.attrs((props) => {
   };
 })`
   color: #586069;
-  font-size: calc(1.2rem/1.6);
+  font-size: calc(12rem / 16);
 `;
 
 const UnorderedList = styled.ul.attrs((props) => {})`
@@ -18,11 +18,11 @@ const UnorderedList = styled.ul.attrs((props) => {})`
   flex-direction: row;
   justify-content: center;
   list-style: none;
-  margin-left: calc(3rem/1.6);
+  margin-left: calc(30rem / 16);
 `;
 
 const ListItem = styled.li.attrs((props) => {})`
-  margin-right: calc(2rem/1.6);
+  margin-right: calc(20rem / 16);
 `;
 
 const FooterItems = (props) => {

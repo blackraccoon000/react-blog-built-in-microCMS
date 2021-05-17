@@ -18,8 +18,8 @@ const ArticleWrapper = styled.div.attrs((props) => {})`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  min-width:  calc(60rem/1.6);
-  max-width:  calc(120rem/1.6);
+  min-width: calc(600rem / 16);
+  max-width: calc(1200rem / 16);
   margin: 0 auto;
 `;
 /**

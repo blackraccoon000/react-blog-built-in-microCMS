@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { connect } from 'react-redux';
-import ArticleCard from "../L3_Organisms/ArticleCard"
+import ArticleCard from '../L3_Organisms/ArticleCard';
 
 const Wrapper = styled.div.attrs((props) => {})`
   align-items: center;
@@ -20,23 +20,23 @@ const Container = styled.div.attrs((props) => {})`
 
 const Heading = styled.h1.attrs((props) => {})`
   font-family: 'Dancing Script', cursive;
-  font-size: calc(3rem/1.6);
-  margin: calc(3rem/1.6) calc(1rem/1.6) calc(1rem/1.6) calc(1rem/1.6);
+  font-size: calc(30rem / 16);
+  margin: calc(30rem / 16) calc(10rem / 16) calc(10rem / 16) calc(10rem / 16);
 `;
 
 const Unordered = styled.ul.attrs((props) => {})`
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  margin: calc(2rem/1.6) auto;
+  margin: calc(20rem / 16) auto;
 `;
 
 const ListItem = styled.li.attrs((props) => {})`
-  font-size: calc(1.5rem/1.6);
-  margin: calc(1rem/1.6);
+  font-size: calc(15rem / 16);
+  margin: calc(10rem / 16);
 
   :last-child {
-    margin-bottom: calc(3rem/1.6);
+    margin-bottom: calc(30rem / 16);
   }
 `;
 

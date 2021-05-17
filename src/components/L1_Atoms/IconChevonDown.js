@@ -14,8 +14,8 @@ const Svg = styled.svg.attrs((props) => {
     x: 0,
     y: 0,
     style: {
-      margin: `${props.margin}`
-    }
+      margin: `${props.margin}`,
+    },
   };
 })`
   opacity: 1;
@@ -63,7 +63,7 @@ IconChevonDown.propTypes = {
 
 IconChevonDown.defaultProps = {
   color: '#8b8c8e',
-  margin: "calc(.4rem/1.6) 0 0 calc(1rem/1.6)",
+  margin: 'calc(4rem/16) 0 0 calc(10rem/16)',
   height: 8,
   width: 15,
 };

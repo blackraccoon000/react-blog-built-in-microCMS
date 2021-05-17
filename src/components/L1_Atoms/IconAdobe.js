@@ -15,7 +15,7 @@ const Svg = styled.svg.attrs((props) => {
     y: 0,
   };
 })`
-  margin: calc(.4rem/1.6) 0 0 calc(1rem/1.6);
+  margin: calc(4rem / 16) 0 0 calc(1rem / 16);
   opacity: 1;
 `;
 
@@ -31,7 +31,8 @@ const Path = styled.path.attrs((props) => {
 const IconAdobe = (props) => {
   return (
     <Svg {...props}>
-      <Path color={props.color}
+      <Path
+        color={props.color}
         d="M23.36,1.18H6.64C3.53,1.18,1,3.71,1,6.82v16.36c0,3.11,2.53,5.64,5.64,5.64h16.72c3.11,0,5.64-2.53,5.64-5.64
         V6.82C29,3.71,26.47,1.18,23.36,1.18z M25.01,21.74c0,1.53-1.11,2.8-2.56,3.06c-2.45-5.86-4.88-11.65-7.38-17.61
         c-1.96,4.66-3.83,9.08-5.75,13.65c1.97,0,3.68,0.02,5.39-0.01c0.59-0.01,0.89,0.19,1.09,0.75c0.41,1.1,0.84,2.19,1.28,3.28H8.11

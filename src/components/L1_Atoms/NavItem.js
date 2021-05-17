@@ -11,22 +11,22 @@ const NavA = styled.a.attrs((props) => {
   };
 })`
   background: transparent;
-  font-size: calc(1.5rem/1.6);
+  font-size: calc(15rem / 16);
   font-weight: 500;
-  margin-left: calc(1.5rem/1.6);
-  padding: calc(1rem/1.6);
+  margin-left: calc(15rem / 16);
+  padding: calc(10rem / 16);
   text-decoration: none;
 `;
 
-const SpanItem = styled.span.attrs(props => {})`
+const SpanItem = styled.span.attrs((props) => {})`
   vertical-align: middle;
-`
+`;
 
 const NavItem = (props) => {
   return (
-      <NavA {...props}>
-        <SpanItem>{props.value}</SpanItem>
-      </NavA>
+    <NavA {...props}>
+      <SpanItem>{props.value}</SpanItem>
+    </NavA>
   );
 };
 
@@ -38,7 +38,7 @@ NavItem.propTypes = {
 
 NavItem.defaultProps = {
   color: '#8b8c8e',
-  link: "/",
+  link: '/',
   value: 'Sign In',
 };
 

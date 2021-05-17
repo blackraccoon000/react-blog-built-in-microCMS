@@ -1,11 +1,11 @@
-import React from "react"
-import styled from "styled-components"
-import PropTypes from "prop-types"
-import SummaryDetails from "./SummaryDetails"
+import React from 'react';
+import styled from 'styled-components';
+import PropTypes from 'prop-types';
+import SummaryDetails from './SummaryDetails';
 
-const MenuWrapper = styled.nav.attrs(props =>{})`
+const MenuWrapper = styled.nav.attrs((props) => {})`
   display: flex;
-`
+`;
 
 const Unordered = styled.ul.attrs((props) => {})`
   display: flex;
@@ -15,7 +15,7 @@ const Unordered = styled.ul.attrs((props) => {})`
 
 const ListItem = styled.li.attrs((props) => {})`
   align-items: center;
-  font-size: calc(1.5rem/1.6);
+  font-size: calc(15rem / 16);
   margin: 0 auto;
 `;
 
@@ -39,28 +39,28 @@ const HeaderMenu = (props) => {
         </ListItem>
       </Unordered>
     </MenuWrapper>
-  )
-}
+  );
+};
 
 HeaderMenu.propTypes = {
   detailMargin: PropTypes.string,
   summaryLabel: PropTypes.string,
-  someLinks: PropTypes.array
-}
+  someLinks: PropTypes.array,
+};
 
 HeaderMenu.defaultProps = {
-  detailMargin: "0",
-  summaryLabel: "Links",
+  detailMargin: '0',
+  summaryLabel: 'Links',
   someLinks: [
     {
       link: '/',
-      linkLabel: 'Top'
+      linkLabel: 'Top',
     },
     {
       link: '/help',
-      linkLabel: 'Help'
+      linkLabel: 'Help',
     },
-  ]
-}
+  ],
+};
 
 export default HeaderMenu;

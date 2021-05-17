@@ -5,8 +5,8 @@ import FooterIcons from '../L2_Molecules/FooterIcons';
 
 const Footer = styled.footer`
   background-color: #fafbfc;
-  border-top:  calc(.1rem/1.6) solid #e5e5e5;
-  height:  calc(5rem/1.6);
+  border-top: calc(1rem / 16) solid #e5e5e5;
+  height: calc(50rem / 16);
   left: 0;
   width: 100%;
   z-index: 50;
@@ -16,8 +16,8 @@ const Container = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  min-width:  calc(60rem/1.6);
-  max-width:  calc(120rem/1.6);
+  min-width: calc(600rem / 16);
+  max-width: calc(1200rem / 16);
   margin: 0 auto;
 `;
 
