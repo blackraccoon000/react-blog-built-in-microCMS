@@ -21,7 +21,7 @@ const DateType = styled.div.attrs((props) => {
   return {
     style: {
       color: `${props.color}`,
-      fontSize: `${props.dateSize}px`,
+      fontSize: `${props.dateFontSize/16}rem`,
       fontFamily: `${props.fontFamily}`
     },
   };
@@ -62,7 +62,7 @@ const ArticleDate = (props) => {
           </DateType>
         : <DateType
             color={props.color}
-            dateSize={props.dateSize}
+            dateFontSize={props.dateFontSize}
             fontFamily={props.fontFamily}
           >
             {createdDate}
@@ -81,8 +81,11 @@ ArticleDate.propTypes = {
   color: PropTypes.string,
   /**
    * DateTypeの文字列の大きさを指定
+   * pxをremへ変換するのに
+   * fontSize: `${props.dateSize/16}rem`
+   * のように指定している。
    */
-  dateSize: PropTypes.number,
+  dateFontSize: PropTypes.number,
   /**
    * DateTypeの余白を指定
    */
@@ -105,6 +108,7 @@ ArticleDate.propTypes = {
   updateSize: PropTypes.number,
   /**
    * IconScheduleのsizeを指定する。
+   * Svgの設定なのでpx変換は不要
    */
   scheduleSize: PropTypes.number,
 };
@@ -112,8 +116,8 @@ ArticleDate.propTypes = {
 ArticleDate.defaultProps = {
   color: '#787878',
   scheduleSize: 15,
-  dateSize: 15,
-  dateMargin: "20px auto",
+  dateFontSize: 15,
+  dateMargin: "calc(2rem/1.6) auto",
   fontFamily: 'source-code-pro',
   createdAt: '2021-05-02T07:38:52.010Z',
   updatedAt: '2021-05-11T07:32:08.904Z',

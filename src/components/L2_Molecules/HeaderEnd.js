@@ -10,9 +10,9 @@ const EndWrapper = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  margin: 0 30px 0 0;
+  margin: 0 calc(3rem/1.6) 0 0;
   overflow: visible;
-  width:1100px;
+  width:calc(110rem/1.6);
 `;
 
 const EndDiv = styled.div`

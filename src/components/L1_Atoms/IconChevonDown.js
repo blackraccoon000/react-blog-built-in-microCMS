@@ -63,7 +63,7 @@ IconChevonDown.propTypes = {
 
 IconChevonDown.defaultProps = {
   color: '#8b8c8e',
-  margin: "4px 0 0 10px",
+  margin: "calc(.4rem/1.6) 0 0 calc(1rem/1.6)",
   height: 8,
   width: 15,
 };

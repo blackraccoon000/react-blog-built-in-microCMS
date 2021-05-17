@@ -33,7 +33,7 @@ const Link = styled.a.attrs((props) => {
   };
 })`
   font-size: calc(1.5rem/1.6);
-  letter-spacing: .05rem;
+  letter-spacing: calc(.5rem/1.6);
   line-height: 1.5;
   text-decoration:none;
   margin: calc(1rem/1.6) 0 calc(.5rem/1.6) 0;
@@ -48,7 +48,7 @@ const Comment = styled.p.attrs(props=>{
   }
 })`
   font-size: calc(1.36rem/1.6);
-  letter-spacing: .05rem;
+  letter-spacing: calc(.05rem/1.6);
   line-height: 1.5;
   margin: 0  0 calc(5rem/1.6) 0;
 `
@@ -75,7 +75,6 @@ const FooterCopyrightAria = (props) => {
 };
 
 FooterCopyrightAria.propTypes = {
-  border: PropTypes.string,
   bGColor: PropTypes.string,
   color: PropTypes.string,
   fontFamily: PropTypes.oneOf(["kan415typos-std",'source-code-pro',"monospace","sans-serif"]),
@@ -86,7 +85,6 @@ FooterCopyrightAria.propTypes = {
 }
 
 FooterCopyrightAria.defaultProps = {
-  border: "#e2e1de 2px solid",
   bGColor: "#61b1c8",
   color: "#e6e6e6",
   fontFamily: "kan415typos-std",

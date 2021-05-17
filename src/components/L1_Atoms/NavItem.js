@@ -11,10 +11,10 @@ const NavA = styled.a.attrs((props) => {
   };
 })`
   background: transparent;
-  font-size: 15px;
+  font-size: calc(1.5rem/1.6);
   font-weight: 500;
-  margin-left: 15px;
-  padding: 10px;
+  margin-left: calc(1.5rem/1.6);
+  padding: calc(1rem/1.6);
   text-decoration: none;
 `;
 

@@ -16,39 +16,45 @@ const BodyWrapper = styled.div.attrs((props) => {})`
   display: flex;
   flex-direction: row;
   justify-content: center;
-  margin: 30px auto 30px auto;
-  width: 800px;
+  margin: calc(3rem/1.6) auto;
+  width: calc(80rem/1.6);
 `;
 
 const BodyType = styled.div.attrs((props) => {})`
   justify-content: center;
-  width: 750px;
+  width: calc(75rem/1.6);
 
-  & h3 {
-    font-size: 18px;
+  & h2 {
+    font-size: calc(1.8rem/1.6);
     font-weight: 600;
-    margin: 15px auto;
+    margin: calc(1.3rem/1.6) auto;
+    color: #787878;
+  }
+  & h3 {
+    font-size: calc(1.6rem/1.6);
+    font-weight: 500;
+    margin: calc(1.5rem/1.6) auto;
     color: #787878;
   }
   & pre {
     background-color: #19171c;
-    border: 2px solid #19171c;
-    border-radius: 10px;
+    border: calc(.2rem/1.6) solid #19171c;
+    border-radius: calc(1rem/1.6);
     box-sizing: border-box;
-    padding: 15px;
-    width: 750px;
+    padding: calc(1.5rem/1.6);
+    width: calc(75rem/1.6);
 
     & code {
       white-space: pre-wrap;
     }
   }
   & img {
-    border: 1px;
-    border-radius: 10px;
+    border: calc(.1rem/1.6);
+    border-radius: calc(1rem/1.6);
     display: flex;
     justify-content: center;
-    margin-bottom: 25px;
-    width: 750px;
+    margin-bottom: calc(2.5rem/1.6);
+    width: calc(75rem/1.6);
   }
 `;
 

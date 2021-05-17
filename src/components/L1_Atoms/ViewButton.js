@@ -10,17 +10,17 @@ const Btn = styled.button.attrs(props => {
       border: `${props.border}`,
       color: `${props.color}`,
       fontFamily: `${props.fontFamily}`,
-      fontSize: `${props.fontSize}`,
+      fontSize: `${props.fontSize/16}rem`,
       fontWeight: `${props.fontWeight}`,
       margin: `${props.btnMargin}`
     }
   }
 })`
   appearance:none;
-  border-radius: 24px;
+  border-radius: calc(2.4rem/1.6);
   cursor: pointer;
   outline:none;
-  padding: 8px 15px;
+  padding: calc(.8rem/1.6) calc(1.5rem/1.6);
 `
 
 const Span = styled.span.attrs(props => {})`
@@ -45,7 +45,7 @@ ViewButton.propTypes = {
   border: PropTypes.string,
   color: PropTypes.string,
   fontFamily: PropTypes.oneOf(['source-code-pro',"kan415typos-std","monospace","sans-serif"]),
-  fontSize: PropTypes.string,
+  fontSize: PropTypes.number,
   fontWeight: PropTypes.number,
   margin: PropTypes.string,
   btnMargin: PropTypes.string,
@@ -53,13 +53,13 @@ ViewButton.propTypes = {
 
 ViewButton.defaultProps = {
   bGColor: "#61b1c8",
-  border: "#e6e6e6 2px solid",
+  border: "#e6e6e6 calc(.2rem/1.6) solid",
   color: "#e6e6e6",
   fontFamily: 'monospace',
-  fontSize: ".8rem",
+  fontSize: 8,
   fontWeight: 600,
-  margin: "2px 10px 0 0",
-  btnMargin: "10px 0 0 0",
+  margin: "calc(.2rem/1.6) calc(1rem/1.6) 0 0",
+  btnMargin: "calc(1rem/1.6) 0 0 0",
   value: "VIEW MORE"
 }
 

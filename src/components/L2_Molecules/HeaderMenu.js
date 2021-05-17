@@ -15,7 +15,7 @@ const Unordered = styled.ul.attrs((props) => {})`
 
 const ListItem = styled.li.attrs((props) => {})`
   align-items: center;
-  font-size: 15px;
+  font-size: calc(1.5rem/1.6);
   margin: 0 auto;
 `;
 
@@ -54,7 +54,7 @@ HeaderMenu.defaultProps = {
   someLinks: [
     {
       link: '/',
-      linkLabel: 'TopXXXXXXXXXXXXXXXXXXXXXXXXxXxxxxxXXXXXXXX'
+      linkLabel: 'Top'
     },
     {
       link: '/help',

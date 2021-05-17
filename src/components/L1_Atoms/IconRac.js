@@ -9,7 +9,7 @@ const LinkWrapper = styled.a.attrs((props) => {
     ariaLabel: 'Homepage',
     dataGaClick: 'Header, go to Home, icon:PlayWell favicon Image',
     style: {
-      marginBottom: `${props.flag ? "0px" : "6px"}`
+      marginBottom: `${props.flag ? "0" : "calc(.6rem/1.6)"}`
     }
   };
 })`

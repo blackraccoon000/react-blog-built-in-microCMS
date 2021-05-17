@@ -15,24 +15,24 @@ const UnorderedList = styled.ul.attrs((props) => {})`
   flex-direction: row;
   justify-content: center;
   list-style: none;
-  padding: 10px;
+  padding: calc(1rem/1.6);
 `;
 
 const ListItem = styled.li.attrs((props) => {})`
-  margin-right: 16px;
+  margin-right: calc(1.6rem/1.6);
 `;
 
 const QiitaBorder = styled.div.attrs((props) => {
   return {
     style: {
-      border: `2px solid ${props.color}`,
+      border: `calc(.2rem/1.6) solid ${props.color}`,
     },
   };
 })`
-  border-radius: 10px;
-  height: 11px;
-  padding: 5px 6px;
-  margin-top: 3px;
+  border-radius: calc(1rem/1.6);
+  height: calc(1.1rem/1.6);
+  padding: calc(.5rem/1.6) calc(.6rem/1.6);
+  margin-top: calc(.3rem/1.6);
 `;
 
 const FooterIcons = (props) => {

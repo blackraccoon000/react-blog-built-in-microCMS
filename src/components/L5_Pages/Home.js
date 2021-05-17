@@ -8,39 +8,35 @@ const Wrapper = styled.div.attrs((props) => {})`
   background-color: #fff4f4;
   display: flex;
   flex-direction: column;
-  /* height: 100vh; */
   justify-content: flex-start;
 `;
 
 const Container = styled.div.attrs((props) => {})`
   align-items: center;
-  /* background-color: #fff; */
   display: flex;
   flex-direction: column;
   justify-content: center;
-  /* margin-top: 50px; */
-  /* width: 1200px; */
 `;
 
 const Heading = styled.h1.attrs((props) => {})`
   font-family: 'Dancing Script', cursive;
-  font-size: 30px;
-  margin: 30px 10px 10px 10px;
+  font-size: calc(3rem/1.6);
+  margin: calc(3rem/1.6) calc(1rem/1.6) calc(1rem/1.6) calc(1rem/1.6);
 `;
 
 const Unordered = styled.ul.attrs((props) => {})`
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  margin: 20px auto;
+  margin: calc(2rem/1.6) auto;
 `;
 
 const ListItem = styled.li.attrs((props) => {})`
-  font-size: 15px;
-  margin: 10px;
+  font-size: calc(1.5rem/1.6);
+  margin: calc(1rem/1.6);
 
   :last-child {
-    margin-bottom: 30px;
+    margin-bottom: calc(3rem/1.6);
   }
 `;
 

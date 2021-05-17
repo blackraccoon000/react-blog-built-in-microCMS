@@ -12,8 +12,8 @@ const Header = styled.header.attrs(props => {
   }
 })`
   background-color: #fafbfc;
-  border-bottom: 1px solid #e5e5e5;
-  height: 45px;
+  border-bottom:  calc(.1rem/1.6) solid #e5e5e5;
+  height:  calc(4.5rem/1.6);
   left: 0;
   top: 0;
   width: 100%;
@@ -24,10 +24,10 @@ const Container = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: center;
-  min-width: 600px;
-  max-width: 1200px;
+  min-width:  calc(60rem/1.6);
+  max-width:  calc(120rem/1.6);
   margin: 0 auto;
-  padding: 5px 20px;
+  padding:  calc(.5rem/1.6)  calc(2rem/1.6);
 `;
 
 const HeaderContainer = (props) => {

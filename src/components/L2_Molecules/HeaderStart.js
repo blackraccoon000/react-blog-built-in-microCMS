@@ -6,7 +6,7 @@ import IconRac from '../L1_Atoms/IconRac';
 const StartDiv = styled.div`
   display: flex;
   flex-direction: row;
-  margin: 0 24px 0 30px;
+  margin: 0 calc(2.4rem/1.6) 0 calc(3rem/1.6);
   position: relative;
 `;
 

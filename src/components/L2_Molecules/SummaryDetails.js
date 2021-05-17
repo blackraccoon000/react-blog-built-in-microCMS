@@ -12,14 +12,14 @@ const Details = styled.details.attrs((props) => {
 })`
   cursor: pointer;
   overflow: visible;
-  padding: 8px;
+  padding: calc(.8rem/1.6);
   pointer-events: none;
   position: relative;
 
   &[open] {
     & summary {
-      border-bottom: 2px solid #8b8c8e;
-      padding-bottom: 4px;
+      border-bottom: calc(.2rem/1.6) solid #8b8c8e;
+      padding-bottom: calc(.4rem/1.6);
     }
     & div {
       height: auto;
@@ -49,7 +49,7 @@ const Summary = styled.summary.attrs((props) => {})`
   border: none;
   color: #8b8c8e;
   list-style: none;
-  margin: 0 0 0 5px;
+  margin: 0 0 0 calc(.5rem/1.6);
   padding-top: 2px;
   pointer-events: auto;
   transition: 0.8s;
@@ -62,9 +62,9 @@ const OtherLinks = styled.a.attrs((props) => {
 })`
   color: #8b8c8e;
   display: block;
-  font-size: 14px;
+  font-size: calc(1.4rem/1.6);
   font-weight: 600;
-  padding: 16px 20px 0;
+  padding: calc(1.6rem/1.6) calc(2rem/1.6) 0;
   pointer-events: auto;
   transition: 0.8s;
   text-decoration: none;
@@ -79,12 +79,12 @@ const DropdownMenu = styled.div.attrs((props) => {})`
   background-color: #fff;
   background-clip: padding-box;
   border: 1px solid #8b8c8e;
-  border-radius: 10px;
-  height: 0px;
-  margin-top: 10px;
+  border-radius: calc(1rem/1.6);
+  height: 0;
+  margin-top: calc(1rem/1.6);
 
   & a:last-child {
-    margin-bottom: 10px;
+    margin-bottom: calc(1rem/1.6);
   }
 `;
 
@@ -117,7 +117,7 @@ SummaryDetails.propTypes = {
 };
 
 SummaryDetails.defaultProps = {
-  detailMargin: "18px 10px 10px 10px",
+  detailMargin: "calc(1.8rem/1.6) calc(1rem/1.6) calc(1rem/1.6) calc(1rem/1.6)",
   summaryLabel: 'Why Github?',
   someLinks: [
     {

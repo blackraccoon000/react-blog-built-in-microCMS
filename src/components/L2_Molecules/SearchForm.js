@@ -5,22 +5,22 @@ import IconFocus from '../L1_Atoms/IconFocus';
 import IconSearchKeySlash from '../L1_Atoms/IconSearchKeySlash';
 
 const Form = styled.form`
-  margin-left: 15px;
-  padding: 5px;
+  margin-left: calc(1.5rem/1.6);
+  padding: calc(.5rem/1.6);
 `;
 
 const Label = styled.label.attrs((props) => ({}))`
   background-color: transparent;
-  border-radius: 6px;
+  border-radius: calc(.6rem/1.6);
   box-sizing: border-box;
-  padding: 8px;
+  padding: calc(.8rem/1.6);
   position: relative;
 
   &:focus-within {
     background-color: white;
 
     & svg {
-      width: 20px;
+      width: calc(2rem/1.6);
     }
   }
 `;
@@ -38,27 +38,27 @@ const Input = styled.input.attrs((props) => ({
   background-color: transparent;
   border: none;
   color: #5a616f;
-  font-size: 14px;
+  font-size: calc(1.4rem/1.6);
   outline: none;
   padding: 0;
   transition: 0.5s;
   width: 0;
 
   &:focus {
-    width: 170px;
-    padding: 0px 10px;
+    width: calc(17rem/1.6);
+    padding: 0px calc(1rem/1.6);
   }
 
   &::placeholder {
     color: #8b8c8e;
-    margin: 5px 20px;
+    margin: calc(.5rem/1.6) calc(2rem/1.6);
   }
 `;
 
 const SearchKeySlash = styled(IconSearchKeySlash)`
   position: relative;
-  top: 4px;
-  width: 0px;
+  top: calc(.4rem/1.6);
+  width: 0;
 `;
 
 const SearchForm = (props) => {

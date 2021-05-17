@@ -18,16 +18,16 @@ const Article = styled.div.attrs((props) => {
 const Category = styled.span.attrs((props) => {
   return {
     style: {
-      border: `1px solid ${props.color}`,
+      border: `calc(.1rem/1.6) solid ${props.color}`,
       color: `${props.color}`,
       margin: `${props.margin}`,
     },
   };
 })`
-  padding: 2px 8px;
+  padding: calc(.2rem/1.6) calc(.8rem/1.6);
   white-space: nowrap;
-  border-radius: 3px;
-  font-size: 11px;
+  border-radius: calc(.3rem/1.6);
+  font-size: calc(1.1rem/1.6);
 `;
 
 const CategoryLink = styled.a.attrs((props) => {
@@ -81,8 +81,8 @@ ArticleKeywords.propTypes = {
 ArticleKeywords.defaultProps = {
   color: '#787878',
   keywords: ['テスト', 'ブログ', 'test', 'blog', 'microcms'],
-  margin: '10px 7px 2px',
-  width: "800px",
+  margin: 'calc(1rem/1.6) calc(.7rem/1.6) calc(.2rem/1.6)',
+  width: "calc(80rem/1.6)",
 };
 
 export default ArticleKeywords;

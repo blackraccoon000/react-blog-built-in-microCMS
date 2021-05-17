@@ -20,7 +20,7 @@ const Header = styled.header.attrs(props => {
 const Nav = styled.nav.attrs(props => {})`
   display: flex;
   justify-content: space-between;
-  margin: 0 30px;
+  margin: 0  calc(3rem/1.6);
   align-items: center;
 `
 
