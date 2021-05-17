@@ -8,6 +8,7 @@ const ArticleWrapper = styled.div.attrs((props) => {
       height: `${props.height}`,
       margin: `${props.imageMargin}`,
       overflow: `${props.overflow}`,
+      order: `${props.order}`,
     },
   };
 })`
@@ -34,9 +35,14 @@ const ArticleImg = (props) => {
       height={props.height}
       imageMargin={props.imageMargin}
       overflow={props.overflow}
+      order={props.order}
     >
       <a href={props.link}>
-        <BlogTopImg src={props.src} radius={props.radius} width={props.width} />
+        <BlogTopImg
+          src={props.src}
+          radius={props.imageRadius}
+          width={props.width}
+        />
       </a>
     </ArticleWrapper>
   );
@@ -45,10 +51,11 @@ const ArticleImg = (props) => {
 ArticleImg.propTypes = {
   height: PropTypes.string,
   link: PropTypes.string,
-  radius: PropTypes.string,
+  imageRadius: PropTypes.string,
   src: PropTypes.string,
   imageMargin: PropTypes.string,
   overflow: PropTypes.string,
+  order: PropTypes.number,
   width: PropTypes.string,
 };
 
@@ -56,11 +63,12 @@ ArticleImg.defaultProps = {
   height: '100%',
   link: '#',
   imageMargin: 'calc(30rem/16) auto 0 auto',
-  radius: 'calc(1rem/1.6)',
+  imageRadius: 'calc(1rem/1.6)',
   src:
     'https://images.microcms-assets.io/assets/577bcb7965bf4dbd951686143646657b/2687c64d1e7e4a8b8fef792ff909ea81/cat_four.jpg',
   overflow: 'hidden',
   width: 'calc(750rem/16)',
+  order: 0,
 };
 
 export default ArticleImg;

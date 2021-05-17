@@ -28,7 +28,6 @@ const FooterIndexPageLink = (props) => {
     <Wrapper bGColor={props.bGColor}>
       <Container>
         <ViewButton
-          border={props.border}
           btnMargin={props.btnMargin}
           bGColor={props.bGColor}
           color={props.color}
@@ -39,14 +38,12 @@ const FooterIndexPageLink = (props) => {
 };
 
 FooterIndexPageLink.propTypes = {
-  border: PropTypes.string,
   btnMargin: PropTypes.string,
   bGColor: PropTypes.string,
   color: PropTypes.string,
 };
 
 FooterIndexPageLink.defaultProps = {
-  border: '#e2e1de calc(2rem/16) solid',
   btnMargin: 'calc(30rem/16) 0 0 0',
   bGColor: '#61b1c8',
   color: '#e6e6e6',

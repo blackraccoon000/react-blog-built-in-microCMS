@@ -101,6 +101,7 @@ ArticleCard.propTypes = {
    */
   titleMargin: PropTypes.string,
   dateMargin: PropTypes.string,
+  order: PropTypes.number,
 };
 
 /**
@@ -119,6 +120,7 @@ ArticleCard.defaultProps = {
   height: 'none',
   radius: 'calc(10rem/16) calc(10rem/16) 0 0',
   dateMargin: 'calc(10rem/16) 0',
+  order: 0,
 };
 
 export default ArticleCard;
