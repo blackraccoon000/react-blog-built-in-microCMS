@@ -4,7 +4,6 @@ import FooterIndexPageLink from '../L2_Molecules/FooterIndexPageLink';
 import FooterCopyrightAria from '../L2_Molecules/FooterCopyrightAria';
 
 const Footer = styled.footer`
-  border-top: calc(1rem / 16) solid #e5e5e5;
   height: calc(50rem / 16);
   left: 0;
   width: 100%;

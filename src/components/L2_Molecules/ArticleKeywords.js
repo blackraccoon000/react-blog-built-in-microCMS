@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 const Article = styled.div.attrs((props) => {
   return {
     style: {
-      width: `${props.width}`,
+      order: `${props.order}`,
     },
   };
 })`
@@ -45,7 +45,7 @@ const CategoryLink = styled.a.attrs((props) => {
  */
 const ArticleKeywords = (props) => {
   return (
-    <Article width={props.width}>
+    <Article order={props.order}>
       {props.keywords.map((keyword, num) => {
         return (
           <Category key={`${keyword}_${num}`} {...props}>
@@ -75,14 +75,14 @@ ArticleKeywords.propTypes = {
   /**
    * キーワード枠の全体幅を決める。
    */
-  width: PropTypes.string,
+  order: PropTypes.number,
 };
 
 ArticleKeywords.defaultProps = {
   color: '#787878',
   keywords: ['テスト', 'ブログ', 'test', 'blog', 'microcms'],
   margin: 'calc(10rem/16) calc(7rem/16) calc(2rem/16)',
-  width: 'calc(800rem/16)',
+  order: 0,
 };
 
 export default ArticleKeywords;

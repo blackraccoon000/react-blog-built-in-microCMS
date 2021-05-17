@@ -11,7 +11,13 @@ import { blogDataSecond } from '../../tests/fixtures/bodyData';
 hljs.registerLanguage('javascript', javascript);
 hljs.registerLanguage('xml', xml);
 
-const BodyWrapper = styled.div.attrs((props) => {})`
+const BodyWrapper = styled.div.attrs((props) => {
+  return {
+    style: {
+      order: `${props.order}`,
+    },
+  };
+})`
   align-items: center;
   display: flex;
   flex-direction: row;
@@ -67,7 +73,7 @@ const ArticleBody = (props) => {
   });
 
   return (
-    <BodyWrapper>
+    <BodyWrapper order={props.order}>
       <BodyType dangerouslySetInnerHTML={{ __html: $.html() }} />
     </BodyWrapper>
   );
@@ -78,10 +84,12 @@ ArticleBody.propTypes = {
    * 記事を文字列型で抜粋
    */
   body: PropTypes.string,
+  order: PropTypes.number,
 };
 
 ArticleBody.defaultProps = {
   body: blogDataSecond,
+  order: 0,
 };
 
 export default ArticleBody;

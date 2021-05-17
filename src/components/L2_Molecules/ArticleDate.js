@@ -9,6 +9,7 @@ const DateWrapper = styled.div.attrs((props) => {
   return {
     style: {
       margin: `${props.dateMargin}`,
+      order: `${props.order}`,
     },
   };
 })`
@@ -17,8 +18,9 @@ const DateWrapper = styled.div.attrs((props) => {
   flex-direction: row;
 `;
 
-const DateType = styled.div.attrs((props) => {
+const DateType = styled.time.attrs((props) => {
   return {
+    dateTime: `${props.datetime}`,
     style: {
       color: `${props.color}`,
       fontSize: `${props.dateFontSize / 16}rem`,
@@ -44,10 +46,11 @@ const ArticleDate = (props) => {
   );
 
   return (
-    <DateWrapper dateMargin={props.dateMargin}>
+    <DateWrapper dateMargin={props.dateMargin} order={props.order}>
       <IconSchedule color={props.color} size={props.scheduleSize} />
       {createdDate === updatedDate ? (
         <DateType
+          datetime={props.createdAt}
           color={props.color}
           dateSize={props.dateSize}
           fontFamily={props.fontFamily}
@@ -56,6 +59,7 @@ const ArticleDate = (props) => {
         </DateType>
       ) : (
         <DateType
+          datetime={props.updatedAt}
           color={props.color}
           dateFontSize={props.dateFontSize}
           fontFamily={props.fontFamily}
@@ -111,6 +115,7 @@ ArticleDate.propTypes = {
    * Svgの設定なのでpx変換は不要
    */
   scheduleSize: PropTypes.number,
+  order: PropTypes.number,
 };
 
 ArticleDate.defaultProps = {
@@ -122,6 +127,7 @@ ArticleDate.defaultProps = {
   createdAt: '2021-05-02T07:38:52.010Z',
   updatedAt: '2021-05-11T07:32:08.904Z',
   updateSize: 15,
+  order: 0,
 };
 
 export default ArticleDate;

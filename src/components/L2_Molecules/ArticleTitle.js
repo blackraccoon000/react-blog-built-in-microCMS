@@ -5,9 +5,10 @@ import PropTypes from 'prop-types';
 const ArticleHeadline = styled.h1.attrs((props) => {
   return {
     style: {
+      fontFamily: `${props.fontFamily}`,
       fontSize: `${props.titleFontSize / 16}rem`,
       margin: `${props.titleMargin}`,
-      fontFamily: `${props.fontFamily}`,
+      order: `${props.order}`,
     },
   };
 })`
@@ -38,6 +39,7 @@ const ArticleTitle = (props) => {
       fontFamily={props.fontFamily}
       titleMargin={props.titleMargin}
       titleFontSize={props.titleFontSize}
+      order={props.order}
     >
       <ArticleLink color={props.color} link={props.link}>
         {props.title}
@@ -58,6 +60,7 @@ ArticleTitle.propTypes = {
   titleMargin: PropTypes.string,
   link: PropTypes.string,
   title: PropTypes.string,
+  order: PropTypes.number,
 };
 
 ArticleTitle.defaultProps = {
@@ -67,6 +70,7 @@ ArticleTitle.defaultProps = {
   titleMargin: 'calc(20rem/16) auto 0 auto',
   link: '#',
   title: 'Article Title',
+  order: 0,
 };
 
 export default ArticleTitle;
