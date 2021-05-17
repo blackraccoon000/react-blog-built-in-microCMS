@@ -1,5 +1,6 @@
-import React from "react"
-import styled from "styled-components"
+import React from 'react';
+import styled from 'styled-components';
+import { MemoryRouter } from 'react-router';
 import { Reset } from 'styled-reset';
 
 const parameters = {
@@ -24,16 +25,18 @@ const DecorateWrapper = styled.div`
   margin: 0;
   padding: 0;
   width: auto;
-`
+`;
 
 const decorators = [
   (Story) => {
     return (
-      <DecorateWrapper>
-        <Reset />
-        <Story />
-      </DecorateWrapper>
-    )
+      <MemoryRouter initialEntries={['/']}>
+        <DecorateWrapper>
+          <Reset />
+          <Story />
+        </DecorateWrapper>
+      </MemoryRouter>
+    );
   },
 ];
 

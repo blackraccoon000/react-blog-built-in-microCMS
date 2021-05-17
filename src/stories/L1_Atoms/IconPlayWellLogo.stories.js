@@ -1,6 +1,6 @@
-
 import React from 'react';
 import IconPlayWellLogo from '../../components/L1_Atoms/IconPlayWellLogo';
+import { MemoryRouter } from 'react-router';
 
 export default {
   title: 'L1_Atoms/IconPlayWellLogo',
@@ -28,16 +28,25 @@ export default {
       },
     },
   },
+  // decorators: [
+  //   (Story) => {
+  //     return (
+  //       <MemoryRouter initialEntries={['/']}>
+  //         <Story />
+  //       </MemoryRouter>
+  //     );
+  //   },
+  // ],
 };
 
 const Template = (args) => <IconPlayWellLogo {...args} />;
 
 export const Default_White = Template.bind({});
 Default_White.args = {
-  color: "#fff"
+  color: '#fff',
 };
 
 export const Red = Template.bind({});
 Red.args = {
-  color: "#e84141"
+  color: '#e84141',
 };

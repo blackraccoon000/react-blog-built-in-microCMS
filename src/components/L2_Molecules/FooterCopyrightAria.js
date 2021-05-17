@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
+import FooterIcons from '../L2_Molecules/FooterIcons';
 
 const Wrapper = styled.div.attrs((props) => {
   return {
@@ -48,9 +49,9 @@ const Comment = styled.p.attrs((props) => {
   };
 })`
   font-size: calc(13.6rem / 16);
-  letter-spacing: calc(0.5rem/16);
+  letter-spacing: calc(0.5rem / 16);
   line-height: 1.5;
-  margin: 0 0 calc(50rem / 16) 0;
+  margin: 0 0 calc(10rem / 16) 0;
 `;
 
 const FooterCopyrightAria = (props) => {
@@ -68,6 +69,7 @@ const FooterCopyrightAria = (props) => {
         <Comment color={props.color} fontFamily={props.fontFamily}>
           {props.value}
         </Comment>
+        <FooterIcons margin={props.margin} color={props.color} />
       </Container>
     </Wrapper>
   );
@@ -86,6 +88,7 @@ FooterCopyrightAria.propTypes = {
   linkLabel: PropTypes.string,
   value: PropTypes.string,
   ga: PropTypes.string,
+  margin: PropTypes.number,
 };
 
 FooterCopyrightAria.defaultProps = {
@@ -96,6 +99,7 @@ FooterCopyrightAria.defaultProps = {
   linkLabel: '© 2021 PlayWell,Inc',
   value: 'If you can dream it, you can do it.',
   ga: 'Footer, go to home, text:home',
+  margin: 30,
 };
 
 export default FooterCopyrightAria;

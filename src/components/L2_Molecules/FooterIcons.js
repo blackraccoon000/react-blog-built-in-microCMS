@@ -10,7 +10,13 @@ import IconChromatic from '../L1_Atoms/IconChromatic';
 import IconMicroCms from '../L1_Atoms/IconMicroCms';
 import IconAdobe from '../L1_Atoms/IconAdobe';
 
-const UnorderedList = styled.ul.attrs((props) => {})`
+const UnorderedList = styled.ul.attrs((props) => {
+  return {
+    style: {
+      marginBottom: `${props.margin / 16}rem`,
+    },
+  };
+})`
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -36,9 +42,9 @@ const QiitaBorder = styled.div.attrs((props) => {
 `;
 
 const FooterIcons = (props) => {
-  const { color } = props;
+  const { color, margin } = props;
   return (
-    <UnorderedList>
+    <UnorderedList margin={margin}>
       <ListItem>
         <a href="https://qiita.com/whiteraccoon">
           <QiitaBorder color={color}>
@@ -82,10 +88,12 @@ const FooterIcons = (props) => {
 
 FooterIcons.propTypes = {
   color: PropTypes.string,
+  margin: PropTypes.number,
 };
 
 FooterIcons.defaultProps = {
   color: '#586069',
+  margin: 10,
 };
 
 export default FooterIcons;

@@ -21,13 +21,13 @@ const Category = styled.span.attrs((props) => {
       border: `calc(1rem/16) solid ${props.color}`,
       color: `${props.color}`,
       margin: `${props.margin}`,
+      fontSize: `calc(${props.fontSize / 16}rem)`,
     },
   };
 })`
   padding: calc(2rem / 16) calc(8rem / 16);
   white-space: nowrap;
   border-radius: calc(3rem / 16);
-  font-size: calc(11rem / 16);
 `;
 
 const CategoryLink = styled.a.attrs((props) => {
@@ -76,10 +76,12 @@ ArticleKeywords.propTypes = {
    * キーワード枠の全体幅を決める。
    */
   order: PropTypes.number,
+  fontSize: PropTypes.number,
 };
 
 ArticleKeywords.defaultProps = {
   color: '#787878',
+  fontSize: 11,
   keywords: ['テスト', 'ブログ', 'test', 'blog', 'microcms'],
   margin: 'calc(10rem/16) calc(7rem/16) calc(2rem/16)',
   order: 0,

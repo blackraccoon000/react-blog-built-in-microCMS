@@ -52,7 +52,7 @@ const ArticleDate = (props) => {
         <DateType
           datetime={props.createdAt}
           color={props.color}
-          dateSize={props.dateSize}
+          dateFontSize={props.dateFontSize}
           fontFamily={props.fontFamily}
         >
           {createdDate}
@@ -122,7 +122,7 @@ ArticleDate.defaultProps = {
   color: '#787878',
   scheduleSize: 15,
   dateFontSize: 15,
-  dateMargin: 'calc(2rem/1.6) auto',
+  dateMargin: 'calc(1rem/1.6) auto',
   fontFamily: 'source-code-pro',
   createdAt: '2021-05-02T07:38:52.010Z',
   updatedAt: '2021-05-11T07:32:08.904Z',

@@ -1,7 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
+import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
+import { viewPages } from '../../actions/viewActions';
 import ViewButton from '../L1_Atoms/ViewButton';
 
 const Wrapper = styled.div.attrs((props) => {
@@ -24,6 +26,9 @@ const Container = styled.div`
 `;
 
 const FooterIndexPageLink = (props) => {
+  const countUp = (e) => {
+    props.viewsUpdater(4);
+  };
   return (
     <Wrapper bGColor={props.bGColor}>
       <Container>
@@ -31,6 +36,7 @@ const FooterIndexPageLink = (props) => {
           btnMargin={props.btnMargin}
           bGColor={props.bGColor}
           color={props.color}
+          onClick={countUp}
         />
       </Container>
     </Wrapper>
@@ -49,4 +55,20 @@ FooterIndexPageLink.defaultProps = {
   color: '#e6e6e6',
 };
 
-export default FooterIndexPageLink;
+const mapStateToProps = (state) => {
+  // console.log('FIP-state:', state);
+  return {
+    pages: state.pages,
+  };
+};
+
+const mapDispatchToProps = (dispatch) => ({
+  viewsUpdater: (views) => dispatch(viewPages(views)),
+});
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(FooterIndexPageLink);
+
+export { FooterIndexPageLink };

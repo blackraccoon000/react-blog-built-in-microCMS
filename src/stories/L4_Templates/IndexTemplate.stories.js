@@ -1,5 +1,5 @@
 import React from 'react';
-import IndexTemplate from '../../components/L4_Templates/IndexTemplate';
+import { IndexTemplate } from '../../components/L4_Templates/IndexTemplate';
 
 export default {
   title: 'L4_Templates/IndexTemplate',
