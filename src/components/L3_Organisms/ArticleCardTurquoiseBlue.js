@@ -116,14 +116,15 @@ ArticleCardTurquoiseBlue.propTypes = {
 };
 
 ArticleCardTurquoiseBlue.defaultProps = {
-  title: '',
+  title: 'Article Card Title',
   titleFontSize: 18,
   titleMargin: 'calc(5rem/16) auto 0',
   dateSize: 12,
   imageMargin: '0',
   imageRadius: '0',
   imageWidth: '100%',
-  imageHeight: 'calc(270rem/16)',
+  // imageHeight: 'calc(270rem/16)',
+  imageHeight: 'auto',
   keywordSize: 10,
   keywordMargin: 'calc(5rem/16) calc(3rem/16) calc(2rem/16)',
 };
