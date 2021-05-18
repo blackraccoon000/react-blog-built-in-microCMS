@@ -26,7 +26,13 @@ const BodyWrapper = styled.div.attrs((props) => {
   width: calc(800rem / 16);
 `;
 
-const BodyType = styled.div.attrs((props) => {})`
+const BodyType = styled.div.attrs((props) => {
+  return {
+    style: {
+      fontFamily: `${props.fontFamily}`,
+    },
+  };
+})`
   justify-content: center;
   width: calc(750rem / 16);
 
@@ -41,6 +47,9 @@ const BodyType = styled.div.attrs((props) => {})`
     font-weight: 500;
     margin: calc(15rem / 16) auto;
     color: #787878;
+    & strong {
+      background-color: transparent;
+    }
   }
   & pre {
     background-color: #19171c;
@@ -74,7 +83,10 @@ const ArticleBody = (props) => {
 
   return (
     <BodyWrapper order={props.order}>
-      <BodyType dangerouslySetInnerHTML={{ __html: $.html() }} />
+      <BodyType
+        dangerouslySetInnerHTML={{ __html: $.html() }}
+        fontFamily={props.fontFamily}
+      />
     </BodyWrapper>
   );
 };
@@ -84,11 +96,18 @@ ArticleBody.propTypes = {
    * 記事を文字列型で抜粋
    */
   body: PropTypes.string,
+  fontFamily: PropTypes.oneOf([
+    'source-code-pro',
+    'kan415typos-std',
+    'monospace',
+    'sans-serif',
+  ]),
   order: PropTypes.number,
 };
 
 ArticleBody.defaultProps = {
   body: blogDataSecond,
+  fontFamily: 'source-code-pro',
   order: 0,
 };
 
