@@ -60,7 +60,7 @@ ViewButton.defaultProps = {
   bGColor: '#61b1c8',
   border: '#e6e6e6 calc(.2rem/1.6) solid',
   color: '#e6e6e6',
-  fontFamily: 'monospace',
+  fontFamily: 'kan415typos-std',
   fontSize: 8,
   fontWeight: 600,
   margin: 'calc(2rem/16) calc(10rem/16) 0 0',

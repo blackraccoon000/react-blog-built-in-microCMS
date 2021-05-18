@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import ChevonDown from '../L1_Atoms/IconChevonDown';
+import { Link } from 'react-router-dom';
 
 const Details = styled.details.attrs((props) => {
   return {
@@ -55,11 +56,7 @@ const Summary = styled.summary.attrs((props) => {})`
   transition: 0.8s;
 `;
 
-const OtherLinks = styled.a.attrs((props) => {
-  return {
-    href: `${props.link}`,
-  };
-})`
+const StyledLink = styled(Link)`
   color: #8b8c8e;
   display: block;
   font-size: calc(14rem / 16);
@@ -98,9 +95,9 @@ const SummaryDetails = (props) => {
       <DropdownMenu>
         {props.someLinks.map((link) => {
           return (
-            <OtherLinks key={link.linkLabel} link={link.link}>
+            <StyledLink key={link.linkLabel} to={link.link}>
               {link.linkLabel}
-            </OtherLinks>
+            </StyledLink>
           );
         })}
       </DropdownMenu>

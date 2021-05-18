@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import FooterIcons from '../L2_Molecules/FooterIcons';
+import { Link } from 'react-router-dom';
 
 const Wrapper = styled.div.attrs((props) => {
   return {
@@ -23,16 +24,9 @@ const Container = styled.div`
   text-align: center;
 `;
 
-const Link = styled.a.attrs((props) => {
-  return {
-    href: `${props.link}`,
-    dataGaClick: `${props.ga}`,
-    style: {
-      color: `${props.color}`,
-      fontFamily: `${props.fontFamily}`,
-    },
-  };
-})`
+const StyledLink = styled(Link)`
+  color: ${(props) => props.color};
+  font-family: ${(props) => props.fontFamily};
   font-size: calc(15rem / 16);
   letter-spacing: calc(5rem / 16);
   line-height: 1.5;
@@ -58,14 +52,14 @@ const FooterCopyrightAria = (props) => {
   return (
     <Wrapper bGColor={props.bGColor}>
       <Container>
-        <Link
+        <StyledLink
           color={props.color}
           fontFamily={props.fontFamily}
-          link={props.link}
+          to={props.link}
           ga={props.ga}
         >
           {props.linkLabel}
-        </Link>
+        </StyledLink>
         <Comment color={props.color} fontFamily={props.fontFamily}>
           {props.value}
         </Comment>

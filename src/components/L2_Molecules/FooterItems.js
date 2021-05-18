@@ -1,13 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 
-const Link = styled.a.attrs((props) => {
-  return {
-    href: `${props.link}`,
-    dataGaClick: `${props.ga}`,
-  };
-})`
+const StyledLink = styled(Link)`
   color: #586069;
   font-size: calc(12rem / 16);
 `;
@@ -31,13 +27,13 @@ const FooterItems = (props) => {
       {props.linkList.map((linkItem) => {
         return (
           <ListItem key={`li_${linkItem.linkLabel}`}>
-            <Link
+            <StyledLink
               key={`link_${linkItem.linkLabel}`}
-              link={linkItem.link}
+              to={linkItem.link}
               ga={linkItem.ga}
             >
               {linkItem.linkLabel}
-            </Link>
+            </StyledLink>
           </ListItem>
         );
       })}

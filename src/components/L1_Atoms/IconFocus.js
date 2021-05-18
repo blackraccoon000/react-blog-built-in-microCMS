@@ -1,10 +1,10 @@
 import React from 'react';
-import styled, { ThemeProvider } from 'styled-components';
+import styled from 'styled-components';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 
-const LinkWrapper = styled.a.attrs((props) => {
+const Wrapper = styled.div.attrs((props) => {
   return {
-    href: `${props.link}`,
     style: {
       order: `${props.order}`,
     },
@@ -54,9 +54,11 @@ const Focus = (props) => {
 
 const IconFocus = (props) => {
   return props.flag ? (
-    <LinkWrapper {...props}>
-      <Focus {...props} />
-    </LinkWrapper>
+    <Wrapper {...props}>
+      <Link to={props.link}>
+        <Focus {...props} />
+      </Link>
+    </Wrapper>
   ) : (
     <Focus {...props} />
   );

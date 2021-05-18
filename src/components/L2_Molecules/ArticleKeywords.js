@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 
 const Article = styled.div.attrs((props) => {
   return {
@@ -30,13 +31,8 @@ const Category = styled.span.attrs((props) => {
   border-radius: calc(3rem / 16);
 `;
 
-const CategoryLink = styled.a.attrs((props) => {
-  return {
-    style: {
-      color: `${props.color}`,
-    },
-  };
-})`
+const StyledLink = styled(Link)`
+  color: ${(props) => props.color};
   text-decoration: none;
 `;
 
@@ -49,9 +45,9 @@ const ArticleKeywords = (props) => {
       {props.keywords.map((keyword, num) => {
         return (
           <Category key={`${keyword}_${num}`} {...props}>
-            <CategoryLink href={`category/${keyword}`} {...props}>
+            <StyledLink to={`category/${keyword}`} color={props.color}>
               {keyword}
-            </CategoryLink>
+            </StyledLink>
           </Category>
         );
       })}

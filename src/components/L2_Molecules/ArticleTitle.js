@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 
 const ArticleHeadline = styled.h1.attrs((props) => {
   return {
@@ -19,14 +20,8 @@ const ArticleHeadline = styled.h1.attrs((props) => {
   text-align: center;
 `;
 
-const ArticleLink = styled.a.attrs((props) => {
-  return {
-    href: `${props.link}`,
-    style: {
-      color: `${props.color}`,
-    },
-  };
-})`
+const StyledLink = styled(Link)`
+  color: ${(props) => props.color};
   display: inline-block;
   font-weight: 600;
   text-decoration: none;
@@ -41,9 +36,9 @@ const ArticleTitle = (props) => {
       titleFontSize={props.titleFontSize}
       order={props.order}
     >
-      <ArticleLink color={props.color} link={props.link}>
+      <StyledLink color={props.color} to={props.link}>
         {props.title}
-      </ArticleLink>
+      </StyledLink>
     </ArticleHeadline>
   );
 };
