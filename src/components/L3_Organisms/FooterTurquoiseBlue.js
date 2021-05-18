@@ -25,10 +25,14 @@ const FooterTurquoiseBlue = (props) => {
 
 FooterTurquoiseBlue.propTypes = {
   pages: PropTypes.array,
+  views: PropTypes.object,
 };
 
 FooterTurquoiseBlue.defaultProps = {
   pages: pages,
+  views: {
+    totalCount: 3,
+  },
 };
 
 const mapStateToProps = (state) => {
