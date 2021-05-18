@@ -2,11 +2,10 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { Route, Redirect } from 'react-router-dom';
 
-import HeaderContainer from '../components/L3_Organisms/HeaderContainer';
 import HeaderTurquoiseBlue from '../components/L3_Organisms/HeaderTurquoiseBlue';
-import FooterContainer from '../components/L3_Organisms/FooterContainer';
-import FooterTurquoiseBlue from "../components/L3_Organisms/FooterTurquoiseBlue"
+import FooterTurquoiseBlue from '../components/L3_Organisms/FooterTurquoiseBlue';
 import ArticleContainer from '../components/L3_Organisms/ArticleContainer';
+import Loading from '../components/L1_Atoms/Loading';
 
 const ArticleRoute = (props) => {
   const { id, ...rest } = props;
@@ -17,10 +16,8 @@ const ArticleRoute = (props) => {
       component={(props) =>
         id ? (
           <>
-            {/* <HeaderContainer /> */}
-            <HeaderTurquoiseBlue/>
+            <HeaderTurquoiseBlue />
             <ArticleContainer {...props} />
-            {/* <FooterContainer /> */}
             <FooterTurquoiseBlue />
           </>
         ) : (
@@ -28,7 +25,11 @@ const ArticleRoute = (props) => {
           // ArticleContainerを呼び出すことを防ぐ必要がある。
           // ArticleContainerでは、pageDataがあることが前提になっているため、
           // pageDataが読み込めない状態では表示ができない。
-          <h1>データが見つかりません</h1>
+          <>
+            <HeaderTurquoiseBlue />
+            <Loading />
+            <FooterTurquoiseBlue />
+          </>
         )
       }
     />
@@ -42,7 +43,7 @@ const mapStateToProps = (state, ownProps) => {
   const pageData = state.pages.find(
     (page) => page.id === ownProps.computedMatch.params.id
   );
-  console.log(pageData)
+  console.log(pageData);
   return {
     id: pageData ? pageData.id : null,
   };
