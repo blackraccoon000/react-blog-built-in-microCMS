@@ -46,39 +46,55 @@ const FooterIcons = (props) => {
   return (
     <UnorderedList margin={margin}>
       <ListItem>
-        <a href="https://qiita.com/whiteraccoon">
+        <a href="https://qiita.com/whiteraccoon" target="_blank" rel="noopener">
           <QiitaBorder color={color}>
             <IconQiita color={color} />
           </QiitaBorder>
         </a>
       </ListItem>
       <ListItem>
-        <a href="https://twitter.com/yutakaf_0326">
+        <a
+          href="https://twitter.com/yutakaf_0326"
+          target="_blank"
+          rel="noopener"
+        >
           <IconTwitter color={color} />
         </a>
       </ListItem>
       <ListItem>
-        <a href="https://www.facebook.com/yutaka.fujii.3979/">
+        <a
+          href="https://www.facebook.com/yutaka.fujii.3979/"
+          target="_blank"
+          rel="noopener"
+        >
           <IconFacebook color={color} />
         </a>
       </ListItem>
       <ListItem>
-        <a href="https://github.com/blackraccoon000/react-blog-built-in-microCMS">
+        <a
+          href="https://github.com/blackraccoon000/react-blog-built-in-microCMS"
+          target="_blank"
+          rel="noopener"
+        >
           <IconGitOct color={color} />
         </a>
       </ListItem>
       <ListItem>
-        <a href="https://www.chromatic.com/library?appId=6099f15c1b8f98003be928e5">
+        <a
+          href="https://www.chromatic.com/library?appId=6099f15c1b8f98003be928e5"
+          target="_blank"
+          rel="noopener"
+        >
           <IconChromatic color={color} />
         </a>
       </ListItem>
       <ListItem>
-        <a href="https://microcms.io/">
+        <a href="https://microcms.io/" target="_blank" rel="noopener">
           <IconMicroCms color={color} />
         </a>
       </ListItem>
       <ListItem>
-        <a href="https://fonts.adobe.com/">
+        <a href="https://fonts.adobe.com/" target="_blank" rel="noopener">
           <IconAdobe color={color} />
         </a>
       </ListItem>

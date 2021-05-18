@@ -26,6 +26,7 @@ const ArticleCard = (props) => {
     <CardDivision>
       <ArticleImg
         height="none"
+        imgHeight={props.imgHeight}
         src={props.src}
         radius="calc(10rem/16) calc(10rem/16) 0 0"
         imageMargin={props.imageMargin}
@@ -102,6 +103,7 @@ ArticleCard.propTypes = {
   titleMargin: PropTypes.string,
   dateMargin: PropTypes.string,
   order: PropTypes.number,
+  imgHeight: PropTypes.string,
 };
 
 /**
@@ -121,6 +123,7 @@ ArticleCard.defaultProps = {
   radius: 'calc(10rem/16) calc(10rem/16) 0 0',
   dateMargin: 'calc(10rem/16) 0',
   order: 0,
+  imgHeight: '270px',
 };
 
 export default ArticleCard;

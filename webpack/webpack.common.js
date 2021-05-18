@@ -72,7 +72,7 @@ module.exports = {
     new FaviconsWebpackPlugin({
       logo: path.resolve(
         __dirname,
-        '../src/favicons/playwell-icon-260_260_2.png'
+        '../src/favicons/playwell-icon-260_260_TurquoiseBlue.png'
       ),
       cache: true,
       mode: 'webapp',

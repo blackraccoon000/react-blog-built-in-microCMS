@@ -14,9 +14,10 @@ const Footer = styled.footer`
 `;
 
 const FooterTurquoiseBlue = (props) => {
+  console.log(props);
   return (
     <Footer>
-      <FooterIndexPageLink />
+      {props.pages.length < props.views.totalCount && <FooterIndexPageLink />}
       <FooterCopyrightAria />
     </Footer>
   );
@@ -24,16 +25,21 @@ const FooterTurquoiseBlue = (props) => {
 
 FooterTurquoiseBlue.propTypes = {
   pages: PropTypes.array,
+  views: PropTypes.object,
 };
 
 FooterTurquoiseBlue.defaultProps = {
   pages: pages,
+  views: {
+    totalCount: 3,
+  },
 };
 
 const mapStateToProps = (state) => {
   console.log('FT-state:', state);
   return {
     pages: state.pages,
+    views: state.views,
   };
 };
 

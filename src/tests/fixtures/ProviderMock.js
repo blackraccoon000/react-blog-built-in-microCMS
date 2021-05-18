@@ -6,6 +6,6 @@ import { createDataOne, createDataTwo } from '../fixtures/createData';
 
 const blogData = [createDataOne, createDataTwo];
 const mockStore = configureMockStore([thunk]);
-const store = mockStore({ blogData: blogData });
+const store = mockStore();
 
 export default ({ children }) => <Provider store={store}>{children}</Provider>;

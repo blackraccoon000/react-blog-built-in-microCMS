@@ -13,7 +13,7 @@ const Post = styled.article.attrs((props) => {})`
 `;
 
 const ArticleCardTurquoiseBlue = (props) => {
-  console.log('ArticleCard:', props);
+  // console.log('ArticleCard:', props);
   return (
     <Post>
       <ArticleTitle
@@ -43,6 +43,7 @@ const ArticleCardTurquoiseBlue = (props) => {
         order={1}
         imageMargin={props.imageMargin}
         imageRadius={props.imageRadius}
+        imageHeight={props.imageHeight}
         height={props.imageHeight}
         width={props.imageWidth}
       />
@@ -123,8 +124,7 @@ ArticleCardTurquoiseBlue.defaultProps = {
   imageMargin: '0',
   imageRadius: '0',
   imageWidth: '100%',
-  // imageHeight: 'calc(270rem/16)',
-  imageHeight: 'auto',
+  imageHeight: 'calc(270rem/16)',
   keywordSize: 10,
   keywordMargin: 'calc(5rem/16) calc(3rem/16) calc(2rem/16)',
 };

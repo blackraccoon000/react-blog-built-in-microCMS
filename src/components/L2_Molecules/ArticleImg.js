@@ -19,19 +19,22 @@ const ArticleWrapper = styled.div.attrs((props) => {
 const BlogTopImg = styled.img.attrs((props) => {
   return {
     src: `${props.src}`,
+    loading: 'lazy',
     style: {
       borderRadius: `${props.radius}`,
       width: `${props.width}`,
+      height: `${props.imageHeight}`,
     },
   };
 })`
+  object-fit: cover;
   justify-content: center;
   margin: 0 auto;
   transform: scale(1);
 `;
 
 const ArticleImg = (props) => {
-  console.log('AI:', props);
+  // console.log('AI:', props);
   return (
     <ArticleWrapper
       height={props.height}
@@ -44,6 +47,7 @@ const ArticleImg = (props) => {
           src={props.src}
           radius={props.imageRadius}
           width={props.width}
+          imageHeight={props.imageHeight}
         />
       </Link>
     </ArticleWrapper>
@@ -52,6 +56,7 @@ const ArticleImg = (props) => {
 
 ArticleImg.propTypes = {
   height: PropTypes.string,
+  imageHeight: PropTypes.string,
   link: PropTypes.string,
   imageRadius: PropTypes.string,
   src: PropTypes.string,
@@ -63,6 +68,7 @@ ArticleImg.propTypes = {
 
 ArticleImg.defaultProps = {
   height: '100%',
+  imageHeight: 'auto',
   link: '#',
   imageMargin: 'calc(30rem/16) auto 0 auto',
   imageRadius: 'calc(1rem/1.6)',
