@@ -5,6 +5,7 @@ import PropTypes from 'prop-types';
 
 import { viewPages } from '../../actions/viewActions';
 import ViewButton from '../L1_Atoms/ViewButton';
+import pageUpdater from '../../microcms/pageUpdater';
 
 const Wrapper = styled.div.attrs((props) => {
   return {
@@ -26,8 +27,14 @@ const Container = styled.div`
 `;
 
 const FooterIndexPageLink = (props) => {
-  const countUp = (e) => {
-    props.viewsUpdater(4);
+  const updater = (e) => {
+    // console.log('PropsPages:', props.pages.length);
+    // console.log('PropsViewsPC:', props.views.pageCount);
+    // console.log('PropsViewsTC:', props.views.totalCount);
+    if (props.pages.length < props.views.totalCount) {
+      pageUpdater(props.views.pageCount, props.views.limitCount);
+      props.viewsUpdater(props.views.limitCount);
+    }
   };
   return (
     <Wrapper bGColor={props.bGColor}>
@@ -36,7 +43,7 @@ const FooterIndexPageLink = (props) => {
           btnMargin={props.btnMargin}
           bGColor={props.bGColor}
           color={props.color}
-          onClick={countUp}
+          onClick={updater}
         />
       </Container>
     </Wrapper>
@@ -56,9 +63,10 @@ FooterIndexPageLink.defaultProps = {
 };
 
 const mapStateToProps = (state) => {
-  // console.log('FIP-state:', state);
+  console.log('FIP-state:', state);
   return {
     pages: state.pages,
+    views: state.views,
   };
 };
 

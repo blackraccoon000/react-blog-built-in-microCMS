@@ -18,15 +18,15 @@ const IndexPosts = styled.div.attrs((props) => {})`
   display: grid;
   grid-template-rows: auto auto;
   grid-template-columns: 1fr 1fr 1fr 1fr;
-  /* grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr; */
 `;
 
 const IndexTemplate = (props) => {
+  // console.log('viewCount', props.views.pageCount);
   return (
     <Wrapper bGColor={props.bGColor}>
       <IndexPosts>
         {props.pages.map((page, num) => {
-          if (num < props.views) {
+          if (num < props.views.pageCount) {
             return (
               <ArticleCardTurquoiseBlue
                 key={`${page.id}_${num}`}
@@ -48,13 +48,15 @@ const IndexTemplate = (props) => {
 IndexTemplate.propTypes = {
   bGColor: PropTypes.string,
   posts: PropTypes.array,
-  views: PropTypes.number,
+  views: PropTypes.object,
 };
 
 IndexTemplate.defaultProps = {
   bGColor: '#61b1c8',
   pages: pages,
-  views: 4,
+  views: {
+    pageCount: 4,
+  },
 };
 
 const mapStateToProps = (state) => {

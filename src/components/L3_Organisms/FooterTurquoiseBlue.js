@@ -14,9 +14,10 @@ const Footer = styled.footer`
 `;
 
 const FooterTurquoiseBlue = (props) => {
+  console.log(props);
   return (
     <Footer>
-      <FooterIndexPageLink />
+      {props.pages.length < props.views.totalCount && <FooterIndexPageLink />}
       <FooterCopyrightAria />
     </Footer>
   );
@@ -34,6 +35,7 @@ const mapStateToProps = (state) => {
   console.log('FT-state:', state);
   return {
     pages: state.pages,
+    views: state.views,
   };
 };
 
