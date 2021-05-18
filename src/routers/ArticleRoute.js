@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { Route, Redirect } from 'react-router-dom';
 
 import HeaderTurquoiseBlue from '../components/L3_Organisms/HeaderTurquoiseBlue';
-import FooterTurquoiseBlue from '../components/L3_Organisms/FooterTurquoiseBlue';
+import FooterCopyrightAria from '../components/L2_Molecules/FooterCopyrightAria';
 import ArticleContainer from '../components/L3_Organisms/ArticleContainer';
 import Loading from '../components/L1_Atoms/Loading';
 
@@ -18,7 +18,7 @@ const ArticleRoute = (props) => {
           <>
             <HeaderTurquoiseBlue />
             <ArticleContainer {...props} />
-            <FooterTurquoiseBlue />
+            <FooterCopyrightAria />
           </>
         ) : (
           // 直リンクで飛んできた場合、dataのloadができていないため、
@@ -28,7 +28,7 @@ const ArticleRoute = (props) => {
           <>
             <HeaderTurquoiseBlue />
             <Loading />
-            <FooterTurquoiseBlue />
+            <FooterCopyrightAria />
           </>
         )
       }

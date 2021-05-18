@@ -13,27 +13,63 @@ import { blogDataSecond } from '../../tests/fixtures/bodyData';
 /**
  * 各Componentを統合するWrapper
  */
-const ArticleWrapper = styled.div.attrs((props) => {})`
+const Wrapper = styled.div`
+  background-color: #61b1c8;
+`;
+
+const Container = styled.div.attrs((props) => {})`
   align-items: center;
+  background-color: #fbfbf9;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  min-width: calc(600rem / 16);
-  max-width: calc(1200rem / 16);
+  max-width: calc(1000rem / 16);
   margin: 0 auto;
+`;
+
+const KeywordWrapper = styled.div`
+  display: flex;
+  justify-content: flex-start;
+  width: 750px;
+`;
+
+const TitleWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  width: 750px;
 `;
 /**
  * ブログの記事を表示する。
  */
 const ArticleContainer = (props) => {
+  document.title = props.title;
   return (
-    <ArticleWrapper>
-      <ArticleTitle title={props.title} link={props.link} />
-      <ArticleKeywords keywords={props.keywords} />
-      <ArticleDate createdAt={props.createdAt} updatedAt={props.updatedAt} />
-      <ArticleImg src={props.src} link={props.link} />
-      <ArticleBody body={props.body} />
-    </ArticleWrapper>
+    <Wrapper>
+      <Container>
+        <KeywordWrapper>
+          <ArticleKeywords
+            border="none"
+            color="#61b1c8"
+            keywords={props.keywords}
+            margin="calc(30rem/16) 0 calc(10rem/16)"
+          />
+        </KeywordWrapper>
+        <ArticleImg
+          src={props.src}
+          link={props.link}
+          imageMargin="calc(5rem/16) auto 0 auto"
+        />
+        <TitleWrapper>
+          <ArticleTitle title={props.title} link={props.link} />
+          <ArticleDate
+            createdAt={props.createdAt}
+            updatedAt={props.updatedAt}
+          />
+        </TitleWrapper>
+        <ArticleBody body={props.body} />
+      </Container>
+    </Wrapper>
   );
 };
 

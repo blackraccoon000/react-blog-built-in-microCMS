@@ -27,10 +27,12 @@ const ArticleCardTurquoiseBlue = (props) => {
         fontSize={props.keywordSize}
         keywords={props.keywords}
         margin={props.keywordMargin}
+        padding={props.keywordPadding}
         order={3}
       />
       <ArticleDate
         dateFontSize={props.dateSize}
+        dateMargin={props.dateMargin}
         updateSize={props.dateSize}
         scheduleSize={props.dateSize}
         createdAt={props.createdAt}
@@ -114,6 +116,7 @@ ArticleCardTurquoiseBlue.propTypes = {
   dateSize: PropTypes.number,
   keywordSize: PropTypes.number,
   keywordMargin: PropTypes.string,
+  keywordPadding: PropTypes.string,
 };
 
 ArticleCardTurquoiseBlue.defaultProps = {
@@ -121,12 +124,14 @@ ArticleCardTurquoiseBlue.defaultProps = {
   titleFontSize: 18,
   titleMargin: 'calc(5rem/16) auto 0',
   dateSize: 12,
+  dateMargin: 'calc(5rem/16) auto calc(15rem/16) auto',
   imageMargin: '0',
   imageRadius: '0',
   imageWidth: '100%',
   imageHeight: 'calc(270rem/16)',
   keywordSize: 10,
   keywordMargin: 'calc(5rem/16) calc(3rem/16) calc(2rem/16)',
+  keywordPadding: 'calc(2rem / 16) calc(8rem / 16) calc(5rem / 16)',
 };
 
 export default ArticleCardTurquoiseBlue;

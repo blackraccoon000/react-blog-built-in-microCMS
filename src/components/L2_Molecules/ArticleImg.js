@@ -71,7 +71,7 @@ ArticleImg.defaultProps = {
   imageHeight: 'auto',
   link: '#',
   imageMargin: 'calc(30rem/16) auto 0 auto',
-  imageRadius: 'calc(1rem/1.6)',
+  imageRadius: '',
   src:
     'https://images.microcms-assets.io/assets/577bcb7965bf4dbd951686143646657b/2687c64d1e7e4a8b8fef792ff909ea81/cat_four.jpg',
   overflow: 'hidden',
