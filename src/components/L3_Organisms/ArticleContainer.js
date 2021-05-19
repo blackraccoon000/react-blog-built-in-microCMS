@@ -23,14 +23,8 @@ const Container = styled.div.attrs((props) => {})`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  max-width: calc(1000rem / 16);
+  max-width: calc(800rem / 16);
   margin: 0 auto;
-`;
-
-const KeywordWrapper = styled.div`
-  display: flex;
-  justify-content: flex-start;
-  width: 750px;
 `;
 
 const TitleWrapper = styled.div`
@@ -47,22 +41,30 @@ const ArticleContainer = (props) => {
   return (
     <Wrapper>
       <Container>
-        <KeywordWrapper>
+        <ArticleImg
+          src={props.src}
+          link={props.link}
+          imageMargin="0 auto"
+          width="auto"
+        />
+        <TitleWrapper>
           <ArticleKeywords
             border="none"
             color="#61b1c8"
             keywords={props.keywords}
             margin="calc(30rem/16) 0 calc(10rem/16)"
           />
-        </KeywordWrapper>
-        <ArticleImg
-          src={props.src}
-          link={props.link}
-          imageMargin="calc(5rem/16) auto 0 auto"
-        />
-        <TitleWrapper>
-          <ArticleTitle title={props.title} link={props.link} />
+          <ArticleTitle
+            title={props.title}
+            titleMargin={props.titleMargin}
+            titlePadding={props.titlePadding}
+            link={props.link}
+          />
           <ArticleDate
+            scheduleSize={props.size}
+            dateFontSize={props.size}
+            dateMargin={props.dateMargin}
+            updateSize={props.size}
             createdAt={props.createdAt}
             updatedAt={props.updatedAt}
           />
@@ -99,6 +101,7 @@ ArticleContainer.propTypes = {
    * ブログのトップイメージのソースURLを指定する。
    */
   src: PropTypes.string,
+  size: PropTypes.number,
   /**
    * L2_Molecules/ArticleTitle・ArticleImg
    * ブログのタイトルもしくはトップイメージをクリックした際のリンク先URLを貼る。
@@ -109,6 +112,9 @@ ArticleContainer.propTypes = {
    * ブログ本文を参照する。htmlベースで1行
    */
   body: PropTypes.string,
+  dateMargin: PropTypes.string,
+  titleMargin: PropTypes.string,
+  titlePadding: PropTypes.string,
 };
 
 /**
@@ -121,6 +127,10 @@ ArticleContainer.defaultProps = {
   updatedAt: '2021-05-11T07:32:08.904Z',
   src:
     'https://images.microcms-assets.io/assets/577bcb7965bf4dbd951686143646657b/2687c64d1e7e4a8b8fef792ff909ea81/cat_four.jpg',
+  size: 12,
+  dateMargin: 'calc(15rem/16) auto 0 calc(10rem/16)',
+  titleMargin: '0',
+  titlePadding: '0 0 calc(6rem / 16) calc(10rem / 16)',
   link: '#',
   body: blogDataSecond,
 };

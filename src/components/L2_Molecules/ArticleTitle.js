@@ -10,13 +10,12 @@ const ArticleHeadline = styled.h1.attrs((props) => {
       fontSize: `${props.titleFontSize / 16}rem`,
       margin: `${props.titleMargin}`,
       order: `${props.order}`,
+      padding: `${props.titlePadding}`,
     },
   };
 })`
   align-items: center;
   display: flex;
-  /* flex-direction: column; */
-  padding: calc(8rem / 16);
   text-align: center;
 `;
 
@@ -33,6 +32,7 @@ const ArticleTitle = (props) => {
     <ArticleHeadline
       fontFamily={props.fontFamily}
       titleMargin={props.titleMargin}
+      titlePadding={props.titlePadding}
       titleFontSize={props.titleFontSize}
       order={props.order}
     >
@@ -53,6 +53,7 @@ ArticleTitle.propTypes = {
   ]),
   titleFontSize: PropTypes.number,
   titleMargin: PropTypes.string,
+  titlePadding: PropTypes.string,
   link: PropTypes.string,
   title: PropTypes.string,
   order: PropTypes.number,
@@ -64,6 +65,7 @@ ArticleTitle.defaultProps = {
   titleFontSize: 25,
   // titleMargin: 'calc(20rem/16) auto 0 auto',
   titleMargin: 'calc(20rem/16) 0 calc(5rem/16)',
+  titlePadding: 'calc(8rem / 16)',
   link: '#',
   title: 'Article Title',
   order: 0,

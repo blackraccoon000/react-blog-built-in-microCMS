@@ -13,7 +13,7 @@ const Article = styled.div.attrs((props) => {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: flex-start;
 `;
 
 const Category = styled.span.attrs((props) => {
