@@ -11,6 +11,8 @@ const pageUpdater = (props, offset, limit) => {
       };
     });
 
+    console.log('pU:', idAry);
+
     const pageAry = value.data.contents.map((page, num) => {
       return {
         ...page,

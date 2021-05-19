@@ -24,7 +24,6 @@ const SpanItem = styled.span.attrs((props) => {
   return {
     style: {
       color: `${props.color}`,
-      fontFamily: `${props.fontFamily}`,
       fontSize: `calc(${props.fontSize / 16}rem)`,
     },
   };

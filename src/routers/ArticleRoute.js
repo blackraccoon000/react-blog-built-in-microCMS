@@ -6,10 +6,12 @@ import HeaderTurquoiseBlue from '../components/L3_Organisms/HeaderTurquoiseBlue'
 import FooterCopyrightAria from '../components/L2_Molecules/FooterCopyrightAria';
 import ArticleContainer from '../components/L3_Organisms/ArticleContainer';
 import Loading from '../components/L1_Atoms/Loading';
+import pageGetter from '../microcms/pageGetter';
 
 const ArticleRoute = (props) => {
+  console.log('AR:', props);
   const { id, ...rest } = props;
-  console.log('Article ID', id);
+  console.log('id:', id);
   return (
     <Route
       {...rest}
@@ -27,6 +29,7 @@ const ArticleRoute = (props) => {
           // pageDataが読み込めない状態では表示ができない。
           <>
             <HeaderTurquoiseBlue />
+            {pageGetter(props)}
             <Loading />
             <FooterCopyrightAria />
           </>
@@ -43,11 +46,16 @@ const mapStateToProps = (state, ownProps) => {
   const pageData = state.pages.find(
     (page) => page.id === ownProps.computedMatch.params.id
   );
-  console.log(pageData);
   return {
     id: pageData ? pageData.id : null,
+    pages: state.pages,
+    views: state.views,
   };
 };
 
+const mapDispatchToProps = (dispatch) => ({
+  viewsUpdater: (views) => dispatch(viewPages(views)),
+});
+
 export { ArticleRoute };
-export default connect(mapStateToProps)(ArticleRoute);
+export default connect(mapStateToProps, mapDispatchToProps)(ArticleRoute);
