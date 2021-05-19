@@ -33,6 +33,8 @@ const BlogTopImg = styled.img.attrs((props) => {
   transform: scale(1);
 `;
 
+const StyledLink = styled(Link)``;
+
 const ArticleImg = (props) => {
   // console.log('AI:', props);
   return (
@@ -42,19 +44,30 @@ const ArticleImg = (props) => {
       overflow={props.overflow}
       order={props.order}
     >
-      <Link to={props.link}>
+      {props.flag ? (
+        <StyledLink to={props.link}>
+          <BlogTopImg
+            src={props.src}
+            radius={props.imageRadius}
+            width={props.width}
+            imageHeight={props.imageHeight}
+          />
+        </StyledLink>
+      ) : (
         <BlogTopImg
           src={props.src}
           radius={props.imageRadius}
           width={props.width}
           imageHeight={props.imageHeight}
         />
-      </Link>
+      )}
     </ArticleWrapper>
   );
 };
 
 ArticleImg.propTypes = {
+  cursor: PropTypes.string,
+  flag: PropTypes.bool,
   height: PropTypes.string,
   imageHeight: PropTypes.string,
   link: PropTypes.string,
@@ -67,6 +80,8 @@ ArticleImg.propTypes = {
 };
 
 ArticleImg.defaultProps = {
+  cursor: 'pointer',
+  flag: true,
   height: '100%',
   imageHeight: 'auto',
   link: '#',

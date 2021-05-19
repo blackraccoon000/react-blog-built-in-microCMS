@@ -8,6 +8,8 @@ import ArticleDate from '../L2_Molecules/ArticleDate';
 import ArticleImg from '../L2_Molecules/ArticleImg';
 import ArticleKeywords from '../L2_Molecules/ArticleKeywords';
 import ArticleTitle from '../L2_Molecules/ArticleTitle';
+import ArticlePageNav from '../L2_Molecules/ArticlePageNav';
+import BreadCrumbList from '../L2_Molecules/BreadCrumbList';
 
 import { blogDataSecond } from '../../tests/fixtures/bodyData';
 /**
@@ -38,27 +40,27 @@ const TitleWrapper = styled.div`
  */
 const ArticleContainer = (props) => {
   document.title = props.title;
+  console.log(props);
   return (
     <Wrapper>
       <Container>
         <ArticleImg
+          flag={false}
           src={props.src}
-          link={props.link}
           imageMargin="0 auto"
           width="auto"
         />
         <TitleWrapper>
-          <ArticleKeywords
-            border="none"
+          <BreadCrumbList
             color="#61b1c8"
             keywords={props.keywords}
-            margin="calc(30rem/16) 0 calc(10rem/16)"
+            title={props.title}
           />
           <ArticleTitle
+            flag={false}
             title={props.title}
             titleMargin={props.titleMargin}
             titlePadding={props.titlePadding}
-            link={props.link}
           />
           <ArticleDate
             scheduleSize={props.size}
@@ -70,6 +72,12 @@ const ArticleContainer = (props) => {
           />
         </TitleWrapper>
         <ArticleBody body={props.body} />
+        <ArticlePageNav
+          prevId={props.prevId}
+          prevTitle={props.prevTitle}
+          nextId={props.nextId}
+          nextTitle={props.nextTitle}
+        />
       </Container>
     </Wrapper>
   );
@@ -146,7 +154,6 @@ const mapStateToProps = (state, ownProps) => {
   );
   return {
     pages: state.pages,
-    pageData: pageData,
     id: pageData.id,
     title: pageData.title,
     keywords: pageData.keywords,
@@ -155,6 +162,10 @@ const mapStateToProps = (state, ownProps) => {
     src: pageData.thumbnail.url,
     link: pageData.link,
     body: pageData.body,
+    prevId: pageData.prevId,
+    prevTitle: pageData.prevTitle,
+    nextId: pageData.nextId,
+    nextTitle: pageData.nextTitle,
   };
 };
 

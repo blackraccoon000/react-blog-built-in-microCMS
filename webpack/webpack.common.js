@@ -64,7 +64,7 @@ module.exports = {
     }),
     new HtmlWebpackPlugin({
       lang: 'ja-JP',
-      title: 'PlayWell | よく学びよく遊べ',
+      title: 'PlayWell | よく遊びよく学べ',
       filename: path.resolve(__dirname, '../public/index.html'),
       hash: true,
       template: path.resolve(__dirname, '../src/template/index.html'),
