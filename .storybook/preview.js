@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import ProviderMock from '../src/tests/fixtures/ProviderMock';
 import { MemoryRouter } from 'react-router';
 import { Reset } from 'styled-reset';
 
@@ -30,12 +31,14 @@ const DecorateWrapper = styled.div`
 const decorators = [
   (Story) => {
     return (
-      <MemoryRouter initialEntries={['/']}>
-        <DecorateWrapper>
-          <Reset />
-          <Story />
-        </DecorateWrapper>
-      </MemoryRouter>
+      <ProviderMock>
+        <MemoryRouter initialEntries={['/']}>
+          <DecorateWrapper>
+            <Reset />
+            <Story />
+          </DecorateWrapper>
+        </MemoryRouter>
+      </ProviderMock>
     );
   },
 ];
