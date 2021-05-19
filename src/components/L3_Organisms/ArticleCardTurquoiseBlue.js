@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 import ArticleImg from '../L2_Molecules/ArticleImg';
 import ArticleTitle from '../L2_Molecules/ArticleTitle';
 import ArticleKeywords from '../L2_Molecules/ArticleKeywords';
@@ -13,18 +14,18 @@ const Post = styled.article.attrs((props) => {})`
 `;
 
 const ArticleCardTurquoiseBlue = (props) => {
-  // console.log('ArticleCard:', props);
   return (
     <Post>
       <ArticleTitle
         order={2}
-        link={props.link}
+        link={`/article/${props.id}`}
         title={props.title}
         titleFontSize={props.titleFontSize}
         titleMargin={props.titleMargin}
       />
       <ArticleKeywords
         fontSize={props.keywordSize}
+        justifyContent={props.keywordJustifyContent}
         keywords={props.keywords}
         margin={props.keywordMargin}
         padding={props.keywordPadding}
@@ -117,6 +118,7 @@ ArticleCardTurquoiseBlue.propTypes = {
   keywordSize: PropTypes.number,
   keywordMargin: PropTypes.string,
   keywordPadding: PropTypes.string,
+  keywordJustifyContent: PropTypes.string,
 };
 
 ArticleCardTurquoiseBlue.defaultProps = {
@@ -132,6 +134,16 @@ ArticleCardTurquoiseBlue.defaultProps = {
   keywordSize: 10,
   keywordMargin: 'calc(5rem/16) calc(3rem/16) calc(2rem/16)',
   keywordPadding: 'calc(2rem / 16) calc(8rem / 16) calc(5rem / 16)',
+  keywordJustifyContent: 'center',
 };
 
-export default ArticleCardTurquoiseBlue;
+const mapStateToProps = (state) => {
+  // console.log('ACTB-state:', state);
+  return {
+    pages: state.pages,
+    views: state.views,
+  };
+};
+
+export default connect(mapStateToProps)(ArticleCardTurquoiseBlue);
+export { ArticleCardTurquoiseBlue };

@@ -7,13 +7,13 @@ const Article = styled.div.attrs((props) => {
   return {
     style: {
       order: `${props.order}`,
+      justifyContent: `${props.justifyContent}`,
     },
   };
 })`
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: flex-start;
 `;
 
 const Category = styled.span.attrs((props) => {
@@ -30,6 +30,7 @@ const Category = styled.span.attrs((props) => {
 })`
   white-space: nowrap;
   border-radius: calc(3rem / 16);
+  vertical-align: middle;
 `;
 
 const StyledLink = styled(Link)`
@@ -42,7 +43,7 @@ const StyledLink = styled(Link)`
  */
 const ArticleKeywords = (props) => {
   return (
-    <Article order={props.order}>
+    <Article justifyContent={props.justifyContent} order={props.order}>
       {props.keywords.map((keyword, num) => {
         return (
           <Category
@@ -50,7 +51,7 @@ const ArticleKeywords = (props) => {
             key={`${keyword}_${num}`}
             {...props}
           >
-            <StyledLink to={`category/${keyword}`} color={props.color}>
+            <StyledLink to={`keyword/${keyword}`} color={props.color}>
               {keyword}
             </StyledLink>
           </Category>
@@ -72,6 +73,7 @@ ArticleKeywords.propTypes = {
     'monospace',
     'sans-serif',
   ]),
+  justifyContent: PropTypes.string,
   /**
    * キーワードは配列形式で複数記載できる。
    */
@@ -93,6 +95,7 @@ ArticleKeywords.defaultProps = {
   color: '#787878',
   fontFamily: 'kan415typos-std',
   fontSize: 11,
+  justifyContent: 'flex-start',
   keywords: ['テスト', 'ブログ', 'test', 'blog', 'microcms'],
   margin: 'calc(10rem/16) calc(7rem/16) calc(10rem/16)',
   padding: 'calc(2rem / 16) calc(8rem / 16)',

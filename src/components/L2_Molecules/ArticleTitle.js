@@ -27,6 +27,14 @@ const StyledLink = styled(Link)`
   margin: 0;
 `;
 
+const Span = styled.span`
+  color: ${(props) => props.color};
+  display: inline-block;
+  font-weight: 600;
+  text-decoration: none;
+  margin: 0;
+`;
+
 const ArticleTitle = (props) => {
   return (
     <ArticleHeadline
@@ -36,15 +44,20 @@ const ArticleTitle = (props) => {
       titleFontSize={props.titleFontSize}
       order={props.order}
     >
-      <StyledLink color={props.color} to={props.link}>
-        {props.title}
-      </StyledLink>
+      {props.flag ? (
+        <StyledLink color={props.color} to={props.link}>
+          {props.title}
+        </StyledLink>
+      ) : (
+        <Span color={props.color}>{props.title}</Span>
+      )}
     </ArticleHeadline>
   );
 };
 
 ArticleTitle.propTypes = {
   color: PropTypes.string,
+  flag: PropTypes.bool,
   fontFamily: PropTypes.oneOf([
     'source-code-pro',
     'kan415typos-std',
@@ -61,6 +74,7 @@ ArticleTitle.propTypes = {
 
 ArticleTitle.defaultProps = {
   color: '#787878',
+  flag: true,
   fontFamily: 'kan415typos-std',
   titleFontSize: 25,
   // titleMargin: 'calc(20rem/16) auto 0 auto',

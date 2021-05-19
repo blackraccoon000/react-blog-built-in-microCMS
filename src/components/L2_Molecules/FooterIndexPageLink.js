@@ -31,10 +31,7 @@ const FooterIndexPageLink = (props) => {
     // console.log('PropsPages:', props.pages.length);
     // console.log('PropsViewsPC:', props.views.pageCount);
     // console.log('PropsViewsTC:', props.views.totalCount);
-    if (props.pages.length < props.views.totalCount) {
-      pageUpdater(props.views.pageCount, props.views.limitCount);
-      props.viewsUpdater(props.views.limitCount);
-    }
+    pageUpdater(props, props.views.pageCount, props.views.limitCount);
   };
   return (
     <Wrapper bGColor={props.bGColor}>
