@@ -57,7 +57,7 @@ const BreadCrumbList = (props) => {
             color={props.color}
             fontSize={13}
             margin={'calc(2rem/16) 0 0 calc(10rem/16)'}
-            padding={'calc(2rem/16) 0 calc(10rem/16)'}
+            padding={'calc(2rem/16) 0 calc(8rem/16)'}
             value="keywords"
             link="/keywords"
           />
@@ -69,7 +69,7 @@ const BreadCrumbList = (props) => {
                 key={`${keyword}_${num}`}
                 color={props.color}
                 fontSize={12}
-                margin={'0 calc(7rem/16) calc(10rem/16)'}
+                margin={'calc(2rem/16) calc(7rem/16) calc(10rem/16)'}
                 padding={'0 calc(8rem / 16)'}
                 value={keyword}
                 link={`/keyword/${keyword}`}

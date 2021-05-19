@@ -17,14 +17,17 @@ const Wrapper = styled.div.attrs((props) => {
 
 const StyledLink = styled(Link)`
   color: ${(props) => props.color};
+  font-family: ${(props) => props.fontFamily};
+  font-size: calc(${(props) => props.fontSize}rem / 16);
   text-decoration: none;
 `;
 
-const SpanItem = styled.span.attrs((props) => {
+const PItem = styled.p.attrs((props) => {
   return {
     style: {
       color: `${props.color}`,
-      fontSize: `calc(${props.fontSize / 16}rem)`,
+      fontSize: `calc(${props.fontSize}rem/16)`,
+      fontFamily: `${props.fontFamily}`,
     },
   };
 })`
@@ -34,15 +37,24 @@ const SpanItem = styled.span.attrs((props) => {
 const NavItem = (props) => {
   return (
     <Wrapper margin={props.margin} padding={props.padding}>
-      <SpanItem fontFamily={props.fontFamily} fontSize={props.fontSize}>
-        {props.flag ? (
-          <StyledLink color={props.color} to={props.link}>
-            {props.value}
-          </StyledLink>
-        ) : (
-          <SpanItem color={props.color}>{props.value}</SpanItem>
-        )}
-      </SpanItem>
+      {props.flag ? (
+        <StyledLink
+          color={props.color}
+          fontFamily={props.fontFamily}
+          fontSize={props.fontSize}
+          to={props.link}
+        >
+          {props.value}
+        </StyledLink>
+      ) : (
+        <PItem
+          color={props.color}
+          fontFamily={props.fontFamily}
+          fontSize={props.fontSize}
+        >
+          {props.value}
+        </PItem>
+      )}
     </Wrapper>
   );
 };
