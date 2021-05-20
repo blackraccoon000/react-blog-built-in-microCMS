@@ -1,5 +1,4 @@
 const viewPages = (pageCount) => {
-  // console.log('vps:', pageCount);
   return {
     type: 'VIEW_PAGES',
     pageCount,
@@ -7,11 +6,17 @@ const viewPages = (pageCount) => {
 };
 
 const viewTotalCount = (totalCount) => {
-  console.log('vtc:', totalCount);
   return {
     type: 'VIEW_TOTAL_COUNT',
     totalCount,
   };
 };
 
-export { viewPages, viewTotalCount };
+const viewError = (error) => {
+  return {
+    type: 'VIEW_ERROR',
+    error,
+  };
+};
+
+export { viewPages, viewTotalCount, viewError };

@@ -12,15 +12,17 @@ const createPage = (createPage) => {
 };
 
 const editPage = (id, updates) => {
-  const { title = '', note = '', link = '' } = updates;
+  // const { title = '', note = '', link = '' } = updates;
+  // console.log(updates);
   return {
     type: 'EDIT_PAGE',
     id,
-    updates: {
-      title,
-      note,
-      link,
-    },
+    updates,
+    // updates: {
+    //   title,
+    //   note,
+    //   link,
+    // },
   };
 };
 
@@ -32,6 +34,7 @@ const removePage = (id) => {
 };
 
 const setPages = (pages) => {
+  // console.log(pages);
   return {
     type: 'SET_PAGES',
     pages,

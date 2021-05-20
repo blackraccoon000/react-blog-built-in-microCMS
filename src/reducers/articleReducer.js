@@ -1,6 +1,7 @@
 const articleReducerDefaultState = [];
 
 const articleReducer = (state = articleReducerDefaultState, action) => {
+  // console.log('articleReducer:', state, action);
   switch (action.type) {
     case 'CREATE_PAGE':
       return [...state, action.page];

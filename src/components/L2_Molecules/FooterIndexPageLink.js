@@ -60,7 +60,6 @@ FooterIndexPageLink.defaultProps = {
 };
 
 const mapStateToProps = (state) => {
-  console.log('FIP-state:', state);
   return {
     pages: state.pages,
     views: state.views,

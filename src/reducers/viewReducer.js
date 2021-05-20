@@ -7,8 +7,6 @@ const viewDefaultState = {
 const viewReducer = (state = viewDefaultState, action) => {
   switch (action.type) {
     case 'VIEW_PAGES':
-      // console.log('vR-state:', state);
-      // console.log('vR-action:', action);
       const pageCount = state.pageCount + action.pageCount;
       return {
         ...state,
@@ -16,10 +14,16 @@ const viewReducer = (state = viewDefaultState, action) => {
       };
     case 'VIEW_TOTAL_COUNT':
       const totalCount = action.totalCount;
-      // console.log('VTC-state:', state);
-      // console.log('VTC-action:', action.totalCount);
-      // console.log('vtcop:', { ...state, ...action });
-      return { ...state, totalCount };
+      return {
+        ...state,
+        totalCount,
+      };
+    case 'VIEW_ERROR':
+      const error = action.error;
+      return {
+        ...state,
+        error,
+      };
     default:
       return state;
   }

@@ -6,16 +6,24 @@ import HeaderTurquoiseBlue from '../components/L3_Organisms/HeaderTurquoiseBlue'
 import FooterCopyrightAria from '../components/L2_Molecules/FooterCopyrightAria';
 import ArticleContainer from '../components/L3_Organisms/ArticleContainer';
 import Loading from '../components/L1_Atoms/Loading';
-import pageGetter from '../microcms/pageGetter';
+import updatePages from '../microcms/updatePages';
+import { setPages } from '../actions/articleActions';
+import consoleLog from '../utils/consoleLog';
+import fetchPages from '../microcms/fetchPages';
 
 const ArticleRoute = (props) => {
-  console.log('AR:', props);
+  // ここの設定を更に調整する。
+  // console.log('AR:', props.views.totalCount);
+  // && props.pages.length < props.views.totalCount
+  props.page.nextId !== undefined
+    ? console.log('props.page.nextId : ', props.page.nextId)
+    : props.updatePager(); // ここどうしよっかなー。
+
   const { id, ...rest } = props;
-  console.log('id:', id);
   return (
     <Route
       {...rest}
-      component={(props) =>
+      component={() =>
         id ? (
           <>
             <HeaderTurquoiseBlue />
@@ -29,8 +37,8 @@ const ArticleRoute = (props) => {
           // pageDataが読み込めない状態では表示ができない。
           <>
             <HeaderTurquoiseBlue />
-            {pageGetter(props)}
             <Loading />
+            {props.updatePager()}
             <FooterCopyrightAria />
           </>
         )
@@ -40,22 +48,37 @@ const ArticleRoute = (props) => {
 };
 
 const mapStateToProps = (state, ownProps) => {
-  console.log('state: ', state);
-  console.log('ownProps: ', ownProps);
-  console.log('id:', ownProps.computedMatch.params.id);
-  const pageData = state.pages.find(
-    (page) => page.id === ownProps.computedMatch.params.id
-  );
+  const id = ownProps.computedMatch.params.id;
+  const beforePage = state.pages.find((page) => page.id === id);
+  const pidAry = state.pages.map((page) => page.id);
+  const now = pidAry.indexOf(id);
+  const afterPage = {
+    ...beforePage,
+    prevId: state.pages[now - 1] ? state.pages[now - 1].id : undefined,
+    prevTitle: state.pages[now - 1] ? state.pages[now - 1].title : undefined,
+    nextId: state.pages[now + 1] ? state.pages[now + 1].id : undefined,
+    nextTitle: state.pages[now + 1] ? state.pages[now + 1].title : undefined,
+  };
+  console.log('AP:', afterPage);
+
   return {
-    id: pageData ? pageData.id : null,
+    id,
+    page: afterPage,
     pages: state.pages,
     views: state.views,
   };
 };
 
-const mapDispatchToProps = (dispatch) => ({
-  viewsUpdater: (views) => dispatch(viewPages(views)),
-});
+const mapDispatchToProps = (dispatch, ownProps) => {
+  return {
+    updatePager: () => {
+      // ここのoffsetとlimitの番号を変更できるようにする。
+      fetchPages(
+        `?fields=id,title,keyword,thumbnail,createdAt,updatedAt,body&offset=4&limit=4`
+      );
+    },
+  };
+};
 
 export { ArticleRoute };
 export default connect(mapStateToProps, mapDispatchToProps)(ArticleRoute);
