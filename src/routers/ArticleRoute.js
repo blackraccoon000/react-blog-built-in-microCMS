@@ -12,12 +12,29 @@ import consoleLog from '../utils/consoleLog';
 import fetchPages from '../microcms/fetchPages';
 
 const ArticleRoute = (props) => {
-  // ここの設定を更に調整する。
-  // console.log('AR:', props.views.totalCount);
-  // && props.pages.length < props.views.totalCount
   props.page.nextId !== undefined
-    ? console.log('props.page.nextId : ', props.page.nextId)
-    : props.updatePager(); // ここどうしよっかなー。
+    ? console.log(
+        '次ページ ID',
+        props.page.nextId,
+        '-> 記事情報取得済み',
+        props.pages.length,
+        props.views.pageCount
+      )
+    : props.pages.length !== props.views.totalCount
+    ? console.log(
+        '次ページ ID',
+        props.page.nextId,
+        '-> 記事情報未取得 更新します'
+      ) &
+      props.updater() &
+      console.log(props)
+    : props.pages.length === 0
+    ? console.log('現在の記事情報なし -> 取得します') & props.faster(props.id)
+    : console.log('AR: props.pages.length:', props.pages.length);
+
+  // props.pages.length === 0
+  // ? console.log('現在の記事情報なし -> 取得します') & props.faster(props.id)
+  // : console.log('bbbbbbb');
 
   const { id, ...rest } = props;
   return (
@@ -38,7 +55,7 @@ const ArticleRoute = (props) => {
           <>
             <HeaderTurquoiseBlue />
             <Loading />
-            {props.updatePager()}
+            {props.updater()}
             <FooterCopyrightAria />
           </>
         )
@@ -49,17 +66,28 @@ const ArticleRoute = (props) => {
 
 const mapStateToProps = (state, ownProps) => {
   const id = ownProps.computedMatch.params.id;
+  const defaultPage = {
+    id,
+    title: '',
+    keywords: [''],
+    createdAt: '',
+    updatedAt: '',
+    thumbnail: {
+      url: '',
+    },
+    body: '',
+  };
   const beforePage = state.pages.find((page) => page.id === id);
+  const workingPage = beforePage === undefined ? defaultPage : beforePage;
   const pidAry = state.pages.map((page) => page.id);
   const now = pidAry.indexOf(id);
   const afterPage = {
-    ...beforePage,
+    ...workingPage,
     prevId: state.pages[now - 1] ? state.pages[now - 1].id : undefined,
     prevTitle: state.pages[now - 1] ? state.pages[now - 1].title : undefined,
     nextId: state.pages[now + 1] ? state.pages[now + 1].id : undefined,
     nextTitle: state.pages[now + 1] ? state.pages[now + 1].title : undefined,
   };
-  console.log('AP:', afterPage);
 
   return {
     id,
@@ -71,10 +99,14 @@ const mapStateToProps = (state, ownProps) => {
 
 const mapDispatchToProps = (dispatch, ownProps) => {
   return {
-    updatePager: () => {
-      // ここのoffsetとlimitの番号を変更できるようにする。
+    updater: () => {
       fetchPages(
-        `?fields=id,title,keyword,thumbnail,createdAt,updatedAt,body&offset=4&limit=4`
+        `?fields=id,title,keyword,thumbnail,createdAt,updatedAt,body&limit=4`
+      );
+    },
+    faster: (id) => {
+      fetchPages(
+        `?ids=${id}&fields=id,title,keyword,thumbnail,createdAt,updatedAt,body&limit=4`
       );
     },
   };

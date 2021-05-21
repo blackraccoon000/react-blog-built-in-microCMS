@@ -22,6 +22,8 @@ const IndexPosts = styled.div.attrs((props) => {})`
 
 const IndexTemplate = (props) => {
   document.title = 'PlayWell | よく遊びよく学べ';
+  const { pageCount, totalCount } = props.views;
+  // const pageLimit = pageCount < totalCount ?
   return (
     <Wrapper bGColor={props.bGColor}>
       <IndexPosts>

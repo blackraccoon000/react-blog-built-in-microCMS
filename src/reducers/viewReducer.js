@@ -1,5 +1,5 @@
 const viewDefaultState = {
-  pageCount: 8,
+  pageCount: 0, //4 or 8 ?
   limitCount: 4,
   totalCount: 0,
 }; // 初期表示数のコントロール
@@ -7,7 +7,7 @@ const viewDefaultState = {
 const viewReducer = (state = viewDefaultState, action) => {
   switch (action.type) {
     case 'VIEW_PAGES':
-      const pageCount = state.pageCount + action.pageCount;
+      const pageCount = action.pageCount;
       return {
         ...state,
         pageCount,

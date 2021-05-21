@@ -34,7 +34,7 @@ const removePage = (id) => {
 };
 
 const setPages = (pages) => {
-  // console.log(pages);
+  console.log('Page情報が更新されました');
   return {
     type: 'SET_PAGES',
     pages,

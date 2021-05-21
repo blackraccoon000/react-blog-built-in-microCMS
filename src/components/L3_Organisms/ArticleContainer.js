@@ -44,14 +44,10 @@ const TitleWrapper = styled.div`
  */
 const ArticleContainer = (props) => {
   document.title = props.title;
-  props.prevId === undefined && console.log('prevIdがありません');
-  props.nextId === undefined &&
-    console.log(
-      'nextIdがありません',
-      props.views
-      // props.pages.length < props.views.totalCount
-    );
-  console.log('ACP:', props);
+
+  props.nextId === 'undefined' &&
+    console.log('次ページ ID', props.nextId, '-> ID更新を待ちます');
+
   return (
     <Wrapper>
       <Container>
@@ -161,10 +157,7 @@ ArticleContainer.defaultProps = {
  */
 const mapStateToProps = (state, ownProps) => {
   // console.log('ACS:', state);
-  console.log('ACO:', ownProps);
-
-  // const page = state.pages.find((page) => page.id === ownProps.id);
-  // console.log(page);
+  // console.log('ACO:', ownProps);
 
   return {
     pages: state.pages,

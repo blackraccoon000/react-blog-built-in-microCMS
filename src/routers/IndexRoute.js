@@ -10,7 +10,6 @@ import updatePages from '../microcms/updatePages';
 import fetchPages from '../microcms/fetchPages';
 
 const IndexRoute = (props) => {
-  // console.log('IR:', props);
   const { id, ...rest } = props;
   return (
     <Route
@@ -25,7 +24,7 @@ const IndexRoute = (props) => {
         ) : (
           <>
             <HeaderTurquoiseBlue />
-            {props.updatePager()}
+            {props.updater()}
             <Loading />
             <FooterTurquoiseBlue />
           </>
@@ -36,8 +35,6 @@ const IndexRoute = (props) => {
 };
 
 const mapStateToProps = (state, ownProps) => {
-  // console.log('IRS:', state);
-  // console.log('IRO:', ownProps);
   return {
     pages: state.pages,
     views: state.views,
@@ -45,19 +42,11 @@ const mapStateToProps = (state, ownProps) => {
 };
 
 const mapDispatchToProps = (dispatch, ownProps) => {
-  // const queries = `?fields=id,title,keyword,thumbnail,createdAt,updatedAt,body&offset=0&limit=9`;
   return {
-    updatePager: () => {
-      // fetchPages(queries);
+    updater: () => {
       fetchPages(
-        `?fields=id,title,keyword,thumbnail,createdAt,updatedAt,body&offset=0&limit=4`
+        `?fields=id,title,keyword,thumbnail,createdAt,updatedAt,body&limit=4`
       );
-      // fetchPages(
-      //   `?fields=id,title,keyword,thumbnail,createdAt,updatedAt,body&offset=4&limit=4`
-      // );
-      // fetchPages(
-      //   `?fields=id,title,keyword,thumbnail,createdAt,updatedAt,body&offset=8&limit=4`
-      // );
     },
   };
 };
