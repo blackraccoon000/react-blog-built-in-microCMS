@@ -21,14 +21,13 @@ const IndexPosts = styled.div.attrs((props) => {})`
 `;
 
 const IndexTemplate = (props) => {
+  console.log('props:', props);
   document.title = 'PlayWell | よく遊びよく学べ';
-  const { pageCount, totalCount } = props.views;
-  // const pageLimit = pageCount < totalCount ?
   return (
     <Wrapper bGColor={props.bGColor}>
       <IndexPosts>
         {props.pages.map((page, num) => {
-          if (num < props.views.pageCount) {
+          if (num < props.views.availableViews) {
             return (
               <ArticleCardTurquoiseBlue
                 key={`${page.id}_${num}`}
@@ -59,15 +58,16 @@ IndexTemplate.defaultProps = {
   bGColor: '#61b1c8',
   pages: pages,
   views: {
-    pageCount: 4,
+    availableViews: 4,
+    acquisition: 11,
   },
 };
 
 const mapStateToProps = (state) => {
   // console.log('IT-state:', state);
   return {
-    pages: state.pages,
-    views: state.views,
+    pages: state.contents.pages,
+    views: state.contents.views,
   };
 };
 

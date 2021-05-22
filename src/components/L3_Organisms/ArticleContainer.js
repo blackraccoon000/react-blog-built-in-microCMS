@@ -13,9 +13,6 @@ import BreadCrumbList from '../L2_Molecules/BreadCrumbList';
 
 import { blogDataSecond } from '../../tests/fixtures/bodyData';
 
-import updatePages from '../../microcms/updatePages';
-import { setPages } from '../../actions/articleActions';
-
 /**
  * 各Componentを統合するWrapper
  */

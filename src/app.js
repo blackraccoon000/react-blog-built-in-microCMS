@@ -5,14 +5,13 @@ import Provider from './provider/Provider';
 import AppRouter from './routers/AppRouter';
 import fonts from './utils/fonts';
 import consoleLog from './utils/consoleLog';
-// import initializePages from './microcms/initializePages';
-// import updatePages from './microcms/updatePages';
-// import store from './store/store';
-// import { setPages } from './actions/articleActions';
+import fetchPages from './microcms/fetchPages';
+
+fetchPages('start');
 
 const jsx = (
   <Provider>
-    {consoleLog()}
+    {/* {consoleLog()} */}
     {fonts(document)}
     <Reset />
     <AppRouter />

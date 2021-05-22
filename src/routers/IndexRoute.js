@@ -6,11 +6,11 @@ import HeaderTurquoiseBlue from '../components/L3_Organisms/HeaderTurquoiseBlue'
 import FooterTurquoiseBlue from '../components/L3_Organisms/FooterTurquoiseBlue';
 import IndexTemplate from '../components/L4_Templates/IndexTemplate';
 import Loading from '../components/L1_Atoms/Loading';
-import updatePages from '../microcms/updatePages';
 import fetchPages from '../microcms/fetchPages';
 
 const IndexRoute = (props) => {
   const { id, ...rest } = props;
+  console.log('IR Props:', props);
   return (
     <Route
       {...rest}
@@ -24,7 +24,6 @@ const IndexRoute = (props) => {
         ) : (
           <>
             <HeaderTurquoiseBlue />
-            {props.updater()}
             <Loading />
             <FooterTurquoiseBlue />
           </>
@@ -36,8 +35,8 @@ const IndexRoute = (props) => {
 
 const mapStateToProps = (state, ownProps) => {
   return {
-    pages: state.pages,
-    views: state.views,
+    pages: state.contents.pages,
+    views: state.contents.views,
   };
 };
 

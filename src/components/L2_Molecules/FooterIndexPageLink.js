@@ -2,10 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-
-import { viewPages } from '../../actions/viewActions';
 import ViewButton from '../L1_Atoms/ViewButton';
-import pageUpdater from '../../microcms/pageUpdater';
 
 const Wrapper = styled.div.attrs((props) => {
   return {

@@ -1,40 +1,21 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { Route, Redirect } from 'react-router-dom';
+import { Route } from 'react-router-dom';
 
 import HeaderTurquoiseBlue from '../components/L3_Organisms/HeaderTurquoiseBlue';
 import FooterCopyrightAria from '../components/L2_Molecules/FooterCopyrightAria';
 import ArticleContainer from '../components/L3_Organisms/ArticleContainer';
 import Loading from '../components/L1_Atoms/Loading';
-import updatePages from '../microcms/updatePages';
-import { setPages } from '../actions/articleActions';
-import consoleLog from '../utils/consoleLog';
 import fetchPages from '../microcms/fetchPages';
 
 const ArticleRoute = (props) => {
-  props.page.nextId !== undefined
-    ? console.log(
-        '次ページ ID',
-        props.page.nextId,
-        '-> 記事情報取得済み',
-        props.pages.length,
-        props.views.pageCount
-      )
-    : props.pages.length !== props.views.totalCount
-    ? console.log(
-        '次ページ ID',
-        props.page.nextId,
-        '-> 記事情報未取得 更新します'
-      ) &
-      props.updater() &
-      console.log(props)
-    : props.pages.length === 0
-    ? console.log('現在の記事情報なし -> 取得します') & props.faster(props.id)
-    : console.log('AR: props.pages.length:', props.pages.length);
-
-  // props.pages.length === 0
-  // ? console.log('現在の記事情報なし -> 取得します') & props.faster(props.id)
-  // : console.log('bbbbbbb');
+  console.log('AR:', props);
+  props.pages.length === 0 &&
+    props.views.obtainable === 0 &&
+    props.faster(props.id);
+  // : props.pages.map((page) => {
+  //     page.id !== props.id && console.log('なんか変', page, props.id);
+  //   });
 
   const { id, ...rest } = props;
   return (
@@ -55,7 +36,6 @@ const ArticleRoute = (props) => {
           <>
             <HeaderTurquoiseBlue />
             <Loading />
-            {props.updater()}
             <FooterCopyrightAria />
           </>
         )
@@ -65,6 +45,7 @@ const ArticleRoute = (props) => {
 };
 
 const mapStateToProps = (state, ownProps) => {
+  // console.log('mapState:', state);
   const id = ownProps.computedMatch.params.id;
   const defaultPage = {
     id,
@@ -77,36 +58,39 @@ const mapStateToProps = (state, ownProps) => {
     },
     body: '',
   };
-  const beforePage = state.pages.find((page) => page.id === id);
+  const beforePage = state.contents.pages.find((page) => page.id === id);
   const workingPage = beforePage === undefined ? defaultPage : beforePage;
-  const pidAry = state.pages.map((page) => page.id);
+  const pidAry = state.contents.pages.map((page) => page.id);
   const now = pidAry.indexOf(id);
   const afterPage = {
     ...workingPage,
-    prevId: state.pages[now - 1] ? state.pages[now - 1].id : undefined,
-    prevTitle: state.pages[now - 1] ? state.pages[now - 1].title : undefined,
-    nextId: state.pages[now + 1] ? state.pages[now + 1].id : undefined,
-    nextTitle: state.pages[now + 1] ? state.pages[now + 1].title : undefined,
+    prevId: state.contents.pages[now - 1]
+      ? state.contents.pages[now - 1].id
+      : undefined,
+    prevTitle: state.contents.pages[now - 1]
+      ? state.contents.pages[now - 1].title
+      : undefined,
+    nextId: state.contents.pages[now + 1]
+      ? state.contents.pages[now + 1].id
+      : undefined,
+    nextTitle: state.contents.pages[now + 1]
+      ? state.contents.pages[now + 1].title
+      : undefined,
   };
 
   return {
     id,
     page: afterPage,
-    pages: state.pages,
-    views: state.views,
+    pages: state.contents.pages,
+    views: state.contents.views,
   };
 };
 
 const mapDispatchToProps = (dispatch, ownProps) => {
   return {
-    updater: () => {
-      fetchPages(
-        `?fields=id,title,keyword,thumbnail,createdAt,updatedAt,body&limit=4`
-      );
-    },
     faster: (id) => {
       fetchPages(
-        `?ids=${id}&fields=id,title,keyword,thumbnail,createdAt,updatedAt,body&limit=4`
+        `?ids=${id}&fields=id,title,keyword,thumbnail,createdAt,updatedAt,body&limit=1`
       );
     },
   };
