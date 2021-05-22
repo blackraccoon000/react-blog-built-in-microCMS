@@ -12,6 +12,7 @@ import ArticlePageNav from '../L2_Molecules/ArticlePageNav';
 import BreadCrumbList from '../L2_Molecules/BreadCrumbList';
 
 import { blogDataSecond } from '../../tests/fixtures/bodyData';
+
 /**
  * 各Componentを統合するWrapper
  */
@@ -40,7 +41,10 @@ const TitleWrapper = styled.div`
  */
 const ArticleContainer = (props) => {
   document.title = props.title;
-  console.log(props);
+
+  props.nextId === 'undefined' &&
+    console.log('次ページ ID', props.nextId, '-> ID更新を待ちます');
+
   return (
     <Wrapper>
       <Container>
@@ -149,23 +153,23 @@ ArticleContainer.defaultProps = {
  * mapStateToPropsは満たされない設定になっている。
  */
 const mapStateToProps = (state, ownProps) => {
-  const pageData = state.pages.find(
-    (page) => page.id === ownProps.match.params.id
-  );
+  // console.log('ACS:', state);
+  // console.log('ACO:', ownProps);
+
   return {
     pages: state.pages,
-    id: pageData.id,
-    title: pageData.title,
-    keywords: pageData.keywords,
-    createdAt: pageData.createdAt,
-    updatedAt: pageData.updatedAt,
-    src: pageData.thumbnail.url,
-    link: pageData.link,
-    body: pageData.body,
-    prevId: pageData.prevId,
-    prevTitle: pageData.prevTitle,
-    nextId: pageData.nextId,
-    nextTitle: pageData.nextTitle,
+    views: state.views,
+    id: ownProps.page.id,
+    title: ownProps.page.title,
+    keywords: ownProps.page.keywords,
+    createdAt: ownProps.page.createdAt,
+    updatedAt: ownProps.page.updatedAt,
+    src: ownProps.page.thumbnail.url,
+    body: ownProps.page.body,
+    prevId: ownProps.page.prevId,
+    prevTitle: ownProps.page.prevTitle,
+    nextId: ownProps.page.nextId,
+    nextTitle: ownProps.page.nextTitle,
   };
 };
 

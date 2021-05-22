@@ -1,21 +1,27 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { Route, Redirect } from 'react-router-dom';
+import { Route } from 'react-router-dom';
 
 import HeaderTurquoiseBlue from '../components/L3_Organisms/HeaderTurquoiseBlue';
 import FooterCopyrightAria from '../components/L2_Molecules/FooterCopyrightAria';
 import ArticleContainer from '../components/L3_Organisms/ArticleContainer';
 import Loading from '../components/L1_Atoms/Loading';
-import pageGetter from '../microcms/pageGetter';
+import fetchPages from '../microcms/fetchPages';
 
 const ArticleRoute = (props) => {
   console.log('AR:', props);
+  props.pages.length === 0 &&
+    props.views.obtainable === 0 &&
+    props.faster(props.id);
+  // : props.pages.map((page) => {
+  //     page.id !== props.id && console.log('なんか変', page, props.id);
+  //   });
+
   const { id, ...rest } = props;
-  console.log('id:', id);
   return (
     <Route
       {...rest}
-      component={(props) =>
+      component={() =>
         id ? (
           <>
             <HeaderTurquoiseBlue />
@@ -29,7 +35,6 @@ const ArticleRoute = (props) => {
           // pageDataが読み込めない状態では表示ができない。
           <>
             <HeaderTurquoiseBlue />
-            {pageGetter(props)}
             <Loading />
             <FooterCopyrightAria />
           </>
@@ -40,22 +45,56 @@ const ArticleRoute = (props) => {
 };
 
 const mapStateToProps = (state, ownProps) => {
-  console.log('state: ', state);
-  console.log('ownProps: ', ownProps);
-  console.log('id:', ownProps.computedMatch.params.id);
-  const pageData = state.pages.find(
-    (page) => page.id === ownProps.computedMatch.params.id
-  );
+  // console.log('mapState:', state);
+  const id = ownProps.computedMatch.params.id;
+  const defaultPage = {
+    id,
+    title: '',
+    keywords: [''],
+    createdAt: '',
+    updatedAt: '',
+    thumbnail: {
+      url: '',
+    },
+    body: '',
+  };
+  const beforePage = state.contents.pages.find((page) => page.id === id);
+  const workingPage = beforePage === undefined ? defaultPage : beforePage;
+  const pidAry = state.contents.pages.map((page) => page.id);
+  const now = pidAry.indexOf(id);
+  const afterPage = {
+    ...workingPage,
+    prevId: state.contents.pages[now - 1]
+      ? state.contents.pages[now - 1].id
+      : undefined,
+    prevTitle: state.contents.pages[now - 1]
+      ? state.contents.pages[now - 1].title
+      : undefined,
+    nextId: state.contents.pages[now + 1]
+      ? state.contents.pages[now + 1].id
+      : undefined,
+    nextTitle: state.contents.pages[now + 1]
+      ? state.contents.pages[now + 1].title
+      : undefined,
+  };
+
   return {
-    id: pageData ? pageData.id : null,
-    pages: state.pages,
-    views: state.views,
+    id,
+    page: afterPage,
+    pages: state.contents.pages,
+    views: state.contents.views,
   };
 };
 
-const mapDispatchToProps = (dispatch) => ({
-  viewsUpdater: (views) => dispatch(viewPages(views)),
-});
+const mapDispatchToProps = (dispatch, ownProps) => {
+  return {
+    faster: (id) => {
+      fetchPages(
+        `?ids=${id}&fields=id,title,keyword,thumbnail,createdAt,updatedAt,body&limit=1`
+      );
+    },
+  };
+};
 
 export { ArticleRoute };
 export default connect(mapStateToProps, mapDispatchToProps)(ArticleRoute);

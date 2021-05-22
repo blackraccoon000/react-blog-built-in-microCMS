@@ -6,23 +6,25 @@ import HeaderTurquoiseBlue from '../components/L3_Organisms/HeaderTurquoiseBlue'
 import FooterTurquoiseBlue from '../components/L3_Organisms/FooterTurquoiseBlue';
 import IndexTemplate from '../components/L4_Templates/IndexTemplate';
 import Loading from '../components/L1_Atoms/Loading';
+import fetchPages from '../microcms/fetchPages';
 
-const ArticleRoute = (props) => {
+const IndexRoute = (props) => {
   const { id, ...rest } = props;
+  console.log('IR Props:', props);
   return (
     <Route
       {...rest}
       component={() => {
-        return props.pages[0] === undefined ? (
+        return props.pages[0] !== undefined ? (
           <>
             <HeaderTurquoiseBlue />
-            <Loading />
+            <IndexTemplate {...rest} />
             <FooterTurquoiseBlue />
           </>
         ) : (
           <>
             <HeaderTurquoiseBlue />
-            <IndexTemplate {...rest} />
+            <Loading />
             <FooterTurquoiseBlue />
           </>
         );
@@ -31,12 +33,22 @@ const ArticleRoute = (props) => {
   );
 };
 
-const mapStateToProps = (state) => {
-  // console.log('IR-state:', state);
+const mapStateToProps = (state, ownProps) => {
   return {
-    pages: state.pages,
+    pages: state.contents.pages,
+    views: state.contents.views,
   };
 };
 
-export { ArticleRoute };
-export default connect(mapStateToProps)(ArticleRoute);
+const mapDispatchToProps = (dispatch, ownProps) => {
+  return {
+    updater: () => {
+      fetchPages(
+        `?fields=id,title,keyword,thumbnail,createdAt,updatedAt,body&limit=4`
+      );
+    },
+  };
+};
+
+export { IndexRoute };
+export default connect(mapStateToProps, mapDispatchToProps)(IndexRoute);

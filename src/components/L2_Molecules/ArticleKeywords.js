@@ -44,19 +44,20 @@ const StyledLink = styled(Link)`
 const ArticleKeywords = (props) => {
   return (
     <Article justifyContent={props.justifyContent} order={props.order}>
-      {props.keywords.map((keyword, num) => {
-        return (
-          <Category
-            fontFamily={props.fontFamily}
-            key={`${keyword}_${num}`}
-            {...props}
-          >
-            <StyledLink to={`keyword/${keyword}`} color={props.color}>
-              {keyword}
-            </StyledLink>
-          </Category>
-        );
-      })}
+      {props.keywords[0] !== '' &&
+        props.keywords.map((keyword, num) => {
+          return (
+            <Category
+              fontFamily={props.fontFamily}
+              key={`${keyword}_${num}`}
+              {...props}
+            >
+              <StyledLink to={`keyword/${keyword}`} color={props.color}>
+                {keyword}
+              </StyledLink>
+            </Category>
+          );
+        })}
     </Article>
   );
 };
