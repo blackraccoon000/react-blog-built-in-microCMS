@@ -8,8 +8,6 @@ const contentsListCreator = (value, store) => {
   const valueGetIds = valueContents.map(({ id } = page) => id);
   const valueGetTitles = valueContents.map(({ title } = page) => title);
 
-  console.log(valueGetTitles[0]);
-
   const acquiredIds = storeContents
     .filter((contents) => contents.Acquired === true)
     .map((contents) => contents.id);
@@ -39,7 +37,6 @@ const contentsListCreator = (value, store) => {
         Acquired: storeGetIds.indexOf(id) === -1 ? false : true,
       }));
     default:
-      // console.log('valueGetIds Concat:', valueGetIds.concat(acquiredIds));
       return (
         storeContents.length === storeObtainable &&
         storeGetIds.map((id, aryNum) => ({

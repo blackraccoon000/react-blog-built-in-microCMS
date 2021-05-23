@@ -21,9 +21,10 @@ const queryShaping = (queries, data, getLimit) => {
         .map((contents, num) => num < getLimit && contents.id)
         .filter((contents) => contents !== false)
         .join(',');
-      console.log('query Shaping ids:', ids);
-
       return `${str}?ids=${ids}&fields=${fields}&offset=0&limit=${data.obtainable}`;
+    case 'onlyOne':
+      /** 一つだけ取得する */
+      return `${str}?ids=${data.id}&fields=${fields}&offset=0&limit=${data.obtainable}`;
     default:
       /** queriesを直接入力する */
       return `${str}${queries}`;

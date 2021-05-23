@@ -4,8 +4,8 @@ import axiosCheck from '../selectors/axiosCheck';
 import queryShaping from '../selectors/queryShaping';
 import fetchControl from '../selectors/fetchControl';
 
-const fetchPages = async (queries = '/', getLimit = 4) => {
-  const data = reduxCheck(store.getState().contents);
+const fetchPages = async (queries = '/', id = '', getLimit = 4) => {
+  const data = reduxCheck(store.getState().contents, id);
   const axc = axiosCheck(data);
   const str = queryShaping(queries, data, getLimit);
   fetchControl(queries, store, axc, str);

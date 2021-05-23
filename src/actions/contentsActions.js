@@ -7,6 +7,9 @@ const setContents = (pages, contentsList) => {
       availableViews: contentsList
         .map((contents) => (contents.Acquired === true ? 1 : 0))
         .reduce((acc, cur) => acc + cur),
+      viewsSortByIds: contentsList
+        .filter((contents) => contents.Acquired === true)
+        .map((contents) => contents.id),
     },
   };
 };
