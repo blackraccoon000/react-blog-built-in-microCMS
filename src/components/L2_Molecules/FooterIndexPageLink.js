@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import ViewButton from '../L1_Atoms/ViewButton';
+import fetchPages from '../../microcms/fetchPages';
 
 const Wrapper = styled.div.attrs((props) => {
   return {
@@ -25,10 +26,7 @@ const Container = styled.div`
 
 const FooterIndexPageLink = (props) => {
   const updater = (e) => {
-    // console.log('PropsPages:', props.pages.length);
-    // console.log('PropsViewsPC:', props.views.pageCount);
-    // console.log('PropsViewsTC:', props.views.totalCount);
-    pageUpdater(props, props.views.pageCount, props.views.limitCount);
+    props.viewsUpdater('acquired', 4);
   };
   return (
     <Wrapper bGColor={props.bGColor}>
@@ -64,7 +62,7 @@ const mapStateToProps = (state) => {
 };
 
 const mapDispatchToProps = (dispatch) => ({
-  viewsUpdater: (views) => dispatch(viewPages(views)),
+  viewsUpdater: (queries, getLimit) => fetchPages(queries, getLimit),
 });
 
 export default connect(

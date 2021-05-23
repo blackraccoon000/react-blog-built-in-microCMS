@@ -30,10 +30,30 @@ const fetchControl = (queries, store, axc, str) => {
           console.error('★★★★★ Axios ContentsList Error:', error)
         );
       break;
+    case 'acquired':
+      useAxios(axc, str)
+        .then((value) => {
+          console.log(
+            'acquired:',
+            value.config.url,
+            '/ acquired value:',
+            value
+          );
+          store.dispatch(
+            setContents(value.data.contents, contentsListCreator(value, store))
+          );
+        })
+        .catch((error) => console.error('★★★★★ Axios Acquired Error:', error));
+      break;
     default:
       useAxios(axc, str)
         .then((value) => {
-          console.log('default:', value);
+          console.log(
+            'default url:',
+            value.config.url,
+            '/ default value:',
+            value
+          );
           store.dispatch(
             setContents(value.data.contents, contentsListCreator(value, store))
           );
