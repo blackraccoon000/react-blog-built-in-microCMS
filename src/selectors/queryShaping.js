@@ -1,4 +1,3 @@
-// const ids = '4joe11pv12p0,5gdg-uw1v,uhrjbmf8xqz3';
 const fields = 'id,title,keyword,thumbnail,createdAt,updatedAt,body';
 
 /**
@@ -22,8 +21,7 @@ const queryShaping = (queries, data, getLimit) => {
         .filter((contents) => contents !== false)
         .join(',');
       return `${str}?ids=${ids}&fields=${fields}&offset=0&limit=${data.obtainable}`;
-    case 'onlyOne':
-      /** 一つだけ取得する */
+    case 'select':
       return `${str}?ids=${data.id}&fields=${fields}&offset=0&limit=${data.obtainable}`;
     default:
       /** queriesを直接入力する */

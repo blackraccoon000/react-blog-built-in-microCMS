@@ -21,7 +21,7 @@ const IndexPosts = styled.div.attrs((props) => {})`
 `;
 
 const IndexTemplate = (props) => {
-  console.log('props:', props);
+  // console.log('props:', props);
   document.title = 'PlayWell | よく遊びよく学べ';
   return (
     <Wrapper bGColor={props.bGColor}>
