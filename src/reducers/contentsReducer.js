@@ -2,6 +2,7 @@ const defaultState = {
   pages: [],
   views: {
     availableViews: 0,
+    viewsSortByIds: [],
     obtainable: 0,
     contentsList: [],
   },
@@ -14,6 +15,7 @@ const contentsReducer = (state = defaultState, action) => {
         pages: [...state.pages, ...action.pages],
         views: {
           availableViews: action.views.availableViews,
+          viewsSortByIds: action.views.viewsSortByIds,
           obtainable: state.views.obtainable,
           contentsList: [...action.views.contentsList],
         },
@@ -23,6 +25,7 @@ const contentsReducer = (state = defaultState, action) => {
         pages: [...state.pages],
         views: {
           availableViews: state.views.availableViews,
+          viewsSortByIds: state.views.viewsSortByIds,
           obtainable: state.views.obtainable,
           contentsList: [...action.views.contentsList],
         },
@@ -32,6 +35,7 @@ const contentsReducer = (state = defaultState, action) => {
         pages: [...state.pages],
         views: {
           availableViews: state.views.availableViews,
+          viewsSortByIds: state.views.viewsSortByIds,
           obtainable: action.views.obtainable,
           contentsList: [...state.views.contentsList],
         },

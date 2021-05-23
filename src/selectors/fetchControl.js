@@ -12,7 +12,7 @@ const fetchControl = (queries, store, axc, str) => {
     case 'start':
       useAxios(axc, str)
         .then((value) => {
-          console.log('start:', value);
+          // console.log('start:', value);
           /** obtainable 取得可能最大数をdispatchする */
           store.dispatch(setObtainable(value.data.totalCount));
           fetchPages('contentsList');
@@ -22,9 +22,9 @@ const fetchControl = (queries, store, axc, str) => {
     case 'contentsList':
       useAxios(axc, str)
         .then((value) => {
-          console.log('contentList:', value);
+          // console.log('contentList:', value);
           store.dispatch(setContentsList(contentsListCreator(value, store)));
-          fetchPages('acquired'); // acquiredのみgetLimitで数指定ができる
+          // fetchPages('acquired'); // acquiredのみgetLimitで数指定ができる
         })
         .catch((error) =>
           console.error('★★★★★ Axios ContentsList Error:', error)
@@ -33,12 +33,12 @@ const fetchControl = (queries, store, axc, str) => {
     case 'acquired':
       useAxios(axc, str)
         .then((value) => {
-          console.log(
-            'acquired:',
-            value.config.url,
-            '/ acquired value:',
-            value
-          );
+          // console.log(
+          //   'acquired:',
+          //   value.config.url,
+          //   '/ acquired value:',
+          //   value
+          // );
           store.dispatch(
             setContents(value.data.contents, contentsListCreator(value, store))
           );
@@ -48,12 +48,12 @@ const fetchControl = (queries, store, axc, str) => {
     default:
       useAxios(axc, str)
         .then((value) => {
-          console.log(
-            'default url:',
-            value.config.url,
-            '/ default value:',
-            value
-          );
+          // console.log(
+          //   'default url:',
+          //   value.config.url,
+          //   '/ default value:',
+          //   value
+          // );
           store.dispatch(
             setContents(value.data.contents, contentsListCreator(value, store))
           );

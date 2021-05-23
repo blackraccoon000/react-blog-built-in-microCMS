@@ -11,20 +11,25 @@ import fetchPages from '../microcms/fetchPages';
 const IndexRoute = (props) => {
   const { id, ...rest } = props;
   console.log('IR Props:', props);
+  props.views.availableViews < 4 &&
+    props.views.obtainable !== 0 &&
+    props.views.contentsList.length !== 0 &&
+    props.updater(4 - props.views.availableViews);
+
   return (
     <Route
       {...rest}
       component={() => {
-        return props.pages[0] !== undefined ? (
+        return props.views.availableViews === 0 ? (
           <>
             <HeaderTurquoiseBlue />
-            <IndexTemplate {...rest} />
+            <Loading />
             <FooterTurquoiseBlue />
           </>
         ) : (
           <>
             <HeaderTurquoiseBlue />
-            <Loading />
+            <IndexTemplate {...rest} />
             <FooterTurquoiseBlue />
           </>
         );
@@ -42,11 +47,7 @@ const mapStateToProps = (state, ownProps) => {
 
 const mapDispatchToProps = (dispatch, ownProps) => {
   return {
-    updater: () => {
-      fetchPages(
-        `?fields=id,title,keyword,thumbnail,createdAt,updatedAt,body&limit=4`
-      );
-    },
+    updater: (getLimit) => fetchPages('acquired', '', getLimit),
   };
 };
 

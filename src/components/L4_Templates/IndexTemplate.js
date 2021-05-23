@@ -26,22 +26,22 @@ const IndexTemplate = (props) => {
   return (
     <Wrapper bGColor={props.bGColor}>
       <IndexPosts>
-        {props.pages.map((page, num) => {
-          if (num < props.views.availableViews) {
-            return (
-              <ArticleCardTurquoiseBlue
-                key={`${page.id}_${num}`}
-                src={page.thumbnail !== undefined ? page.thumbnail.url : ''}
-                title={page.title}
-                id={page.id}
-                createdAt={page.createdAt}
-                updatedAt={page.updatedAt}
-                keywords={
-                  page.keyword !== undefined ? page.keyword.split(',') : ['']
-                }
-              />
-            );
-          }
+        {props.views.viewsSortByIds.map((id) => {
+          /** viewsSortByIdsの順番で表示する */
+          const ACPage = props.pages.find((page) => page.id === id);
+          return (
+            <ArticleCardTurquoiseBlue
+              key={ACPage.id}
+              src={ACPage.thumbnail !== undefined ? ACPage.thumbnail.url : ''}
+              title={ACPage.title}
+              id={ACPage.id}
+              createdAt={ACPage.createdAt}
+              updatedAt={ACPage.updatedAt}
+              keywords={
+                ACPage.keyword !== undefined ? ACPage.keyword.split(',') : ['']
+              }
+            />
+          );
         })}
       </IndexPosts>
     </Wrapper>
@@ -50,7 +50,7 @@ const IndexTemplate = (props) => {
 
 IndexTemplate.propTypes = {
   bGColor: PropTypes.string,
-  posts: PropTypes.array,
+  pages: PropTypes.array,
   views: PropTypes.object,
 };
 
@@ -60,6 +60,12 @@ IndexTemplate.defaultProps = {
   views: {
     availableViews: 4,
     acquisition: 11,
+    viewsSortByIds: [
+      'uhrjbmf8xqz3',
+      'kf9j-jzze',
+      'q0qtwov5f4q6',
+      'ww2vpab1815b',
+    ],
   },
 };
 
