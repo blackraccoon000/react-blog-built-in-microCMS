@@ -8,6 +8,8 @@ const contentsListCreator = (value, store) => {
   const valueGetIds = valueContents.map(({ id } = page) => id);
   const valueGetTitles = valueContents.map(({ title } = page) => title);
 
+  console.log(valueGetTitles[0]);
+
   const acquiredIds = storeContents
     .filter((contents) => contents.Acquired === true)
     .map((contents) => contents.id);
@@ -19,7 +21,7 @@ const contentsListCreator = (value, store) => {
 
   switch (storeGetIds.length) {
     case 0:
-      return valueGetTitles.length === 0 && valueGetTitles[0] === undefined
+      return valueGetTitles[0] === undefined
         ? valueGetIds.map((id, aryNum) => ({
             aryNum,
             id,

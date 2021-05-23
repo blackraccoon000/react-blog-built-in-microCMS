@@ -21,6 +21,7 @@ const queryShaping = (queries, data, getLimit) => {
         .map((contents, num) => num < getLimit && contents.id)
         .filter((contents) => contents !== false)
         .join(',');
+      console.log('query Shaping ids:', ids);
 
       return `${str}?ids=${ids}&fields=${fields}&offset=0&limit=${data.obtainable}`;
     default:
