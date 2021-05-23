@@ -10,7 +10,7 @@ import fetchPages from '../microcms/fetchPages';
 
 const IndexRoute = (props) => {
   const { id, ...rest } = props;
-  console.log('IR Props:', props);
+  // console.log('IR Props:', props);
   props.views.availableViews < 4 &&
     props.views.obtainable !== 0 &&
     props.views.contentsList.length !== 0 &&
