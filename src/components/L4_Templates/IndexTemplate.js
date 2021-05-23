@@ -50,7 +50,7 @@ const IndexTemplate = (props) => {
 
 IndexTemplate.propTypes = {
   bGColor: PropTypes.string,
-  posts: PropTypes.array,
+  pages: PropTypes.array,
   views: PropTypes.object,
 };
 
@@ -60,6 +60,12 @@ IndexTemplate.defaultProps = {
   views: {
     availableViews: 4,
     acquisition: 11,
+    viewsSortByIds: [
+      'uhrjbmf8xqz3',
+      'kf9j-jzze',
+      'q0qtwov5f4q6',
+      'ww2vpab1815b',
+    ],
   },
 };
 
