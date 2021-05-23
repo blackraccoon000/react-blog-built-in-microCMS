@@ -8,6 +8,8 @@ import consoleLog from './utils/consoleLog';
 import fetchPages from './microcms/fetchPages';
 
 fetchPages('start');
+// const keyword = 'テスト';
+// fetchPages(`?fields=id&filters=keyword[contains]${keyword}`);
 
 const jsx = (
   <Provider>

@@ -35,12 +35,22 @@ const fetchControl = (queries, store, axc, str) => {
         })
         .catch((error) => console.error('★★★★★ Axios Acquired Error:', error));
       break;
-    default:
+    case 'select':
       useAxios(axc, str)
         .then((value) => {
           store.dispatch(
             setContents(value.data.contents, contentsListCreator(value, store))
           );
+        })
+        .catch((error) => console.error('★★★★★ Axios Select Error:', error));
+      break;
+    default:
+      useAxios(axc, str)
+        .then((value) => {
+          console.log(value);
+          // store.dispatch(
+          //   setContents(value.data.contents, contentsListCreator(value, store))
+          // );
         })
         .catch((error) => console.error('★★★★★ Axios Default Error:', error));
       break;
