@@ -20,6 +20,7 @@ const fetchControl = (queries, store, axc, str) => {
     case 'contentsList':
       useAxios(axc, str)
         .then((value) => {
+          // console.log('keywords:', value);
           store.dispatch(setContentsList(contentsListCreator(value, store)));
         })
         .catch((error) =>

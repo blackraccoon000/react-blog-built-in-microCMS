@@ -1,5 +1,5 @@
 const fields = 'id,title,keyword,thumbnail,createdAt,updatedAt,body';
-
+const keywordFields = 'id,title,keyword,createdAt,updatedAt';
 /**
  * 取得したqueriesを整形する
  */
