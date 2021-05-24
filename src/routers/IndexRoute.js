@@ -7,14 +7,12 @@ import FooterTurquoiseBlue from '../components/L3_Organisms/FooterTurquoiseBlue'
 import IndexTemplate from '../components/L4_Templates/IndexTemplate';
 import Loading from '../components/L1_Atoms/Loading';
 import fetchPages from '../microcms/fetchPages';
+import getIndexSelector from '../selectors/getIndexSelector';
 
 const IndexRoute = (props) => {
   const { id, ...rest } = props;
   // console.log('IR Props:', props);
-  props.views.availableViews < 4 &&
-    props.views.obtainable !== 0 &&
-    props.views.contentsList.length !== 0 &&
-    props.updater(4 - props.views.availableViews);
+  getIndexSelector(props);
 
   return (
     <Route
