@@ -37,6 +37,7 @@
     "babel-plugin-transform-class-properties": "^6.24.1",
     "babel-plugin-transform-object-rest-spread": "^6.26.0",
     "cheerio": "^1.0.0-rc.9",
+    "css-loader": "^5.2.5",
     "express": "^4.17.1",
     "favicons": "^6.2.1",
     "favicons-webpack-plugin": "^5.0.2",
