@@ -20,7 +20,7 @@ module.exports = {
      * ○参照ファイル名(成功)
      * http://localhost:8082/dist/bundle.js?dd29d78971b5809d4935
      */
-    publicPath: '/dist',
+    publicPath: '/dist/',
     path: path.resolve(__dirname, '../public/dist'),
     filename: 'bundle.js',
     clean: true,
