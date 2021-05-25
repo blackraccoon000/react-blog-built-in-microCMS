@@ -12,24 +12,24 @@ const Wrapper = styled.div`
   flex-direction: column;
 `;
 
+const LoadingContainer = styled.div`
+  background-color: #e6e6e6;
+  height: 200px;
+  width: 200px;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  border-radius: 100px;
+  flex-direction: column;
+`;
+
 const LoadingImg = styled.img`
-  /* position: relative; */
   width: 117px;
   height: 54px;
-  /* animation: imgAnimation 12s infinite ease-in-out;
-
-  @keyframes imgAnimation {
-    0% {
-      right: -100%;
-    }
-    100% {
-      right: 100%;
-    }
-  } */
 `;
 
 const LoadingMessage = styled.p`
-  color: #e6e6e6;
+  color: #deabab;
   font-size: 12px;
   margin-top: 15px;
 `;
@@ -37,8 +37,10 @@ const LoadingMessage = styled.p`
 const Loading = (props) => {
   return (
     <Wrapper>
-      <LoadingImg src={RaccoonRun} alt="loading" />
-      <LoadingMessage>Now Loading ...</LoadingMessage>
+      <LoadingContainer>
+        <LoadingImg src={RaccoonRun} alt="loading" />
+        <LoadingMessage>Now Loading ...</LoadingMessage>
+      </LoadingContainer>
     </Wrapper>
   );
 };
