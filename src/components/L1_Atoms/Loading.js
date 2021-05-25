@@ -1,36 +1,44 @@
 import React from 'react';
 import styled from 'styled-components';
+import RaccoonRun from '../../img/raccoon_run.gif';
 
 const Wrapper = styled.div`
   height: 75vh;
   transition: all 1s;
   background-color: #61b1c8;
   display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 `;
 
-const Spinner = styled.div`
-  width: 100px;
-  height: 100px;
-  margin: 200px auto;
-  background-color: #fff;
-  border-radius: 100%;
-  animation: sk-scaleout 1s infinite ease-in-out;
+const LoadingImg = styled.img`
+  /* position: relative; */
+  width: 117px;
+  height: 54px;
+  /* animation: imgAnimation 12s infinite ease-in-out;
 
-  @keyframes sk-scaleout {
+  @keyframes imgAnimation {
     0% {
-      transform: scale(0);
+      right: -100%;
     }
     100% {
-      transform: scale(1);
-      opacity: 0;
+      right: 100%;
     }
-  }
+  } */
+`;
+
+const LoadingMessage = styled.p`
+  color: #e6e6e6;
+  font-size: 12px;
+  margin-top: 15px;
 `;
 
 const Loading = (props) => {
   return (
     <Wrapper>
-      <Spinner />
+      <LoadingImg src={RaccoonRun} alt="loading" />
+      <LoadingMessage>Now Loading ...</LoadingMessage>
     </Wrapper>
   );
 };
