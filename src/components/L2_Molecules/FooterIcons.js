@@ -8,6 +8,7 @@ import IconYoutube from '../L1_Atoms/IconYoutube';
 import IconFacebook from '../L1_Atoms/IconFacebook';
 import IconChromatic from '../L1_Atoms/IconChromatic';
 import IconMicroCms from '../L1_Atoms/IconMicroCms';
+import IconNetlify from '../L1_Atoms/IconNetlify';
 import IconAdobe from '../L1_Atoms/IconAdobe';
 
 const UnorderedList = styled.ul.attrs((props) => {
@@ -91,6 +92,11 @@ const FooterIcons = (props) => {
       <ListItem>
         <a href="https://microcms.io/" target="_blank" rel="noopener">
           <IconMicroCms color={color} />
+        </a>
+      </ListItem>
+      <ListItem>
+        <a href="https://netlify.com/" target="_blank" rel="noopener">
+          <IconNetlify color={color} />
         </a>
       </ListItem>
       <ListItem>
