@@ -1,0 +1,103 @@
+collect:{
+  _id: 60b0bcf753ab86a1be40bf1b,
+  totalCount: 11,
+  simpleArticles: [
+    {
+      _id: 60b0bcf753ab86a1be40bf1c,
+      id: '4joe11pv12p0',
+      title: 'asa',
+      keyword: 'asa,ddd'
+    },
+    {
+      _id: 60b0bcf753ab86a1be40bf1d,
+      id: '5gdg-uw1v',
+      title: 'new 1',
+      keyword: 'new1,new2'
+    },
+    {
+      _id: 60b0bcf753ab86a1be40bf1e,
+      id: 'uhrjbmf8xqz3',
+      title: '①Reactをwebpackでセットアップする。',
+      keyword: 'テスト,ブログ,test,blog,microcms,react,webpack'
+    },
+    {
+      _id: 60b0bcf753ab86a1be40bf1f,
+      id: 'kf9j-jzze',
+      title: '②Reactをwebpackでセットアップする。',
+      keyword: 'テスト,ブログ,test,blog,microcms,react,webpack'
+    },
+    {
+      _id: 60b0bcf753ab86a1be40bf20,
+      id: 'q0qtwov5f4q6',
+      title: '③ブログタイトル',
+      keyword: 'テスト,ブログ,test,blog,microcms'
+    },
+    {
+      _id: 60b0bcf753ab86a1be40bf21,
+      id: 'ww2vpab1815b',
+      title: '④ブログタイトル',
+      keyword: 'テスト,ブログ,test,blog,microcms'
+    },
+    {
+      _id: 60b0bcf753ab86a1be40bf22,
+      id: '8lvqc7pehr1q',
+      title: '⑤Reactをwebpackでセットアップする。',
+      keyword: 'テスト,ブログ,test,blog,microcms,react,webpack'
+    },
+    {
+      _id: 60b0bcf753ab86a1be40bf23,
+      id: 'asc_9w4_fxl',
+      title: '⑥webpackを活用したfaviconの設定',
+      keyword: 'テスト,ブログ,test,blog,microcms,react,FaviconsWebpackPlugin,HtmlWebpackPlugin'
+    },
+    {
+      _id: 60b0bcf753ab86a1be40bf24,
+      id: '7odtdk62l',
+      title: '⑦webpackを活用したfaviconの設定',
+      keyword: 'テスト,ブログ,test,blog,microcms,react,FaviconsWebpackPlugin,HtmlWebpackPlugin'
+    },
+    {
+      _id: 60b0bcf753ab86a1be40bf25,
+      id: 'vn-81ad1p',
+      title: '⑧Reactをwebpackでセットアップする。',
+      keyword: 'テスト,ブログ,test,blog,microcms,react,webpack'
+    },
+    {
+      _id: 60b0bcf753ab86a1be40bf26,
+      id: 'mxq-0f4nq',
+      title: '⑨ブログタイトル',
+      keyword: 'テスト,ブログ,test,blog,microcms'
+    }
+  ],
+  keywordRelational: [
+    { ids: [Array], _id: 60b0bcf753ab86a1be40bf27, keyword: 'asa' },
+    { ids: [Array], _id: 60b0bcf753ab86a1be40bf28, keyword: 'ddd' },
+    { ids: [Array], _id: 60b0bcf753ab86a1be40bf29, keyword: 'new1' },
+    { ids: [Array], _id: 60b0bcf753ab86a1be40bf2a, keyword: 'new2' },
+    { ids: [Array], _id: 60b0bcf753ab86a1be40bf2b, keyword: 'テスト' },
+    { ids: [Array], _id: 60b0bcf753ab86a1be40bf2c, keyword: 'ブログ' },
+    { ids: [Array], _id: 60b0bcf753ab86a1be40bf2d, keyword: 'test' },
+    { ids: [Array], _id: 60b0bcf753ab86a1be40bf2e, keyword: 'blog' },
+    {
+      ids: [Array],
+      _id: 60b0bcf753ab86a1be40bf2f,
+      keyword: 'microcms'
+    },
+    { ids: [Array], _id: 60b0bcf753ab86a1be40bf30, keyword: 'react' },
+    { ids: [Array], _id: 60b0bcf753ab86a1be40bf31, keyword: 'webpack' },
+    {
+      ids: [Array],
+      _id: 60b0bcf753ab86a1be40bf32,
+      keyword: 'FaviconsWebpackPlugin'
+    },
+    {
+      ids: [Array],
+      _id: 60b0bcf753ab86a1be40bf33,
+      keyword: 'HtmlWebpackPlugin'
+    }
+  ],
+  owner: 60b0576028596573b057bcbe,
+  createdAt: 2021-05-28T09:50:47.567Z,
+  updatedAt: 2021-05-28T09:50:47.567Z,
+  __v: 0
+}
