@@ -3,7 +3,8 @@ const keywordFields = 'id,title,keyword,createdAt,updatedAt';
 
 const acqId = process.env.ACQID;
 // const url = "http://0.0.0.0:3000/acq"
-const url = 'http://blog-api.playwell.site/acq';
+// const url = 'http://blog-api.playwell.site/acq';　// Mixed Content Error
+const url = 'https://young-forest-57852.herokuapp.com/acq';
 const str = 'https://playwell.microcms.io/api/v1/blog';
 import store from '../store/store';
 
