@@ -60,7 +60,6 @@ module.exports = {
   },
   plugins: [
     new webpack.DefinePlugin({
-      'process.env.X_API_KEY': JSON.stringify(process.env.X_API_KEY),
       'process.env.ACQID': JSON.stringify(process.env.ACQID),
     }),
     new HtmlWebpackPlugin({

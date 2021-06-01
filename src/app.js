@@ -8,11 +8,10 @@ import consoleLog from './utils/consoleLog';
 import fetchPages from './microcms/fetchPages';
 
 fetchPages('start');
-// fetchPages();
 
 const jsx = (
   <Provider>
-    {/* {consoleLog()} */}
+    {consoleLog()}
     {fonts(document)}
     <Reset />
     <AppRouter />

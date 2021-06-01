@@ -31,7 +31,7 @@ const Container = styled.div.attrs((props) => {})`
  */
 const OneKeywordContainer = (props) => {
   document.title = props.title;
-  console.log(props);
+  // console.log(props);
   return (
     <Wrapper>
       <Container>

@@ -10,7 +10,7 @@ import fetchPages from '../microcms/fetchPages';
 import acquiredUpdater from '../selectors/acquiredUpdater';
 
 const ArticleCardListRoute = (props) => {
-  console.log(props);
+  // console.log(props);
   return (
     <Route
       component={() => {
