@@ -17,7 +17,19 @@ const Wrapper = styled.div.attrs((props) => {
 const ArticleCardWrapper = styled.div.attrs((props) => {})`
   display: grid;
   grid-template-rows: auto auto;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr;
+
+  @media screen and (min-width: 400px) and (max-width: 766px) {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  @media screen and (min-width: 767px) and (max-width: 1024px) {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  @media screen and (min-width: 1025px) {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
 `;
 
 const ArticleCardList = (props) => {

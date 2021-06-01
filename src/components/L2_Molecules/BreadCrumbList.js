@@ -77,22 +77,26 @@ const BreadCrumbList = (props) => {
           })}
         </KeywordDowner>
       </KeywordWrapper>
-      <NavItem
-        color={props.color}
-        fontSize={12}
-        margin={'calc(10rem/16) 0 calc(10rem/16)'}
-        padding={'calc(2rem / 16) 0'}
-        value=">"
-        flag={false}
-      />
-      <NavItem
-        color={props.color}
-        fontSize={12}
-        margin={'calc(10rem/16) calc(7rem/16) calc(10rem/16)'}
-        padding={'calc(2rem / 16) calc(8rem / 16)'}
-        value={props.title}
-        link={'#'}
-      />
+      {window.parent.screen.width > 600 && (
+        <>
+          <NavItem
+            color={props.color}
+            fontSize={12}
+            margin={'calc(10rem/16) 0 calc(10rem/16)'}
+            padding={'calc(2rem / 16) 0'}
+            value=">"
+            flag={false}
+          />
+          <NavItem
+            color={props.color}
+            fontSize={12}
+            margin={'calc(10rem/16) calc(7rem/16) calc(10rem/16)'}
+            padding={'calc(2rem / 16) calc(8rem / 16)'}
+            value={props.title}
+            link={'#'}
+          />
+        </>
+      )}
     </Wrapper>
   );
 };

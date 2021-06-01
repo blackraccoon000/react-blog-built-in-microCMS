@@ -11,7 +11,11 @@ const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  width: 750px;
+  width: calc(280rem / 16);
+
+  @media screen and (min-width: 900px) {
+    width: calc(750rem / 16);
+  }
 `;
 
 const TitleWrapper = (props) => {
