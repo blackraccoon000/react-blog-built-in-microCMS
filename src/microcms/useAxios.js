@@ -1,7 +1,6 @@
 import axios from 'axios';
 
 const useAxios = async (query) => {
-  console.log(query);
   try {
     console.log('==========axios start==========', { query });
     return await axios.get(`${query}`, {
