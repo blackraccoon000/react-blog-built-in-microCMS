@@ -36,7 +36,6 @@ const BlogTopImg = styled.img.attrs((props) => {
 const StyledLink = styled(Link)``;
 
 const ArticleImg = (props) => {
-  // console.log('AI:', props);
   return (
     <ArticleWrapper
       height={props.height}

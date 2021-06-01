@@ -1,12 +1,13 @@
 import React from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 import cheerio from 'cheerio';
 import hljs from 'highlight.js/lib/core';
 import javascript from 'highlight.js/lib/languages/javascript';
 import xml from 'highlight.js/lib/languages/xml';
 import 'highlight.js/styles/atelier-cave-dark.css';
-import { blogDataSecond } from '../../tests/fixtures/bodyData';
+import Loading from '../L1_Atoms/Loading';
 
 hljs.registerLanguage('javascript', javascript);
 hljs.registerLanguage('xml', xml);
@@ -74,19 +75,26 @@ const BodyType = styled.div.attrs((props) => {
 `;
 
 const ArticleBody = (props) => {
-  const $ = cheerio.load(props.body);
-  $('pre code').each((_, elm) => {
-    const result = hljs.highlightAuto($(elm).text());
-    $(elm).html(result.value);
-    $(elm).addClass('hljs');
-  });
+  let $ = '';
+  if (props.body !== undefined) {
+    $ = cheerio.load(props.body);
+    $('pre code').each((_, elm) => {
+      const result = hljs.highlightAuto($(elm).text());
+      $(elm).html(result.value);
+      $(elm).addClass('hljs');
+    });
+  }
 
   return (
     <BodyWrapper order={props.order}>
-      <BodyType
-        dangerouslySetInnerHTML={{ __html: $.html() }}
-        fontFamily={props.fontFamily}
-      />
+      {props.body !== undefined ? (
+        <BodyType
+          dangerouslySetInnerHTML={{ __html: $.html() }}
+          fontFamily={props.fontFamily}
+        />
+      ) : (
+        <Loading height="none" bgColor="none" />
+      )}
     </BodyWrapper>
   );
 };
@@ -106,9 +114,25 @@ ArticleBody.propTypes = {
 };
 
 ArticleBody.defaultProps = {
-  body: blogDataSecond,
+  body: undefined,
   fontFamily: 'source-code-pro',
   order: 0,
 };
 
-export default ArticleBody;
+const mapStateToProps = (state, ownProps) => {
+  const { articles, views, status } = state;
+  const id =
+    ownProps.computedMatch !== undefined
+      ? ownProps.computedMatch.params.id
+      : '';
+  const article = articles.find((article) => article.id === id);
+  const body = article !== undefined ? article.body : undefined;
+
+  return {
+    id,
+    body,
+  };
+};
+
+export default connect(mapStateToProps)(ArticleBody);
+export { ArticleBody };

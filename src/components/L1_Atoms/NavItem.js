@@ -43,6 +43,7 @@ const NavItem = (props) => {
           fontFamily={props.fontFamily}
           fontSize={props.fontSize}
           to={props.link}
+          name={props.name}
         >
           {props.value}
         </StyledLink>
@@ -70,6 +71,7 @@ NavItem.propTypes = {
   fontSize: PropTypes.number,
   flag: PropTypes.bool,
   link: PropTypes.string,
+  name: PropTypes.string,
   value: PropTypes.string,
   margin: PropTypes.string,
   padding: PropTypes.string,
@@ -81,6 +83,7 @@ NavItem.defaultProps = {
   fontSize: 15,
   flag: true,
   link: '/',
+  name: '',
   value: 'Sign In',
   margin: '0 0 0 calc(15rem / 16)',
   padding: 'calc(10rem / 16)',

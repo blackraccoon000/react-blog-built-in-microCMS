@@ -14,49 +14,49 @@ const Wrapper = styled.div.attrs((props) => {
   };
 })``;
 
-const IndexPosts = styled.div.attrs((props) => {})`
+const ArticleCardWrapper = styled.div.attrs((props) => {})`
   display: grid;
   grid-template-rows: auto auto;
   grid-template-columns: 1fr 1fr 1fr 1fr;
 `;
 
-const IndexTemplate = (props) => {
-  // console.log('props:', props);
+const ArticleCardList = (props) => {
   document.title = 'PlayWell | よく遊びよく学べ';
   return (
     <Wrapper bGColor={props.bGColor}>
-      <IndexPosts>
-        {props.views.viewsSortByIds.map((id) => {
-          /** viewsSortByIdsの順番で表示する */
-          const ACPage = props.pages.find((page) => page.id === id);
+      <ArticleCardWrapper>
+        {props.views.viewArticles.map((article) => {
           return (
             <ArticleCardTurquoiseBlue
-              key={ACPage.id}
-              src={ACPage.thumbnail !== undefined ? ACPage.thumbnail.url : ''}
-              title={ACPage.title}
-              id={ACPage.id}
-              createdAt={ACPage.createdAt}
-              updatedAt={ACPage.updatedAt}
+              key={article.id}
+              src={article.thumbnail !== undefined ? article.thumbnail.url : ''}
+              title={article.title}
+              id={article.id}
+              createdAt={article.createdAt}
+              updatedAt={article.updatedAt}
               keywords={
-                ACPage.keyword !== undefined ? ACPage.keyword.split(',') : ['']
+                article.keyword !== undefined
+                  ? article.keyword.split(',')
+                  : ['']
               }
             />
           );
         })}
-      </IndexPosts>
+      </ArticleCardWrapper>
     </Wrapper>
   );
 };
 
-IndexTemplate.propTypes = {
+ArticleCardList.propTypes = {
   bGColor: PropTypes.string,
-  pages: PropTypes.array,
+  articles: PropTypes.array,
   views: PropTypes.object,
+  viewArticles: PropTypes.array,
 };
 
-IndexTemplate.defaultProps = {
+ArticleCardList.defaultProps = {
   bGColor: '#61b1c8',
-  pages: pages,
+  articles: pages,
   views: {
     availableViews: 4,
     acquisition: 11,
@@ -66,16 +66,24 @@ IndexTemplate.defaultProps = {
       'q0qtwov5f4q6',
       'ww2vpab1815b',
     ],
+    viewArticles: pages,
   },
 };
 
 const mapStateToProps = (state) => {
-  // console.log('IT-state:', state);
+  const { articles, views, status } = state;
   return {
-    pages: state.contents.pages,
-    views: state.contents.views,
+    articles,
+    views,
+    status,
   };
 };
 
-export default connect(mapStateToProps)(IndexTemplate);
-export { IndexTemplate };
+// const mapDispatchToProps = (dispatch, ownProps) => {
+//   return {
+//     acquiredUpdater: (props) => acquiredUpdater(dispatch, props),
+//   };
+// };
+
+export default connect(mapStateToProps)(ArticleCardList);
+export { ArticleCardList };

@@ -1,19 +1,30 @@
 import React from 'react';
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
 import RaccoonRun from '../../img/raccoon_run.gif';
 
-const Wrapper = styled.div`
-  height: 75vh;
+const Wrapper = styled.div.attrs((props) => {
+  return {
+    style: {
+      backgroundColor: `${props.bgColor}`,
+      height: `${props.height}`,
+    },
+  };
+})`
   transition: all 1s;
-  background-color: #61b1c8;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
 `;
 
-const LoadingContainer = styled.div`
-  background-color: #e6e6e6;
+const LoadingContainer = styled.div.attrs((props) => {
+  return {
+    style: {
+      backgroundColor: `${props.rdColor}`,
+    },
+  };
+})`
   height: 200px;
   width: 200px;
   align-items: center;
@@ -34,15 +45,28 @@ const LoadingMessage = styled.p`
   margin-top: 15px;
 `;
 
+/** 背景色を可変にするより、Wrapperの有無を操作できたほうが良いかもしれない。 */
 const Loading = (props) => {
   return (
-    <Wrapper>
-      <LoadingContainer>
+    <Wrapper bgColor={props.bgColor} height={props.height}>
+      <LoadingContainer rdColor={props.rdColor}>
         <LoadingImg src={RaccoonRun} alt="loading" />
         <LoadingMessage>Now Loading ...</LoadingMessage>
       </LoadingContainer>
     </Wrapper>
   );
+};
+
+Loading.propTypes = {
+  bgColor: PropTypes.string,
+  height: PropTypes.string,
+  rdColor: PropTypes.string,
+};
+
+Loading.defaultProps = {
+  bgColor: '#61b1c8',
+  height: '75vh',
+  rdColor: '#e6e6e6',
 };
 
 export default Loading;

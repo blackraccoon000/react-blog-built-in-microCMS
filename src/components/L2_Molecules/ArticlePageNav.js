@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 
 const Wrapper = styled.div`
@@ -39,30 +40,67 @@ const StyledLink = styled(Link)``;
 const ArticlePageNav = (props) => {
   return (
     <Wrapper>
-      <UnList>
-        <ListItem align="left">
-          {props.prevId !== undefined && (
-            <>
-              <PostTitle>Prev Post</PostTitle>
-              <StyledLink to={`/article/${props.prevId}`}>
-                {props.prevTitle}
-              </StyledLink>
-            </>
-          )}
-        </ListItem>
-        <ListItem align="right">
-          {props.nextId !== undefined && (
-            <>
-              <PostTitle>Next Post</PostTitle>
-              <StyledLink to={`/article/${props.nextId}`}>
-                {props.nextTitle}
-              </StyledLink>
-            </>
-          )}
-        </ListItem>
-      </UnList>
+      {props.articleIndex !== -1 && (
+        <UnList>
+          <ListItem align="left">
+            <PostTitle>Prev Post</PostTitle>
+            <StyledLink to={`/article/${props.prev.id}`}>
+              {props.prev.title}
+            </StyledLink>
+          </ListItem>
+          <ListItem align="right">
+            <PostTitle>Next Post</PostTitle>
+            <StyledLink to={`/article/${props.next.id}`}>
+              {props.next.title}
+            </StyledLink>
+          </ListItem>
+        </UnList>
+      )}
     </Wrapper>
   );
 };
 
-export default ArticlePageNav;
+ArticlePageNav.propTypes = {
+  articleIndex: PropTypes.number,
+  prev: PropTypes.object,
+  next: PropTypes.object,
+};
+
+/**
+ * Storybook用、通常の動作では表示されない。
+ */
+ArticlePageNav.defaultProps = {
+  articleIndex: -1,
+  prev: { id: '', title: '' },
+  next: { id: '', title: '' },
+};
+
+const mapStateToProps = (state, ownProps) => {
+  const { articles, views, status } = state;
+  const id =
+    ownProps.computedMatch !== undefined
+      ? ownProps.computedMatch.params.id
+      : '';
+  const articleIndex = articles.findIndex((article) => article.id === id);
+  const prev =
+    articleIndex === -1
+      ? undefined
+      : articleIndex === 0
+      ? undefined
+      : articles[articleIndex - 1];
+  const next =
+    articleIndex === -1
+      ? undefined
+      : articleIndex === views.totalCount
+      ? undefined
+      : articles[articleIndex + 1];
+
+  return {
+    articleIndex,
+    prev,
+    next,
+  };
+};
+
+export default connect(mapStateToProps)(ArticlePageNav);
+export { ArticlePageNav };
