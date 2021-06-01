@@ -7,7 +7,6 @@ import FooterCopyrightAria from '../components/L2_Molecules/FooterCopyrightAria'
 import ArticleContainer from '../components/L4_Templates/ArticleContainer';
 
 const ArticleRoute = (props) => {
-  console.log(props);
   return (
     <Route
       {...props.rest}

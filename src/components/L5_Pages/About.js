@@ -50,17 +50,14 @@ const TextLine = styled.p.attrs((props) => {})`
 
 const About = (props) => {
   document.title = 'このページについて';
+  const width =
+    window.parent.screen.width < 800 ? window.parent.screen.width : 800;
   return (
     <Wrapper>
       <Container>
         <ArticleImg
           flag={false}
-          src={
-            'https://images.microcms-assets.io/assets/577bcb7965bf4dbd951686143646657b/c24d720c28a140eb93ff0bbb2c763569/mokuro.png?fit=fill&fill-color=331cbf&w=800&h=500'
-          }
-          // src={
-          //   'https://images.microcms-assets.io/assets/577bcb7965bf4dbd951686143646657b/c24d720c28a140eb93ff0bbb2c763569/mokuro.png?txt=mokuro&txt-size=30&txt-color=fff&txt-align=middle,center&txt-font=serif,italic'
-          // }
+          src={`https://images.microcms-assets.io/assets/577bcb7965bf4dbd951686143646657b/c24d720c28a140eb93ff0bbb2c763569/mokuro.png?w=${width}`}
           imageMargin="0 auto"
           width="100%"
         />

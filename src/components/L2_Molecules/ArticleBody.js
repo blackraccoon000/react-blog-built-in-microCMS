@@ -24,7 +24,11 @@ const BodyWrapper = styled.div.attrs((props) => {
   flex-direction: row;
   justify-content: center;
   margin: calc(30rem / 16) auto;
-  width: calc(800rem / 16);
+  width: calc(300rem / 16);
+
+  @media screen and (min-width: 900px) {
+    width: calc(800rem / 16);
+  }
 `;
 
 const BodyType = styled.div.attrs((props) => {
@@ -35,7 +39,11 @@ const BodyType = styled.div.attrs((props) => {
   };
 })`
   justify-content: center;
-  width: calc(750rem / 16);
+  width: calc(280rem / 16);
+
+  @media screen and (min-width: 900px) {
+    width: calc(750rem / 16);
+  }
 
   & h2 {
     font-size: calc(18rem / 16);
@@ -58,7 +66,11 @@ const BodyType = styled.div.attrs((props) => {
     border-radius: calc(1rem / 16);
     box-sizing: border-box;
     padding: calc(15rem / 16);
-    width: calc(750rem / 16);
+    width: calc(280rem / 16);
+
+    @media screen and (min-width: 900px) {
+      width: calc(750rem / 16);
+    }
 
     & code {
       white-space: pre-wrap;
@@ -70,7 +82,11 @@ const BodyType = styled.div.attrs((props) => {
     display: flex;
     justify-content: center;
     margin-bottom: calc(25rem / 16);
-    width: calc(750rem / 16);
+    width: calc(280rem / 16);
+
+    @media screen and (min-width: 900px) {
+      width: calc(750rem / 16);
+    }
   }
 `;
 

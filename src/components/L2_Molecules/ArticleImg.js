@@ -17,8 +17,10 @@ const ArticleWrapper = styled.div.attrs((props) => {
 `;
 
 const BlogTopImg = styled.img.attrs((props) => {
+  const width =
+    window.parent.screen.width < 800 ? window.parent.screen.width : 800;
   return {
-    src: `${props.src}`,
+    src: `${props.src}?w=${width}`,
     loading: 'lazy',
     style: {
       borderRadius: `${props.radius}`,

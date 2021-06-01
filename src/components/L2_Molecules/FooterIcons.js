@@ -20,13 +20,22 @@ const UnorderedList = styled.ul.attrs((props) => {
 })`
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   justify-content: center;
   list-style: none;
-  padding: calc(10rem / 16);
+  padding: 0 calc(20rem / 16);
+
+  @media screen and (min-width: 767px) {
+    padding: calc(10rem / 16);
+  }
 `;
 
 const ListItem = styled.li.attrs((props) => {})`
-  margin-right: calc(16rem / 16);
+  margin: calc(8rem / 16) calc(30rem / 16) 0 0;
+
+  @media screen and (min-width: 767px) {
+    margin: 0 calc(16rem / 16) 0 0;
+  }
 `;
 
 const QiitaBorder = styled.div.attrs((props) => {
