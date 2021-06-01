@@ -2,10 +2,10 @@ import axios from 'axios';
 
 const useAxios = async (query) => {
   try {
-    console.log('==========axios start==========', { query });
+    // console.log('==========axios start==========', { query });
     return await axios.get(`${query}`, {});
   } catch (error) {
-    console.log('==========Error axios No start==========', { error });
+    // console.log('==========Error axios No start==========', { error });
   }
 };
 
