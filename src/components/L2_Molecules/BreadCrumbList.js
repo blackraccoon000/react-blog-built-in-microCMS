@@ -1,8 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
-
 import NavItem from '../L1_Atoms/NavItem';
 
 const Wrapper = styled.div`
@@ -30,6 +28,7 @@ const KeywordDowner = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
+  flex-wrap: wrap;
 `;
 
 const BreadCrumbList = (props) => {

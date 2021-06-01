@@ -76,7 +76,7 @@ IconFocus.defaultProps = {
   color: '#8b8c8e',
   flag: true,
   size: 20,
-  link: '/search',
+  link: '/keywords',
   order: 0,
 };
 

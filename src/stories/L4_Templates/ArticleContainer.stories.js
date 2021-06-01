@@ -1,8 +1,8 @@
 import React from 'react';
-import { ArticleContainer } from '../../components/L3_Organisms/ArticleContainer';
+import { ArticleContainer } from '../../components/L4_Templates/ArticleContainer';
 
 export default {
-  title: 'L3_Organisms/ArticleContainer',
+  title: 'L4_Templates/ArticleContainer',
   component: ArticleContainer,
   argTypes: {},
 };

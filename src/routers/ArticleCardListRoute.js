@@ -4,21 +4,17 @@ import { Route } from 'react-router-dom';
 
 import HeaderTurquoiseBlue from '../components/L3_Organisms/HeaderTurquoiseBlue';
 import FooterTurquoiseBlue from '../components/L3_Organisms/FooterTurquoiseBlue';
-import IndexTemplate from '../components/L4_Templates/IndexTemplate';
+import ArticleCardList from '../components/L5_Pages/ArticleCardList';
 import Loading from '../components/L1_Atoms/Loading';
 import fetchPages from '../microcms/fetchPages';
-import getIndexSelector from '../selectors/getIndexSelector';
+import acquiredUpdater from '../selectors/acquiredUpdater';
 
-const IndexRoute = (props) => {
-  const { id, ...rest } = props;
-  // console.log('IR Props:', props);
-  getIndexSelector(props);
-
+const ArticleCardListRoute = (props) => {
+  console.log(props);
   return (
     <Route
-      {...rest}
       component={() => {
-        return props.views.availableViews === 0 ? (
+        return props.articles.length === 0 ? (
           <>
             <HeaderTurquoiseBlue />
             <Loading />
@@ -27,7 +23,7 @@ const IndexRoute = (props) => {
         ) : (
           <>
             <HeaderTurquoiseBlue />
-            <IndexTemplate {...rest} />
+            <ArticleCardList {...props} />
             <FooterTurquoiseBlue />
           </>
         );
@@ -37,17 +33,13 @@ const IndexRoute = (props) => {
 };
 
 const mapStateToProps = (state, ownProps) => {
+  const { articles, views, status } = state;
   return {
-    pages: state.contents.pages,
-    views: state.contents.views,
+    articles,
+    views,
+    status,
   };
 };
 
-const mapDispatchToProps = (dispatch, ownProps) => {
-  return {
-    updater: (getLimit) => fetchPages('acquired', '', getLimit),
-  };
-};
-
-export { IndexRoute };
-export default connect(mapStateToProps, mapDispatchToProps)(IndexRoute);
+export { ArticleCardListRoute };
+export default connect(mapStateToProps)(ArticleCardListRoute);

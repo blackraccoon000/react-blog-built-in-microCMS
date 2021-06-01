@@ -1,13 +1,16 @@
 import axios from 'axios';
 
-const useAxios = async (axc, str) => {
-  if (axc) {
-    console.log('==========axios start==========', { str });
-    return await axios.get(`${str}`, {
-      headers: { 'X-API-KEY': process.env.X_API_KEY },
+const useAxios = async (query) => {
+  console.log(query);
+  try {
+    console.log('==========axios start==========', { query });
+    return await axios.get(`${query}`, {
+      headers: {
+        'X-API-KEY': process.env.X_API_KEY,
+      },
     });
-  } else {
-    console.log('==========axios No start==========', { str });
+  } catch (error) {
+    console.log('==========Error axios No start==========', { error });
   }
 };
 

@@ -1,14 +1,11 @@
-import store from '../store/store';
 import reduxCheck from '../selectors/reduxCheck';
 import axiosCheck from '../selectors/axiosCheck';
 import queryShaping from '../selectors/queryShaping';
 import fetchControl from '../selectors/fetchControl';
 
-const fetchPages = async (queries = '/', id = '', getLimit = 4) => {
-  const data = reduxCheck(store.getState().contents, id);
-  const axc = axiosCheck(data);
-  const str = queryShaping(queries, data, getLimit);
-  fetchControl(queries, store, axc, str);
+const fetchPages = async (command, id = '') => {
+  const query = queryShaping(command, id);
+  fetchControl(command, query);
 };
 
 export default fetchPages;

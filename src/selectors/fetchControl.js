@@ -1,58 +1,27 @@
-import {
-  setObtainable,
-  setContents,
-  setContentsList,
-} from '../actions/contentsActions';
-import contentsListCreator from './contentsListCreator';
+import { initialSetup } from '../actions/common';
+import store from '../store/store';
 import useAxios from '../microcms/useAxios';
-import fetchPages from '../microcms/fetchPages';
 
-const fetchControl = (queries, store, axc, str) => {
-  switch (queries) {
+const fetchControl = (command, query) => {
+  // console.log({ command }, { query });
+  switch (command) {
     case 'start':
-      useAxios(axc, str)
-        .then((value) => {
-          store.dispatch(setObtainable(value.data.totalCount));
-          fetchPages('contentsList');
+      useAxios(query)
+        .then((data) => {
+          store.dispatch(initialSetup(data));
         })
-        .catch((error) => console.error('★★★★★ Axios Start Error:', error));
+        .catch((error) => console.log('★★★★★ Axios Start Error:', error));
       break;
-    case 'contentsList':
-      useAxios(axc, str)
-        .then((value) => {
-          // console.log('keywords:', value);
-          store.dispatch(setContentsList(contentsListCreator(value, store)));
-        })
-        .catch((error) =>
-          console.error('★★★★★ Axios ContentsList Error:', error)
-        );
-      break;
-    case 'acquired':
-      useAxios(axc, str)
-        .then((value) => {
-          store.dispatch(
-            setContents(value.data.contents, contentsListCreator(value, store))
-          );
-        })
-        .catch((error) => console.error('★★★★★ Axios Acquired Error:', error));
-      break;
-    case 'select':
-      useAxios(axc, str)
-        .then((value) => {
-          store.dispatch(
-            setContents(value.data.contents, contentsListCreator(value, store))
-          );
-        })
-        .catch((error) => console.error('★★★★★ Axios Select Error:', error));
-      break;
+    // case 'acquired':
+    //   useAxios(query)
+    //     .then((data) => {
+    //       // store.dispatch(initialSetup(data));
+    //     })
+    //     .catch((error) => console.log('★★★★★ Axios Start Error:', error));
+    //   break;
     default:
-      useAxios(axc, str)
-        .then((value) => {
-          console.log(value);
-          // store.dispatch(
-          //   setContents(value.data.contents, contentsListCreator(value, store))
-          // );
-        })
+      useAxios(query)
+        .then((value) => console.log(value))
         .catch((error) => console.error('★★★★★ Axios Default Error:', error));
       break;
   }

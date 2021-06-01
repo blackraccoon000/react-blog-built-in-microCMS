@@ -1,31 +1,18 @@
 const fields = 'id,title,keyword,thumbnail,createdAt,updatedAt,body';
 const keywordFields = 'id,title,keyword,createdAt,updatedAt';
-/**
- * 取得したqueriesを整形する
- */
-const str = 'https://playwell.microcms.io/api/v1/blog';
 
-const queryShaping = (queries, data, getLimit) => {
-  switch (queries) {
-    case '/':
-      return `${str}/`;
+const acqId = process.env.ACQID;
+const str = 'https://playwell.microcms.io/api/v1/blog';
+import store from '../store/store';
+
+const queryShaping = (command, id) => {
+  switch (command) {
     case 'start':
-      return `${str}?limit=0`;
-    case 'contentsList':
-      return `${str}?fields=id&offset=0&limit=${data.obtainable}`;
+      return `http://0.0.0.0:3000/acq/${acqId}`;
     case 'acquired':
-      /** contentsListの若番から未取得データIDの配列を獲得する */
-      const ids = data.contentsList
-        .filter((contents) => contents.Acquired === false)
-        .map((contents, num) => num < getLimit && contents.id)
-        .filter((contents) => contents !== false)
-        .join(',');
-      return `${str}?ids=${ids}&fields=${fields}&offset=0&limit=${data.obtainable}`;
-    case 'select':
-      return `${str}?ids=${data.id}&fields=${fields}&offset=0&limit=${data.obtainable}`;
+      return `${str}?ids=${id}&fields=body`;
     default:
-      /** queriesを直接入力する */
-      return `${str}${queries}`;
+      return '';
   }
 };
 

@@ -4,17 +4,16 @@ import { Route } from 'react-router-dom';
 
 import HeaderTurquoiseBlue from '../components/L3_Organisms/HeaderTurquoiseBlue';
 import FooterCopyrightAria from '../components/L2_Molecules/FooterCopyrightAria';
-import ArticleContainer from '../components/L4_Templates/ArticleContainer';
+import KeywordContainer from '../components/L4_Templates/KeywordContainer';
 
-const ArticleRoute = (props) => {
-  console.log(props);
+const KeywordRoute = (props) => {
   return (
     <Route
       {...props.rest}
       component={() => (
         <>
           <HeaderTurquoiseBlue />
-          <ArticleContainer {...props} />
+          <KeywordContainer {...props} />
           <FooterCopyrightAria />
         </>
       )}
@@ -36,5 +35,5 @@ const mapDispatchToProps = () => {
   };
 };
 
-export { ArticleRoute };
-export default connect(mapStateToProps, mapDispatchToProps)(ArticleRoute);
+export { KeywordRoute };
+export default connect(mapStateToProps, mapDispatchToProps)(KeywordRoute);
